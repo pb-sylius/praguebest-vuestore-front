@@ -1,0 +1,16 @@
+yarn add vue-template-compiler@2.6.14 -W
+yarn add vue-server-renderer@2.6.14 -W
+yarn add vue@2.6.14 -W
+
+node_modules\@glidejs\glide
+remove type: module from package.json
+
+@nuxt\components\node_modules\vue-template-compiler
+@nuxt\vue-app\node_modules\vue
+@nuxt\vue-renderer\node_modules\vue
+@nuxt\vue-renderer\node_modules\vue-server-renderer
+@nuxt\webpack\node_modules\vue-template-compiler
+@nuxt\components\node_modules\vue-template-compiler
+@nuxt\vue-app\node_modules\vue-template-compiler
+@nuxt\vue-renderer\node_modules\vue
+@nuxt\vue-renderer\node_modules\vue-server-renderer
