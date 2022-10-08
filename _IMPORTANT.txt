@@ -14,3 +14,7 @@ remove type: module from package.json
 @nuxt\vue-app\node_modules\vue-template-compiler
 @nuxt\vue-renderer\node_modules\vue
 @nuxt\vue-renderer\node_modules\vue-server-renderer
+@nuxt\webpack\node_modules\vue-template-compiler
+@storefront-ui\vue\node_modules\vue
+@vue-storefront\core\node_modules\vue
+@nuxt\vue-app\node_modules\vue
