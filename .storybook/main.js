@@ -1,7 +1,7 @@
 module.exports = {
   "stories": [
-    "../stories/**/*.stories.mdx",
-    "../stories/**/*.stories.@(js|jsx|ts|tsx)"
+    "../packages/sylius/theme/ui/**/*.stories.mdx",
+    "../packages/sylius/theme/ui/**/*.stories.@(js|jsx|ts|tsx|vue)"
   ],
   "addons": [
     "@storybook/addon-links",
