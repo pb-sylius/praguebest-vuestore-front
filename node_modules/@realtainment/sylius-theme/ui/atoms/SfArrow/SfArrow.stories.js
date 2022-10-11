@@ -137,6 +137,14 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
+
 Common.args = { disabled: false };
 
 export const Disabled = Template.bind({});

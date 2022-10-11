@@ -113,6 +113,14 @@ Common.args = {
   current: 1,
 };
 
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
+
 export const WithActiveSlot = (args, { argTypes }) => ({
   components: { SfBullets },
   props: Object.keys(argTypes),

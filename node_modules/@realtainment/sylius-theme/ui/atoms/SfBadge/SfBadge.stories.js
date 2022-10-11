@@ -84,26 +84,76 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Primary = Template.bind({});
+Primary.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 Primary.args = { label: "Limited", classes: "color-primary" };
 
 export const AsNumber = Template.bind({});
 
+AsNumber.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
+
 AsNumber.args = { label: "90", classes: "sf-badge--number" };
 
 export const Secondary = Template.bind({});
+Secondary.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 Secondary.args = { label: "90", classes: "color-secondary" };
 
 export const Warning = Template.bind({});
+Warning.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 Warning.args = { label: "90", classes: "color-warning" };
 
 export const Danger = Template.bind({});
+Danger.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 Danger.args = { label: "90", classes: "color-danger" };
 
 export const Info = Template.bind({});
+Info.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 Info.args = { label: "90", classes: "color-info" };
 
 export const Success = Template.bind({});
+Success.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 Success.args = { label: "90", classes: "color-success" };
 
 export const WithDefaultSlot = (args, { argTypes }) => ({

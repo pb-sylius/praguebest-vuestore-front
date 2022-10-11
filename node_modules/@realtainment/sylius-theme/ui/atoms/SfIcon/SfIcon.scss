@@ -1,4 +1,10 @@
 @import "../../styles/helpers";
+.sf-input__icon, .sf-search-bar__icon {
+    position: var(--icon-position, absolute);
+    top: 50%;
+    right: 0;
+    transform: translate3d(0, -50%, 0);
+}
 .sf-icon {
   position: var(--icon-position, relative) !important;
   display: flex;

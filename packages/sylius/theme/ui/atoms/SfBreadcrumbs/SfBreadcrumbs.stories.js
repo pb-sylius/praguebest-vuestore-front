@@ -87,6 +87,14 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
+
 Common.args = {
   breadcrumbs: [
     { text: "Home", link: "#" },
@@ -107,6 +115,13 @@ export const WithLinkSlot = (args, { argTypes }) => ({
   </SfBreadcrumbs>`,
 });
 
+WithLinkSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 WithLinkSlot.args = { ...Common.args };
 
 export const WithCurrentSlot = (args, { argTypes }) => ({

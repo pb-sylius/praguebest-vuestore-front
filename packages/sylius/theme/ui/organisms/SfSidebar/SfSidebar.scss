@@ -97,10 +97,11 @@
       --sidebar-circle-icon-top: var(--spacer-sm);
       --sidebar-content-padding: var(--spacer-base);
       & .sf-sidebar__circle-icon {
-        --button-background: transparent;
-        --icon-color: var(--c-link);
+        position: absolute !important;
+        --button-background: transparent !important;
+        --icon-color: var(--c-link) !important;
         &:hover {
-          --button-box-shadow-opacity: 0;
+          --button-box-shadow-opacity: 0 !important;
         }
       }
       --sidebar-circle-icon-transform: translate3d(-25%, 0, 0);

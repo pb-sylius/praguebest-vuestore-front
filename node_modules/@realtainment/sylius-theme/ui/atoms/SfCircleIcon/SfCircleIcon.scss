@@ -1,4 +1,8 @@
 @import "../../styles/helpers";
+.sf-bottom-modal__close {
+  --button-display: none;
+  position: absolute !important;
+}
 .sf-circle-icon {
   --icon-color: var(--c-white) !important;
   --button-padding: 0 !important;
@@ -6,7 +10,7 @@
   --button-size: 3.25rem !important;
   --button-background: var(--c-primary) !important;
   --button-border-radius: 100% !important;
-  position: var(--circle-icon-position, relative) !important;
+  position: var(--circle-icon-position, relative);
   --button-box-shadow: 0 0 0 0.3125rem var(--c-primary) !important;
   &:hover {
     --button-background: var(--c-primary) !important;

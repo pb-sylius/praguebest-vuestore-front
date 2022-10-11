@@ -8,4 +8,10 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  options: {
+    storySort: {
+      method: 'alphabetical',
+      order: ['Components', ['Atoms', 'Molecules', 'Organisms', 'Templates'], 'Utils', 'Integrations'],
+    },
+  },
 }

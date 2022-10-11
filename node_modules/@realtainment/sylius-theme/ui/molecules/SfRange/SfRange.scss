@@ -46,7 +46,7 @@
         var(--font-weight--normal),
         var(--font-size--xs),
         1.2,
-        (--font-family--secondary)
+        var(--font-family--secondary )
       );
       @include border(--range-tooltip-border, 0, none, var(--c-primary));
     }
