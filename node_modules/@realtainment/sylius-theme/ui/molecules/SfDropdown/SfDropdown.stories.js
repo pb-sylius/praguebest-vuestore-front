@@ -205,6 +205,13 @@ export const Common = Template.bind({});
 Common.args = {
   title: "Choose size",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Persistent = Template.bind({});
 Persistent.args = {
@@ -212,15 +219,36 @@ Persistent.args = {
   isDropdownOpen: true,
   persistent: true,
 };
+Persistent.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const IsOpened = Template.bind({});
 IsOpened.args = {
   ...Common.args,
   isDropdownOpen: true,
 };
+IsOpened.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithUpModifier = Template.bind({});
 WithUpModifier.args = {
   ...Common.args,
   classes: "sf-dropdown--up",
+};
+WithUpModifier.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };

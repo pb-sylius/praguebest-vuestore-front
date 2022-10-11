@@ -524,7 +524,6 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Common = Template.bind({});
-
 Common.args = {
   title: "Cream Beach Bag",
   description:
@@ -534,6 +533,13 @@ Common.args = {
   maxRating: 5,
   reviewsCount: 7,
   image: productEJpg,
+};
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithMultipleImages = Template.bind({
@@ -550,9 +556,23 @@ WithMultipleImages.args = {
     productCJpg,
   ],
 };
+WithMultipleImages.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const AddedToWishlist = Template.bind({});
 AddedToWishlist.args = {
   ...Common.args,
   isInWishlist: true,
+};
+AddedToWishlist.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };

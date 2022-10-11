@@ -287,10 +287,24 @@ Common.args = {
     "The collection features formal and casual comfort shoes with a Danish design focus. Made from premium leathers and comfort.",
   buttonText: "Shop Now",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const OnlyTitle = Template.bind({});
 OnlyTitle.args = {
   title: "Eco Sandals",
+};
+OnlyTitle.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const OnlyDescription = Template.bind({});
@@ -298,15 +312,36 @@ OnlyDescription.args = {
   description:
     "The collection features formal and casual comfort shoes with a Danish design focus. Made from premium leathers and comfort.",
 };
+OnlyDescription.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const OnlySubtitle = Template.bind({});
 OnlySubtitle.args = {
   subtitle: "Summer shoes",
 };
+OnlySubtitle.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const OnlyCallToAction = Template.bind({});
 OnlyCallToAction.args = {
   buttonText: "Shop Now",
+};
+OnlyCallToAction.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithBackground = Template.bind({});
@@ -315,6 +350,13 @@ WithBackground.args = {
   ...Common.args,
   image: "",
 };
+WithBackground.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const OnTheRight = Template.bind({});
 OnTheRight.args = {
@@ -322,6 +364,13 @@ OnTheRight.args = {
   background: "#e1e3e2",
   classes: "sf-banner--right",
   image: "",
+};
+OnTheRight.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithTitleSlot = (args, { argTypes }) => ({
@@ -343,6 +392,13 @@ export const WithTitleSlot = (args, { argTypes }) => ({
   </SfBanner>`,
 });
 WithTitleSlot.args = { ...Common.args };
+WithTitleSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithSubtitleSlot = (args, { argTypes }) => ({
   components: { SfBanner },
@@ -363,6 +419,13 @@ export const WithSubtitleSlot = (args, { argTypes }) => ({
   </SfBanner>`,
 });
 WithSubtitleSlot.args = { ...Common.args };
+WithSubtitleSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithDescriptionSlot = (args, { argTypes }) => ({
   components: { SfBanner },
@@ -383,6 +446,13 @@ export const WithDescriptionSlot = (args, { argTypes }) => ({
   </SfBanner>`,
 });
 WithDescriptionSlot.args = { ...Common.args };
+WithDescriptionSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithCallToActionSlot = (args, { argTypes }) => ({
   components: { SfBanner },
@@ -403,3 +473,10 @@ export const WithCallToActionSlot = (args, { argTypes }) => ({
   </SfBanner>`,
 });
 WithCallToActionSlot.args = { ...Common.args };
+WithCallToActionSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

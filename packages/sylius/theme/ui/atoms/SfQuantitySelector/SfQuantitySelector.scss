@@ -18,9 +18,9 @@
   @include border(--quantity-selector-border, 0, solid, var(--c-light));
   &__button {
     --button-height: 100%;
-    --button-padding: var(--spacer-2xs) var(--spacer-xs) 0;
-    --button-background: transparent;
-    --button-color: var(--c-text);
+    --button-padding: var(--spacer-2xs) var(--spacer-xs) 0 !important;
+    --button-background: transparent !important;
+    --button-color: var(--c-text) !important;
     &:hover {
       --button-background: transparent;
       --button-box-shadow: none;

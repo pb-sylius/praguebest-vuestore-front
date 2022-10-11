@@ -105,9 +105,23 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {};
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Disabled = Template.bind({});
 Disabled.args = { disabled: true };
+Disabled.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithAddToCartSlot = (args, { argTypes }) => ({
   components: { SfAddToCart },
@@ -131,4 +145,11 @@ export const WithAddToCartSlot = (args, { argTypes }) => ({
 WithAddToCartSlot.args = {
   ...Common.args,
   qty: 5,
+};
+WithAddToCartSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };

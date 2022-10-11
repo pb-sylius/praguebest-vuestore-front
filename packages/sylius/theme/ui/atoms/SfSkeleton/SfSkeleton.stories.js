@@ -62,6 +62,13 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Common = Template.bind({});
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Image = (args, { argTypes }) => ({
   components: { SfSkeleton },
@@ -70,6 +77,13 @@ export const Image = (args, { argTypes }) => ({
     `,
 });
 Image.args = { ...Common.args };
+Image.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const ParagrapInputAndButton = (args, { argTypes }) => ({
   components: { SfSkeleton },
@@ -82,6 +96,13 @@ export const ParagrapInputAndButton = (args, { argTypes }) => ({
     </div>`,
 });
 ParagrapInputAndButton.args = { ...Common.args };
+ParagrapInputAndButton.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const AvatarAndParagraphs = (args, { argTypes }) => ({
   components: { SfSkeleton },
@@ -95,3 +116,10 @@ export const AvatarAndParagraphs = (args, { argTypes }) => ({
     </div>`,
 });
 AvatarAndParagraphs.args = { ...Common.args };
+AvatarAndParagraphs.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

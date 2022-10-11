@@ -176,8 +176,22 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {};
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithoutBorder = Template.bind({});
 WithoutBorder.args = {
   classes: "sf-table--no-border",
+};
+WithoutBorder.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };

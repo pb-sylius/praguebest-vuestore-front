@@ -148,11 +148,25 @@ Primary.args = {
   classes: "color-primary",
   content: "Shop now",
 };
+Primary.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
   ...Primary.args,
+};
+Disabled.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const AsLink = Template.bind({});
@@ -161,11 +175,25 @@ AsLink.args = {
   classes: "sf-button--underlined",
   link: "https://storefrontui.io",
 };
+AsLink.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   ...Primary.args,
   classes: "color-secondary",
+};
+Secondary.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const Light = Template.bind({});
@@ -173,11 +201,25 @@ Light.args = {
   ...Primary.args,
   classes: "color-light",
 };
+Light.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Warning = Template.bind({});
 Warning.args = {
   ...Primary.args,
   classes: "color-warning",
+};
+Warning.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const InDanger = Template.bind({});
@@ -185,17 +227,38 @@ InDanger.args = {
   ...Primary.args,
   classes: "color-danger",
 };
+InDanger.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Info = Template.bind({});
 Info.args = {
   ...Primary.args,
   classes: "color-info",
 };
+Info.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Success = Template.bind({});
 Success.args = {
   ...Primary.args,
   classes: "color-success",
+};
+Success.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithDefaultSlot = (args, { argTypes }) => ({

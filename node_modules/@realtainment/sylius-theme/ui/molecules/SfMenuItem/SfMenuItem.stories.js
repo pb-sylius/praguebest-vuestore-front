@@ -175,11 +175,25 @@ Common.args = {
   label: "Red",
   count: 30,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const AsLink = Template.bind({});
 AsLink.args = {
   ...Common.args,
   link: "https://www.storefrontui.io/",
+};
+AsLink.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseIconSlot = (args, { argTypes }) => ({

@@ -103,6 +103,13 @@ Common.args = {
   color: "red",
   label: "Red",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseColorSlot = (args, { argTypes }) => ({
   components: { SfProductOption },

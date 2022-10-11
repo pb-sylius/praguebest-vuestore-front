@@ -62,6 +62,13 @@ export const Loading = Template.bind({});
 Loading.args = {
   loading: true,
 };
+Loading.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithLoaderSlot = (args, { argTypes }) => ({
   components: { SfLoader, SfImage },

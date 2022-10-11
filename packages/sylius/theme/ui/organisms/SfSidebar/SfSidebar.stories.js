@@ -252,11 +252,25 @@ Common.args = {
   visible: true,
   title: "My Cart",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const OnTheRight = Template.bind({});
 OnTheRight.args = {
   ...Common.args,
   classes: "sf-sidebar--right",
+};
+OnTheRight.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const NoOverlay = Template.bind({});
@@ -264,11 +278,25 @@ NoOverlay.args = {
   ...Common.args,
   overlay: false,
 };
+NoOverlay.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Persistent = Template.bind({});
 Persistent.args = {
   ...Common.args,
   persistent: true,
+};
+Persistent.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseTitleSlot = (args, { argTypes }) => ({

@@ -79,3 +79,10 @@ Common.args = {
     desktop: cardD,
   },
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

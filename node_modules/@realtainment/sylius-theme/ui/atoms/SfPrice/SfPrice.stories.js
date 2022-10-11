@@ -139,16 +139,37 @@ export const Common = Template.bind({});
 Common.args = {
   regular: "$200.00",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const OnlyRegular = Template.bind({});
 OnlyRegular.args = {
   regular: "$200.00",
+};
+OnlyRegular.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const HasSpecial = Template.bind({});
 HasSpecial.args = {
   ...Common.args,
   special: "$100.00",
+};
+HasSpecial.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithSpecialSlot = (args, { argTypes }) => ({
@@ -166,6 +187,13 @@ export const WithSpecialSlot = (args, { argTypes }) => ({
 WithSpecialSlot.args = {
   ...HasSpecial.args,
 };
+WithSpecialSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithOldSlot = (args, { argTypes }) => ({
   components: { SfPrice, SfBadge },
@@ -182,6 +210,13 @@ export const WithOldSlot = (args, { argTypes }) => ({
 WithOldSlot.args = {
   ...WithSpecialSlot.args,
 };
+WithOldSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithRegularSlot = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
@@ -197,4 +232,11 @@ export const WithRegularSlot = (args, { argTypes }) => ({
 });
 WithRegularSlot.args = {
   ...OnlyRegular.args,
+};
+WithRegularSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };

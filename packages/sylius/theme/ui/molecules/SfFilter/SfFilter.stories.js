@@ -184,17 +184,38 @@ Common.args = {
   label: "Red",
   count: 30,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Selected = Template.bind({});
 Selected.args = {
   ...Common.args,
   selected: true,
 };
+Selected.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const AsColorFilter = Template.bind({});
 AsColorFilter.args = {
   ...Common.args,
   color: "#E69494",
+};
+AsColorFilter.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseLabelSlot = (args, { argTypes }) => ({
@@ -213,6 +234,13 @@ export const UseLabelSlot = (args, { argTypes }) => ({
   </SfFilter>`,
 });
 UseLabelSlot.args = { ...Common.args };
+UseLabelSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseCountSlot = (args, { argTypes }) => ({
   components: { SfFilter },
@@ -230,3 +258,10 @@ export const UseCountSlot = (args, { argTypes }) => ({
   </SfFilter>`,
 });
 UseCountSlot.args = { ...Common.args };
+UseCountSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

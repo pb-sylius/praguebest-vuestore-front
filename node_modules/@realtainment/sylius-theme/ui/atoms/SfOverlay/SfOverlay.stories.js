@@ -66,15 +66,36 @@ export const Common = Template.bind({});
 Common.args = {
   visible: true,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithFadeTransition = Template.bind({});
 WithFadeTransition.args = {
   ...Common.args,
   transition: "sf-fade",
 };
+WithFadeTransition.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Visible = Template.bind({});
 Visible.args = {
   ...Common.args,
   visible: true,
+};
+Visible.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };

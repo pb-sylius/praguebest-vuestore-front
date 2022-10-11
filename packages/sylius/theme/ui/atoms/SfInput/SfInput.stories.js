@@ -293,6 +293,13 @@ Common.args = {
   label: "First name",
   name: "name",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithError = Template.bind({});
 WithError.args = {
@@ -300,10 +307,24 @@ WithError.args = {
   errorMessage: "Required",
   valid: false,
 };
+WithError.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Invalid = Template.bind({});
 Invalid.args = {
   ...WithError.args,
+};
+Invalid.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const AsRequired = Template.bind({});
@@ -311,11 +332,25 @@ AsRequired.args = {
   ...Common.args,
   required: true,
 };
+AsRequired.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   ...Common.args,
   disabled: true,
+};
+Disabled.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const ShowPassword = Template.bind({});
@@ -323,6 +358,13 @@ ShowPassword.args = {
   ...Common.args,
   type: "password",
   hasShowPassword: true,
+};
+ShowPassword.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithPlaceholder = (args, { argTypes }) => ({
@@ -353,12 +395,26 @@ export const WithPlaceholder = (args, { argTypes }) => ({
 WithPlaceholder.args = {
   ...Common.args,
 };
+WithPlaceholder.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Filled = Template.bind({});
 Filled.args = {
   ...Common.args,
   classes: "sf-input--filled",
   value: "Storefront",
+};
+Filled.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithLabelSlot = (args, { argTypes }) => ({
@@ -397,6 +453,13 @@ export const WithLabelSlot = (args, { argTypes }) => ({
 WithLabelSlot.args = {
   ...Common.args,
 };
+WithLabelSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithErrorSlot = (args, { argTypes }) => ({
   components: { SfInput, SfIcon },
@@ -430,4 +493,11 @@ export const WithErrorSlot = (args, { argTypes }) => ({
 
 WithErrorSlot.args = {
   ...Invalid.args,
+};
+WithErrorSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };

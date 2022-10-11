@@ -180,10 +180,24 @@ export const Common = Template.bind({});
 Common.args = {
   steps: ["Details", "Shipping", "Payment", "Review"],
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const NoGoBack = Template.bind({});
 NoGoBack.args = {
   ...Common.args,
   active: 1,
   canGoBack: false,
+};
+NoGoBack.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };

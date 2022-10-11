@@ -268,3 +268,10 @@ Common.args = {
   wrap: "soft",
   errorMessage: "Required",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

@@ -431,17 +431,38 @@ Common.args = {
   title: "Cotton Sweater Modern Style",
   regularPrice: "$10,99",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithSpecialPrice = Template.bind({});
 WithSpecialPrice.args = {
   ...Common.args,
   specialPrice: "$0,99",
 };
+WithSpecialPrice.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithLink = Template.bind({});
 WithLink.args = {
   ...Common.args,
   link: "https://storefrontui.io",
+};
+WithLink.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseActionsSlot = (args, { argTypes }) => ({

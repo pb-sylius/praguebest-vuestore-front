@@ -242,11 +242,25 @@ Common.args = {
   name: "shipping",
   label: "I want to create an account",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Selected = Template.bind({});
 Selected.args = {
   ...Common.args,
   selected: true,
+};
+Selected.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const Required = Template.bind({});
@@ -254,11 +268,25 @@ Required.args = {
   ...Common.args,
   required: true,
 };
+Required.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithInfo = Template.bind({});
 WithInfo.args = {
   ...Common.args,
   infoMessage: "This is an info message",
+};
+WithInfo.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithCustomError = Template.bind({});
@@ -267,17 +295,38 @@ WithCustomError.args = {
   errorMessage: "Something is wrong",
   valid: false,
 };
+WithCustomError.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Invalid = Template.bind({});
 Invalid.args = {
   ...Common.args,
   valid: false,
 };
+Invalid.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   ...Common.args,
   disabled: true,
+};
+Disabled.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseCheckmarkSlot = (args, { argTypes }) => ({

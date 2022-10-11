@@ -94,6 +94,13 @@ Common.args = {
   titleHeading: "Share your look",
   subtitleHeading: "#YOURLOOK",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseHeadingSlot = (args, { argTypes }) => ({
   components: { SfSection },

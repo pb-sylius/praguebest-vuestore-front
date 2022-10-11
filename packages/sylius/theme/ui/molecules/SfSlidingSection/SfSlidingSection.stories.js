@@ -88,3 +88,10 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Common = Template.bind({});
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

@@ -241,11 +241,25 @@ Common.args = {
   message: "This is an information message",
   visible: true,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithTitle = Template.bind({});
 WithTitle.args = {
   ...Common.args,
   title: "Added to Cart",
+};
+WithTitle.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const Secondary = Template.bind({});
@@ -253,11 +267,25 @@ Secondary.args = {
   ...Common.args,
   type: "secondary",
 };
+Secondary.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Info = Template.bind({});
 Info.args = {
   ...Common.args,
   type: "info",
+};
+Info.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const Success = Template.bind({});
@@ -265,11 +293,25 @@ Success.args = {
   ...Common.args,
   type: "success",
 };
+Success.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Warning = Template.bind({});
 Warning.args = {
   ...Common.args,
   type: "warning",
+};
+Warning.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const Danger = Template.bind({});
@@ -277,17 +319,38 @@ Danger.args = {
   ...Common.args,
   type: "danger",
 };
+Danger.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithAction = Template.bind({});
 WithAction.args = {
   ...Common.args,
   action: "View cart",
 };
+WithAction.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Persistent = Template.bind({});
 Persistent.args = {
   ...Common.args,
   persistent: true,
+};
+Persistent.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseIconSlot = (args, { argTypes }) => ({

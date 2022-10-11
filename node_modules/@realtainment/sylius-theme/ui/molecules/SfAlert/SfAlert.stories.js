@@ -99,16 +99,38 @@ export const Default = Template.bind({});
 Default.args = {
   message: "Low in stock",
 };
+Default.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   ...Default.args,
   type: "secondary",
 };
+Secondary.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
+
 export const Info = Template.bind({});
 Info.args = {
   ...Default.args,
   type: "info",
+};
+Info.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const Success = Template.bind({});
@@ -116,17 +138,38 @@ Success.args = {
   ...Default.args,
   type: "success",
 };
+Success.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Warning = Template.bind({});
 Warning.args = {
   ...Default.args,
   type: "warning",
 };
+Warning.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Danger = Template.bind({});
 Danger.args = {
   ...Default.args,
   type: "danger",
+};
+Danger.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithMessageSlot = (args, { argTypes }) => ({
@@ -141,6 +184,13 @@ export const WithMessageSlot = (args, { argTypes }) => ({
     </template>  
   </SfAlert>`,
 });
+WithMessageSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithIconSlot = (args, { argTypes }) => ({
   components: { SfAlert },
@@ -154,5 +204,11 @@ export const WithIconSlot = (args, { argTypes }) => ({
     </template>  
   </SfAlert>`,
 });
-
 WithIconSlot.args = { ...Default.args };
+WithIconSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

@@ -405,6 +405,13 @@ Common.args = {
   title: "Leave white brooch",
   priceRegular: "$10.99",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseConfigurationSlot = (args, { argTypes }) => ({
   components: { SfGroupedProduct },

@@ -168,9 +168,23 @@ Common.args = {
   country: "Poland",
   phone: "+48 777 777 777",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Selected = Template.bind({});
 Selected.args = {
   ...Common.args,
   selected: Common.args.name,
+};
+Selected.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };

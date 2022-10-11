@@ -145,9 +145,23 @@ export const Common = Template.bind({});
 Common.args = {
   total: 5,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithoutArrows = Template.bind({});
 WithoutArrows.args = { ...Common.args, hasArrows: false };
+WithoutArrows.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UsePointsSlot = (args, { argTypes }) => ({
   components: { SfPagination },

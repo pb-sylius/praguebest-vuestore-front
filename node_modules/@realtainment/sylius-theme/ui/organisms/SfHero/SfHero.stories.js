@@ -293,7 +293,7 @@ const Template = (args, { argTypes }) => ({
         title="Colorful summer dresses are already in store"
         subtitle="Summer Collection 2019"
         button-text="Learn more"
-        image="imageUrl"
+        :image="imageUrl"
         background="#FCE4EC"
     />
   </SfHero>`,
@@ -301,6 +301,13 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {};
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithCloudinaryImage = (args, { argTypes }) => ({
   components: {

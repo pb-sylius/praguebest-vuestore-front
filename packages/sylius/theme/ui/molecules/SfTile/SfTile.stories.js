@@ -85,3 +85,10 @@ Common.args = {
   },
   link: "https://www.storefrontui.io/",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

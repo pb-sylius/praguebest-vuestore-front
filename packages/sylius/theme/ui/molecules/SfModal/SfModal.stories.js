@@ -178,11 +178,25 @@ Common.args = {
   title: "My title",
   visible: true,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithoutOverlay = Template.bind({});
 WithoutOverlay.args = {
   ...Common.args,
   overlay: false,
+};
+WithoutOverlay.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const Persistent = Template.bind({});
@@ -190,11 +204,25 @@ Persistent.args = {
   ...Common.args,
   persistent: true,
 };
+Persistent.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Cross = Template.bind({});
 Cross.args = {
   ...Common.args,
   cross: true,
+};
+Cross.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseCloseSlot = (args, { argTypes }) => ({

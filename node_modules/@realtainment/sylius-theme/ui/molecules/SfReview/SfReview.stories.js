@@ -265,6 +265,13 @@ Common.args = {
     "I was looking for a bright light for the kitchen but wanted some item more modern than a strip light. this one is perfect, very bright and looks great. I can comment on interlation as I had an electrition instal it. Would recommend.",
   rating: 4,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseIconSlot = (args, { argTypes }) => ({
   components: { SfReview },

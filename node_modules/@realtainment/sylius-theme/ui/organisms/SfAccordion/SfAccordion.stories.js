@@ -264,11 +264,25 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {};
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const OpenOne = Template.bind({});
 OpenOne.args = {
   ...Common.args,
   open: "Accessories",
+};
+OpenOne.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const OpenMultiple = Template.bind({
@@ -278,9 +292,15 @@ export const OpenMultiple = Template.bind({
     },
   },
 });
-
 OpenMultiple.args = {
   open: ["Clothing", "Shoes"],
+};
+OpenMultiple.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const AllOpen = Template.bind({});
@@ -288,11 +308,25 @@ AllOpen.args = {
   ...Common.args,
   open: "all",
 };
+AllOpen.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const HideChevron = Template.bind({});
 HideChevron.args = {
   ...Common.args,
   showChevron: false,
+};
+HideChevron.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const controlWithButtons = (args, { argTypes }) => ({

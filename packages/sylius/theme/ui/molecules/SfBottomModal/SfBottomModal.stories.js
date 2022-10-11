@@ -183,6 +183,13 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Common = Template.bind({});
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Example = (args, { argTypes }) => ({
   props: Object.keys(argTypes),

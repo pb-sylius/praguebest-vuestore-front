@@ -18,14 +18,6 @@ module.exports = {
         },
       },
     },
-    {
-      name: '@storybook/addon-storysource',
-      options: {
-        loaderOptions: {
-          injectStoryParameters: false,
-        },
-      },
-    },
   ],
   "framework": "@storybook/vue",
 }

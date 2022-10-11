@@ -119,14 +119,36 @@ export const Common = Template.bind({});
 Common.args = {
   color: "black",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Selected = Template.bind({});
 Selected.args = {
   ...Common.args,
   selected: true,
 };
+Selected.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
+
 
 export const WithColor = Template.bind({});
 WithColor.args = {
   color: "red",
+};
+WithColor.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };

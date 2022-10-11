@@ -65,20 +65,48 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Common = Template.bind({});
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Top = Template.bind({});
 Top.args = {
   classes: "sf-chevron--top",
+};
+Top.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const Right = Template.bind({});
 Right.args = {
   classes: "sf-chevron--right",
 };
+Right.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Left = Template.bind({});
 Left.args = {
   classes: "sf-chevron--left",
+};
+Left.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithDefaultSlot = (args, { argTypes }) => ({

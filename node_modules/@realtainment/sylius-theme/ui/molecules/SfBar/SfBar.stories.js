@@ -125,14 +125,36 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Common = Template.bind({});
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
+
 export const WithBackBtn = Template.bind({});
 WithBackBtn.args = {
   back: true,
+};
+WithBackBtn.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithCloseBtn = Template.bind({});
 WithCloseBtn.args = {
   close: true,
+};
+WithCloseBtn.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseTitleSlot = (args, { argTypes }) => ({
@@ -148,6 +170,13 @@ export const UseTitleSlot = (args, { argTypes }) => ({
   </SfBar>`,
 });
 UseTitleSlot.args = { ...WithBackBtn.args };
+UseTitleSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseBackSlot = (args, { argTypes }) => ({
   components: { SfBar },
@@ -161,6 +190,13 @@ export const UseBackSlot = (args, { argTypes }) => ({
   </SfBar>`,
 });
 UseBackSlot.args = { ...WithCloseBtn.args };
+UseBackSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseCloseSlot = (args, { argTypes }) => ({
   components: { SfBar },
@@ -175,3 +211,10 @@ export const UseCloseSlot = (args, { argTypes }) => ({
   </SfBar>`,
 });
 UseCloseSlot.args = { ...WithCloseBtn.args };
+UseCloseSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

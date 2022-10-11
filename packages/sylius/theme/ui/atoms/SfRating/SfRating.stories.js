@@ -105,17 +105,38 @@ export const Common = Template.bind({});
 Common.args = {
   score: 3,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithMax = Template.bind({});
 WithMax.args = {
   ...Common.args,
   max: 6,
 };
+WithMax.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   ...Common.args,
   icon: "heart",
+};
+WithIcon.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithIconPositiveSlot = (args, { argTypes }) => ({
@@ -132,6 +153,13 @@ export const WithIconPositiveSlot = (args, { argTypes }) => ({
   </SfRating>`,
 });
 WithIconPositiveSlot.args = { ...Common.args };
+WithIconPositiveSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithIconNegativeSlot = (args, { argTypes }) => ({
   components: { SfRating, SfIcon },
@@ -146,5 +174,11 @@ export const WithIconNegativeSlot = (args, { argTypes }) => ({
     </template>  
   </SfRating>`,
 });
-
 WithIconNegativeSlot.args = { ...Common.args };
+WithIconNegativeSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

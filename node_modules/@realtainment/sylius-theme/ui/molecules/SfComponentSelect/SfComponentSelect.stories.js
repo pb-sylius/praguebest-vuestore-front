@@ -357,11 +357,25 @@ Common.args = {
   label: "Color",
   options: optionsList,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Required = Template.bind({});
 Required.args = {
   ...Common.args,
   required: true,
+};
+Required.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const Invalid = Template.bind({});
@@ -370,11 +384,25 @@ Invalid.args = {
   valid: false,
   selected: optionsList[0].value,
 };
+Invalid.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Persistent = Template.bind({});
 Persistent.args = {
   ...Common.args,
   persistent: true,
+};
+Persistent.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const Selected = Template.bind({});
@@ -382,11 +410,25 @@ Selected.args = {
   ...Common.args,
   selected: optionsList[0].value,
 };
+Selected.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithUnderlined = Template.bind({});
 WithUnderlined.args = {
   ...Common.args,
   classes: "sf-component-select--underlined",
+};
+WithUnderlined.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const NoChevron = Template.bind({});
@@ -394,11 +436,25 @@ NoChevron.args = {
   ...Common.args,
   classes: "sf-component-select--no-chevron",
 };
+NoChevron.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const LongOptionsList = Template.bind({});
 LongOptionsList.args = {
   ...Common.args,
   size: 3,
+};
+LongOptionsList.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseLabelSlot = (args, { argTypes }) => ({
@@ -429,6 +485,13 @@ UseLabelSlot.args = { ...Common.args };
 UseLabelSlot.decorators = [
   () => ({ template: '<div style="max-width: 20rem;"><story /></div>' }),
 ];
+UseLabelSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseErrorMessageSlot = (args, { argTypes }) => ({
   components: { SfComponentSelect, SfProductOption },
@@ -456,6 +519,13 @@ export const UseErrorMessageSlot = (args, { argTypes }) => ({
 });
 UseErrorMessageSlot.args = { ...Common.args };
 UseErrorMessageSlot.decorators = [...UseLabelSlot.decorators];
+UseErrorMessageSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseCancelSlot = (args, { argTypes }) => ({
   components: { SfComponentSelect, SfProductOption },
@@ -484,3 +554,10 @@ export const UseCancelSlot = (args, { argTypes }) => ({
 
 UseCancelSlot.args = { ...Common.args };
 UseCancelSlot.decorators = [...UseLabelSlot.decorators];
+UseCancelSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

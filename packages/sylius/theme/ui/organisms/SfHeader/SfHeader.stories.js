@@ -531,3 +531,10 @@ Common.args = {
   title: "Storefront UI",
   logo: logoSvg,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

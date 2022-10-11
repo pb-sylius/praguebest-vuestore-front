@@ -237,6 +237,13 @@ Common.args = {
   openTab: 1,
   tabMaxContentHeight: "6.25rem",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const changeTabsWithButtons = (args, { argTypes }) => ({
   components: { SfTabs, SfButton },

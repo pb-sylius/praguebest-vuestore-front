@@ -263,10 +263,24 @@ Common.args = {
   isOpen: true,
   label: "Choose color",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const IsOpen = Template.bind({});
 IsOpen.args = {
   ...Common.args,
+};
+IsOpen.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithCloseBtn = Template.bind({});
@@ -274,15 +288,36 @@ WithCloseBtn.args = {
   ...Common.args,
   hasClose: true,
 };
+WithCloseBtn.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const VerticalDisplay = Template.bind({});
 VerticalDisplay.args = {
   ...WithCloseBtn.args,
   classes: "sf-color-picker--vertical",
 };
+VerticalDisplay.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const VerticalLeftDisplay = Template.bind({});
 VerticalLeftDisplay.args = {
   ...WithCloseBtn.args,
   classes: "sf-color-picker--left sf-color-picker--vertical",
+};
+VerticalLeftDisplay.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };

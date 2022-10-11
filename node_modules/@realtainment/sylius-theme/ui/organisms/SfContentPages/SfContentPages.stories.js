@@ -299,11 +299,25 @@ Common.args = {
   title: "Help",
   pages,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const HasActive = Template.bind({});
 HasActive.args = {
   ...Common.args,
   active: "About us",
+};
+HasActive.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithCategories = (args, { argTypes }) => ({

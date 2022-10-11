@@ -139,6 +139,13 @@ Common.args = {
   imageWidth: 288,
   imageHeight: 189,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithDetailsSlot = (args, { argTypes }) => ({
   components: { SfCard },
@@ -161,6 +168,13 @@ export const WithDetailsSlot = (args, { argTypes }) => ({
   </SfCard>`,
 });
 WithDetailsSlot.args = { ...Common.args };
+WithDetailsSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithActionSlot = (args, { argTypes }) => ({
   components: { SfCard },
@@ -178,3 +192,10 @@ export const WithActionSlot = (args, { argTypes }) => ({
   </SfCard>`,
 });
 WithActionSlot.args = { ...Common.args };
+WithActionSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

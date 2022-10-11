@@ -187,11 +187,25 @@ Common.args = {
   description: "It carefully packaged with a personal touch",
   title: "Safety",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   ...Common.args,
   icon: "safety",
+};
+WithIcon.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseIconSlot = (args, { argTypes }) => ({
@@ -211,6 +225,13 @@ export const UseIconSlot = (args, { argTypes }) => ({
   </SfCharacteristic>`,
 });
 UseIconSlot.args = { ...Common.args };
+UseIconSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseTextSlot = (args, { argTypes }) => ({
   components: { SfCharacteristic },
@@ -228,6 +249,13 @@ export const UseTextSlot = (args, { argTypes }) => ({
   </SfCharacteristic>`,
 });
 UseTextSlot.args = { ...WithIcon.args };
+UseTextSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseDescriptionSlot = (args, { argTypes }) => ({
   components: { SfCharacteristic },
@@ -245,3 +273,10 @@ export const UseDescriptionSlot = (args, { argTypes }) => ({
   </SfCharacteristic>`,
 });
 UseDescriptionSlot.args = { ...WithIcon.args };
+UseDescriptionSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

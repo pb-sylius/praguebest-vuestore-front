@@ -210,15 +210,36 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Common = Template.bind({});
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithImage = Template.bind({});
 WithImage.args = {
   image,
 };
+WithImage.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithLink = Template.bind({});
 WithLink.args = {
   link: "https://storefrontui.io",
+};
+WithLink.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseTitleSlot = (args, { argTypes }) => ({

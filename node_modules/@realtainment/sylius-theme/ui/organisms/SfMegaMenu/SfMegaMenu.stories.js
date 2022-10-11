@@ -297,6 +297,13 @@ export const Common = Template.bind({});
 Common.args = {
   title: "Menu",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseAsideSlot = (args, { argTypes }) => ({
   components: {

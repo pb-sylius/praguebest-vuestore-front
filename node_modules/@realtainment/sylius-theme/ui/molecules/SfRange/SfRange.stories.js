@@ -232,6 +232,13 @@ export const Common = Template.bind({});
 Common.args = {
   disabled: false,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const OneSlider = Template.bind({});
 OneSlider.args = {
@@ -264,4 +271,11 @@ OneSlider.args = {
     },
   },
   keyboardSupport: true,
+};
+OneSlider.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };

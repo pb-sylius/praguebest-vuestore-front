@@ -204,6 +204,13 @@ export const Common = Template.bind({});
 Common.args = {
   placeholder: "Search for items",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
@@ -211,11 +218,25 @@ WithIcon.args = {
   iconColor: "#43464E",
   iconSize: "1.25rem",
 };
+WithIcon.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithValue = Template.bind({});
 WithValue.args = {
   ...Common.args,
   value: "hello",
+};
+WithValue.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const HideIconCSS = Template.bind({});
@@ -223,11 +244,25 @@ HideIconCSS.args = {
   ...WithIcon.args,
   classes: "sf-search-bar--no-icon",
 };
+HideIconCSS.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Centered = Template.bind({});
 Centered.args = {
   ...WithIcon.args,
   classes: "sf-search-bar--position-center",
+};
+Centered.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseIconSlot = (args, { argTypes }) => ({

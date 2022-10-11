@@ -66,3 +66,10 @@ export const Common = Template.bind({});
 Common.args = {
   link: "https://www.storefrontui.io/",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

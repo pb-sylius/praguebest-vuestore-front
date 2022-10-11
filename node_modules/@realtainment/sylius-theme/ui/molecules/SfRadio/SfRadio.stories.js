@@ -210,17 +210,38 @@ Common.args = {
   value: "store",
   disabled: false,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const TransparentSelected = Template.bind({});
 TransparentSelected.args = {
   ...Common.args,
   classes: "sf-radio--transparent",
 };
+TransparentSelected.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   ...Common.args,
   disabled: true,
+};
+Disabled.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseCheckmarkSlot = (args, { argTypes }) => ({

@@ -126,11 +126,25 @@ Common.args = {
   name: "Material",
   value: "Cotton",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const FullWidth = Template.bind({});
 FullWidth.args = {
   ...Common.args,
   classes: "sf-property--full-width",
+};
+FullWidth.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const ValueInMiddle = Template.bind({});
@@ -138,17 +152,38 @@ ValueInMiddle.args = {
   ...Common.args,
   classes: "sf-property--value-in-middle",
 };
+ValueInMiddle.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Large = Template.bind({});
 Large.args = {
   ...Common.args,
   classes: "sf-property--large",
 };
+Large.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithoutSuffix = Template.bind({});
 WithoutSuffix.args = {
   ...Common.args,
   classes: "sf-property--without-suffix",
+};
+WithoutSuffix.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithNameSlot = (args, { argTypes }) => ({
@@ -167,6 +202,13 @@ export const WithNameSlot = (args, { argTypes }) => ({
 WithNameSlot.args = {
   ...Common.args,
 };
+WithNameSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithValueSlot = (args, { argTypes }) => ({
   components: { SfProperty, SfBadge },
@@ -183,4 +225,11 @@ export const WithValueSlot = (args, { argTypes }) => ({
 });
 WithValueSlot.args = {
   ...Common.args,
+};
+WithValueSlot.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };

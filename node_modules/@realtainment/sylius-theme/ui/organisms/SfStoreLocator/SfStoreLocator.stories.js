@@ -567,6 +567,13 @@ Common.args = {
   pictureWidth: 82,
   pictureHeight: 112,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseMapLoadingSlot = (args, { argTypes }) => ({
   components: { SfStoreLocator },

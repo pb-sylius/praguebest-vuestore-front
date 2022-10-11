@@ -480,6 +480,13 @@ Common.args = {
   reviewsCount: 7,
   showAddToCartButton: true,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithColorPicker = (args, { argTypes }) => ({
   components: { SfProductCard },
@@ -538,6 +545,13 @@ WithLink.args = {
   ...Common.args,
   link: "https://storefrontui.io",
 };
+WithLink.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithBadge = Template.bind({});
 WithBadge.args = {
@@ -545,17 +559,38 @@ WithBadge.args = {
   badgeColor: "color-primary",
   badgeLabel: "-50%",
 };
+WithBadge.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const AddedToCart = Template.bind({});
 AddedToCart.args = {
   ...Common.args,
   isAddedToCart: true,
 };
+AddedToCart.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const AddedToWishlist = Template.bind({});
 AddedToWishlist.args = {
   ...Common.args,
   isInWishlist: true,
+};
+AddedToWishlist.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithMultipleImages = Template.bind({
@@ -572,11 +607,25 @@ WithMultipleImages.args = {
     productEJpg,
   ],
 };
+WithMultipleImages.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithPriceRange = Template.bind({});
 WithPriceRange.args = {
   ...Common.args,
   regularPrice: "$3.99 - $19.09",
+};
+WithPriceRange.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseImageSlot = (args, { argTypes }) => ({

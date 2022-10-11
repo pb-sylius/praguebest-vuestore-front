@@ -208,12 +208,33 @@ Common.args = {
   ],
   current: 1,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithZoom = Template.bind({});
 WithZoom.args = { ...Common.args, enableZoom: true };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithOutsideZoom = Template.bind({});
 WithOutsideZoom.args = { ...Common.args, enableZoom: true, outsideZoom: true };
+WithOutsideZoom.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const AutoSlide = Template.bind({});
 AutoSlide.args = {
@@ -222,5 +243,12 @@ AutoSlide.args = {
     autoplay: true,
     rewind: true,
     gap: 0,
+  },
+};
+AutoSlide.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
   },
 };

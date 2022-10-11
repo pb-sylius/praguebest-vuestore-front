@@ -136,6 +136,13 @@ Common.args = {
   width: 216,
   height: 326,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithSrcOnly = Template.bind({});
 WithSrcOnly.args = {
@@ -144,12 +151,26 @@ WithSrcOnly.args = {
   height: 326,
   srcsets: [],
 };
+WithSrcOnly.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithBreakpoints = Template.bind({});
 WithBreakpoints.args = {
   ...Common.args,
   width: 216,
   height: 326,
+};
+WithBreakpoints.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithResolutions = Template.bind({});
@@ -170,12 +191,27 @@ WithResolutions.args = {
     },
   ],
 };
+WithResolutions.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
+
 
 export const WithPlaceholder = Template.bind({});
 WithPlaceholder.args = {
   ...WithSrcOnly.args,
   placeholder:
   placeholderSvg,
+};
+WithPlaceholder.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithAccessibility = Template.bind({});
@@ -192,6 +228,13 @@ WithAccessibility.decorators = [
   </div>`,
   }),
 ];
+WithAccessibility.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const UseOverlaySlot = (args, { argTypes }) => ({
   components: { SfImage },

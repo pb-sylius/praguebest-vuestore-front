@@ -145,6 +145,13 @@ Common.args = {
   title: "Share your look",
   description: "#YOURLOOK",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithLabelSlot = (args, { argTypes }) => ({
   components: { SfHeading, SfIcon },

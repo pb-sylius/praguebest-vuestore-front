@@ -132,12 +132,26 @@ Common.args = {
   hideText: "Hide colors",
   maxContentHeight: "6.875rem",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const WithCSSHeight = Template.bind({});
 WithCSSHeight.args = {
   ...Common.args,
   maxContentHeight: "",
   customStyle: "--max-height: 6.875rem;",
+};
+WithCSSHeight.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseButtonSlot = (args, { argTypes }) => ({

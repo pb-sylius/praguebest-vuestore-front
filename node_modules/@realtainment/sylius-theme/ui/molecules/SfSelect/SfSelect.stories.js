@@ -290,11 +290,25 @@ export const Common = Template.bind({});
 Common.args = {
   label: "Color",
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Invalid = Template.bind({});
 Invalid.args = {
   ...Common.args,
   valid: false,
+};
+Invalid.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const Required = Template.bind({});
@@ -302,11 +316,25 @@ Required.args = {
   ...Common.args,
   required: true,
 };
+Required.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   ...Common.args,
   disabled: true,
+};
+Disabled.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const WithPlaceholder = Template.bind({});
@@ -314,17 +342,38 @@ WithPlaceholder.args = {
   ...Common.args,
   placeholder: "Select something",
 };
+WithPlaceholder.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const Underlined = Template.bind({});
 Underlined.args = {
   ...Common.args,
   classes: "sf-select--underlined",
 };
+Underlined.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 
 export const HasSelectedValue = Template.bind({});
 HasSelectedValue.args = {
   ...Common.args,
   value: "amber",
+};
+HasSelectedValue.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
 };
 
 export const UseLabelSlot = (args, { argTypes }) => ({
