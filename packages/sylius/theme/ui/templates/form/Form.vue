@@ -153,7 +153,6 @@ import SfButton from "../../atoms/SfButton/SfButton.vue";
 import SfTextarea from "../../atoms/SfTextarea/SfTextarea.vue";
 import SfHeading from "../../atoms/SfHeading/SfHeading.vue";
 import SfRange from "../../molecules/SfRange/SfRange.vue";
-import SfForm from "./Form.vue";
 
 export default {
   name: "Form",
@@ -313,14 +312,14 @@ export default {
       return regex.test(apartment);
     },
     validCity(city) {
-      return !!city && city.length > 2;
+      return Boolean(city) && city.length > 2;
     },
     validZipCode(zipCode) {
       const regex = /^[0-9]/;
       return regex.test(zipCode);
     },
     validCountry(country) {
-      return !!country;
+      return Boolean(country);
     },
     validPhoneNumber(phone) {
       const regex = /^[0-9]{9}$/;
@@ -331,7 +330,7 @@ export default {
       return regex.test(email.toLowerCase());
     },
     validMessage(message) {
-      return !!message && message.length > 10 && message.length <= 400;
+      return Boolean(message) && message.length > 10 && message.length <= 400;
     },
     submit() {
       this.validate();

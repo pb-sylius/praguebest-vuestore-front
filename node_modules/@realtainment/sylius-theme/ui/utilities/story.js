@@ -12,10 +12,9 @@ export const params = (StoryComponent) => {
   const storyParams = {
     source: StoryComponent.source,
     docs: {
-      inlineStories: true,
+      inlineStories: false,
       source: {
         code: StoryComponent.source,
-        type: "dynamic",
       },
       disabled: false,
     },

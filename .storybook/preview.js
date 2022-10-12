@@ -14,4 +14,8 @@ export const parameters = {
       order: ['Components', ['Atoms', 'Molecules', 'Organisms', 'Templates'], 'Utils', 'Integrations'],
     },
   },
+  docs: {
+    // Opt-out of inline rendering
+    inlineStories: true,
+  },
 }
