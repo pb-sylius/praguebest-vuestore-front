@@ -9,35 +9,33 @@ export const story = (StoryComponent) => {
 };
 
 export const params = (StoryComponent) => {
-  setTimeout(() => {
-    console.log(StoryComponent)
-    const storyParams = {
-      source: StoryComponent.source,
-      docs: {
-        inlineStories: true,
-        source: {
-          code: StoryComponent.source,
-        },
-        disabled: false,
+  const storyParams = {
+    source: StoryComponent.source,
+    docs: {
+      inlineStories: true,
+      source: {
+        code: StoryComponent.source,
+        type: "dynamic",
       },
-      controls: {
-        disable: true,
-      },
-      actions: {
-        disable: true,
-      },
-      a11y: {
-        disable: true,
-      },
-      cssprops: {
-        disable: true,
-      },
-      storysource: {
-        disable: true,
-      },
-      layout: "fullscreen",
-    };
+      disabled: false,
+    },
+    controls: {
+      disable: true,
+    },
+    actions: {
+      disable: true,
+    },
+    a11y: {
+      disable: true,
+    },
+    cssprops: {
+      disable: true,
+    },
+    storysource: {
+      disable: true,
+    },
+    layout: "fullscreen",
+  };
 
-    return storyParams;
-  }, 0)
+  return storyParams;
 };
