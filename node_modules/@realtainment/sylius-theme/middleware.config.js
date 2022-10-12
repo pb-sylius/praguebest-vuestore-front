@@ -6,8 +6,8 @@ module.exports = {
         api: 'http://sylius-server.test/api/v2/graphql',
         locale: 'en_US',
         imagePaths: {
-          thumbnail: 'http://sylius-server.test/media/cache/sylius_shop_product_thumbnail',
-          regular: 'http://sylius-server.test/media/cache/sylius_shop_product_large_thumbnail'
+          thumbnail: 'http://sylius-server.test',
+          regular: 'http://sylius-server.test'
         },
         customHeaders: {}
       }
