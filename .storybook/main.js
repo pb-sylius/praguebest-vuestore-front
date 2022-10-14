@@ -6,8 +6,8 @@ const rootPath = path.resolve(__dirname, '../../');
 
 module.exports = {
   "stories": [
-    "../packages/sylius/theme/ui/**/*.stories.mdx",
-    "../packages/sylius/theme/ui/**/*.stories.@(js|jsx|ts|tsx|vue)"
+    "../packages/sylius/theme/ui/components/**/*.stories.mdx",
+    "../packages/sylius/theme/ui/components/**/*.stories.@(js|jsx|ts|tsx|vue)"
   ],
   "addons": [
     "@storybook/addon-links",
