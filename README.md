@@ -1,10 +1,14 @@
 !!!!!!!! IMPORTANT !!!!!!!!
 Don't ever use npm install on this package!
 
+This repository includes all node_modules with fixed dependencies, so you don't need installation.
+
 Installation:
 1) Clone this repository
-2) Run "yarn" command
-3) Run "yarn check" to check invalid dependencies
+2) Run "yarn" command to make sure everythig is ok - use only in case that the application does not work
+3) Run "yarn check" to check invalid dependencies - use only in case you applied 2)
+
+Open packages\sylius\theme\middleware.config.js and change paths for api and imagePaths to your running server.
 
 You will probably need repair those dependencies:
 
@@ -26,7 +30,7 @@ B) node_modules\vue-jest\package.json
     "ts-jest": ">= 24 < 27 ",
     "vue": "^2.x",
     "vue-template-compiler": "^2.x"
-} => 
+} =>
   "peerDependencies": {
     "@babel/core": "7.x",
     "babel-jest": ">= 24 < 27",
