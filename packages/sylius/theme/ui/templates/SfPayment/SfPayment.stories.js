@@ -285,3 +285,10 @@ Common.args = {
   months: months,
   paymentMethods: paymentMethods,
 };
+Common.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};

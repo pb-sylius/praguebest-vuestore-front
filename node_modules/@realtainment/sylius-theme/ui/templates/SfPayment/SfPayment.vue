@@ -172,16 +172,16 @@
                 <div class="sf-radio__label">
                   <template
                     v-if="
-                      item.value !== 'debit' &&
-                      item.value !== 'mastercard' &&
-                      item.value !== 'electron'
+                      item.value !== 'debit.png' &&
+                      item.value !== 'mastercard.png' &&
+                      item.value !== 'electron.png'
                     "
                   >
                     {{ item.label }}
                   </template>
                   <template v-else>
                     <SfImage
-                      :src="`/assets/${item.value}.png`"
+                      :src="item.value"
                       :alt="item.value"
                       class="payment-image"
                       :width="50"
@@ -311,6 +311,10 @@ import SfSelect from "../../molecules/SfSelect/SfSelect.vue";
 import SfRadio from "../../molecules/SfRadio/SfRadio.vue";
 import SfImage from "../../atoms/SfImage/SfImage.vue";
 import SfCheckbox from "../../molecules/SfCheckbox/SfCheckbox.vue";
+import debitPng from "../../assets/debit.png";
+import mastercardPng from "../../assets/mastercard.png";
+import electronPng from "../../assets/electron.png";
+
 
 export default {
   name: "SfPayment",
@@ -399,7 +403,7 @@ export default {
     },
     creditCards: {
       type: Array,
-      default: () => ["debit", "mastercard", "electron"],
+      default: () => ["debit.png", "mastercard.png", "electron.pn"],
     },
   },
   data() {
