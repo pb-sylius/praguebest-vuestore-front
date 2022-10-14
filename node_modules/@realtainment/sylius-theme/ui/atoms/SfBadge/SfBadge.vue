@@ -16,3 +16,4 @@ export default {
 <style lang="scss">
 @import "./SfBadge.scss";
 </style>
+<include-source />

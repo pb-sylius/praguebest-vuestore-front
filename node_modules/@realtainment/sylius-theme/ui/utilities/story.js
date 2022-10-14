@@ -38,3 +38,32 @@ export const params = (StoryComponent) => {
 
   return storyParams;
 };
+
+export const paramsDocs = (StoryComponent) => {
+  const storyParams = {
+    source: StoryComponent.source,
+    docs: {
+      inlineStories: true,
+      source: {
+        code: StoryComponent.source,
+      },
+      disabled: false,
+    },
+    controls: {
+      disable: false,
+    },
+    actions: {
+      disable: false,
+    },
+    a11y: {
+      disable: false,
+    },
+    cssprops: {
+      disable: false,
+    },
+    storysource: {
+      disable: false,
+    },
+  };
+  return storyParams;
+}

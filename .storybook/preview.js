@@ -15,7 +15,6 @@ export const parameters = {
     },
   },
   docs: {
-    // Opt-out of inline rendering
     inlineStories: true,
   },
 }

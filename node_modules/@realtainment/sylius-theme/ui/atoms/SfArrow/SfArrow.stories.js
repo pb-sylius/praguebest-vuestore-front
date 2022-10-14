@@ -1,5 +1,6 @@
 import SfArrow from "../SfArrow/SfArrow.vue";
 import SfIcon from "../SfIcon/SfIcon.vue";
+import { withCssResources } from '@storybook/addon-cssresources';
 
 export default {
   title: "Components/Atoms/Arrow",
@@ -136,7 +137,6 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Common = Template.bind({});
-
 Common.parameters = {
   docs: {
     source: {
@@ -144,11 +144,18 @@ Common.parameters = {
     },
   },
 };
+Common.decorators = [withCssResources];
 
 Common.args = { disabled: false };
 
 export const Disabled = Template.bind({});
-
+Disabled.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
 Disabled.args = { disabled: true };
 
 export const UseDefaultSlot = (args, { argTypes }) => ({

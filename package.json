@@ -93,6 +93,7 @@
     "node": "14.19.0"
   },
   "dependencies": {
+    "@bissolli/storybook-css-properties": "^0.0.14",
     "@glidejs/glide": "3.5.1",
     "@jest/console": "27.5.1",
     "@jest/environment": "27.5.1",
@@ -102,6 +103,7 @@
     "@nuxt/vue-app": "2.15",
     "@nuxtjs/composition-api": "0.29.3",
     "@octokit/core": "3",
+    "@storybook/addon-cssresources": "^6.2.9",
     "@vue/composition-api": "1.7",
     "acorn": "6",
     "acorn-jsx": "^5.3.2",

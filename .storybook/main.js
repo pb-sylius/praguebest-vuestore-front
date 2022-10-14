@@ -17,6 +17,14 @@ module.exports = {
         actions: false,
       },
     },
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        sourceLoaderOptions: {
+          injectStoryParameters: false,
+        },
+      },
+    },
     "@storybook/addon-interactions",
     {
       name: 'storybook-addon-sass-postcss',
