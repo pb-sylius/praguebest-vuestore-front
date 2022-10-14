@@ -10,19 +10,19 @@ module.exports = {
     "../packages/sylius/theme/ui/components/**/*.stories.@(js|jsx|ts|tsx|vue)"
   ],
   "addons": [
-    "@storybook/addon-links",
-    {
-      name: '@storybook/addon-essentials',
-      options: {
-        actions: false,
-      },
-    },
     {
       name: '@storybook/addon-docs',
       options: {
         sourceLoaderOptions: {
           injectStoryParameters: false,
         },
+      },
+    },
+    "@storybook/addon-links",
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false,
       },
     },
     "@storybook/addon-interactions",
