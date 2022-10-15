@@ -1,6 +1,5 @@
 import SfArrow from "../SfArrow/SfArrow.vue";
 import SfIcon from "../SfIcon/SfIcon.vue";
-import { withCssResources } from '@storybook/addon-cssresources';
 
 export default {
   title: "Components/Atoms/Arrow",
@@ -144,7 +143,6 @@ Common.parameters = {
     },
   },
 };
-Common.decorators = [withCssResources];
 
 Common.args = { disabled: false };
 
