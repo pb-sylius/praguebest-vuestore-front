@@ -30,7 +30,9 @@
 
 <script>
 import { onSSR } from '@vue-storefront/core';
-import { SfMenuItem, SfModal } from '@storefront-ui/vue';
+import SfMenuItem from "../ui/components/molecules/SfMenuItem/SfMenuItem.vue";
+import SfModal from "../ui/components/molecules/SfModal/SfModal.vue";
+
 import { useUiState } from '~/composables';
 import { useCategory } from '@realtainment/sylius';
 export default {

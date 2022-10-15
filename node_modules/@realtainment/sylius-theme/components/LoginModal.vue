@@ -197,7 +197,14 @@
 </template>
 <script>
 import { ref, watch, reactive, computed } from '@vue/composition-api';
-import { SfModal, SfInput, SfButton, SfCheckbox, SfLoader, SfAlert, SfBar } from '@storefront-ui/vue';
+import SfModal from "../ui/components/molecules/SfModal/SfModal.vue";
+import SfInput from "../ui/components/atoms/SfInput/SfInput.vue";
+import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
+import SfCheckbox from "../ui/components/molecules/SfCheckbox/SfCheckbox.vue";
+import SfLoader from "../ui/components/atoms/SfLoader/SfLoader.vue";
+import SfAlert from "../ui/components/molecules/SfAlert/SfAlert.vue";
+import SfBar from "../ui/components/molecules/SfBar/SfBar.vue";
+
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
 import { required, email } from 'vee-validate/dist/rules';
 import { useUser, useForgotPassword } from '@realtainment/sylius';

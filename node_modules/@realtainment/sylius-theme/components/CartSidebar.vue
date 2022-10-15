@@ -108,18 +108,18 @@
     </SfSidebar>
   </div>
 </template>
+
 <script>
-import {
-  SfSidebar,
-  SfHeading,
-  SfButton,
-  SfIcon,
-  SfProperty,
-  SfPrice,
-  SfCollectedProduct,
-  SfImage,
-  SfQuantitySelector
-} from '@storefront-ui/vue';
+import SfSidebar from "../ui/components/organisms/SfSidebar/SfSidebar.vue";
+import SfHeading from "../ui/components/atoms/SfHeading/SfHeading.vue";
+import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
+import SfIcon from "../ui/components/atoms/SfIcon/SfIcon.vue";
+import SfProperty from "../ui/components/atoms/SfProperty/SfProperty.vue";
+import SfPrice from "../ui/components/atoms/SfPrice/SfPrice.vue";
+import SfCollectedProduct from "../ui/components/organisms/SfCollectedProduct/SfCollectedProduct.stories";
+import SfImage from "../ui/components/atoms/SfImage/SfImage.vue";
+import SfQuantitySelector from "../ui/components/atoms/SfQuantitySelector/SfQuantitySelector.vue";
+
 import { computed } from '@vue/composition-api';
 import { useCart, useUser, cartGetters } from '@realtainment/sylius';
 import { useUiState } from '~/composables';

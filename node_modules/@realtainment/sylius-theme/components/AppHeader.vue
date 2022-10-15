@@ -99,7 +99,14 @@
 </template>
 
 <script>
-import { SfHeader, SfImage, SfIcon, SfButton, SfBadge, SfSearchBar, SfOverlay } from '@storefront-ui/vue';
+import SfHeader from "../ui/components/organisms/SfHeader/SfHeader.vue";
+import SfImage from "../ui/components/atoms/SfImage/SfImage.vue";
+import SfIcon from "../ui/components/atoms/SfIcon/SfIcon.vue";
+import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
+import SfBadge from "../ui/components/atoms/SfBadge/SfBadge.vue";
+import SfSearchBar from "../ui/components/molecules/SfSearchBar/SfSearchBar.vue";
+import SfOverlay from "../ui/components/atoms/SfOverlay/SfOverlay.vue";
+
 import { useUiState } from '~/composables';
 import { useCart, useUser, cartGetters, useProduct, useCategory } from '@realtainment/sylius';
 import { computed, ref, onBeforeUnmount, watch } from '@vue/composition-api';

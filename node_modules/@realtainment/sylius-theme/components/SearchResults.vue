@@ -78,17 +78,17 @@
     </SfMegaMenu>
   </div>
 </template>
+
 <script>
-import {
-  SfMegaMenu,
-  SfList,
-  SfBanner,
-  SfProductCard,
-  SfScrollable,
-  SfMenuItem,
-  SfButton,
-  SfImage
-} from '@storefront-ui/vue';
+import SfMegaMenu from "../ui/components/organisms/SfMegaMenu/SfMegaMenu.vue";
+import SfList from "../ui/components/organisms/SfList/SfList.vue";
+import SfBanner from "../ui/components/molecules/SfBanner/SfBanner.vue";
+import SfProductCard from "../ui/components/organisms/SfProductCard/SfProductCard.vue";
+import SfScrollable from "../ui/components/molecules/SfScrollable/SfScrollable.vue";
+import SfMenuItem from "../ui/components/molecules/SfMenuItem/SfMenuItem.vue";
+import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
+import SfImage from "../ui/components/atoms/SfImage/SfImage.vue";
+
 import { ref, watch, computed } from '@vue/composition-api';
 import { productGetters } from '@realtainment/sylius';
 
