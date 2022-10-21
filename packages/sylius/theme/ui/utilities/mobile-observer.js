@@ -1,4 +1,6 @@
 import Vue from "vue";
+import { useMobileObserver } from "./observers-config";
+
 let observer;
 const isMobileMax = 1023;
 export const onMediaMatch = (e) => {
@@ -42,6 +44,9 @@ export const mapMobileObserver = () => {
   return {
     isMobile: {
       get() {
+        if (!useMobileObserver) {
+          // return false;
+        }
         if (observer && !observer.isInitialized) {
           setupListener();
         }
