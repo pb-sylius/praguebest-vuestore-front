@@ -62,9 +62,14 @@
       </div>
   </SfModal>
 </template>
-<script>
 
-import { SfModal, SfButton, SfLoader, SfBar, SfInput } from '@storefront-ui/vue';
+<script>
+import SfModal from "../ui/components/molecules/SfModal/SfModal.vue";
+import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
+import SfLoader from "../ui/components/atoms/SfLoader/SfLoader.vue";
+import SfBar from "../ui/components/molecules/SfBar/SfBar.vue";
+import SfInput from "../ui/components/atoms/SfInput/SfInput.vue";
+
 import { ref, computed } from '@vue/composition-api';
 import { useForgotPassword, forgotPasswordGetters } from '@realtainment/sylius';
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';

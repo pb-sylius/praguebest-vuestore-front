@@ -15,6 +15,7 @@
     </slot>
   </div>
 </template>
+
 <script>
 import Simplebar from "simplebar-vue";
 import SfButton from "../../atoms/SfButton/SfButton.vue";

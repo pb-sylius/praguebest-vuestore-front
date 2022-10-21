@@ -31,8 +31,11 @@
     </SfContentPages>
   </div>
 </template>
+
 <script>
-import { SfBreadcrumbs, SfContentPages } from '@storefront-ui/vue';
+import SfBreadcrumbs from "../ui/components/atoms/SfBreadcrumbs/SfBreadcrumbs.vue";
+import SfContentPages from "../ui/components/organisms/SfContentPages/SfContentPages.vue";
+
 import { computed, onBeforeUnmount } from '@vue/composition-api';
 import { useUser } from '@realtainment/sylius';
 import MyProfile from './MyAccount/MyProfile';
@@ -41,7 +44,7 @@ import OrderHistory from './MyAccount/OrderHistory';
 import {
   mapMobileObserver,
   unMapMobileObserver
-} from '@storefront-ui/vue/src/utilities/mobile-observer.js';
+} from '../ui/utilities/mobile-observer';
 
 export default {
   name: 'MyAccount',

@@ -3,7 +3,7 @@
     <SfImage
       v-if="!isMobile"
       class="image"
-      :src="require('@storefront-ui/shared/icons/error.svg')"
+      :src="require('../../../assets/error.svg')"
       alt="Page Not Found"
       :width="412"
       :height="412"
@@ -11,7 +11,7 @@
     <SfImage
       v-else
       class="image"
-      :src="require('@storefront-ui/shared/icons/error.svg')"
+      :src="require('../../../assets/error.svg')"
       alt="Page Not Found"
       :width="230"
       :height="230"
@@ -54,7 +54,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import "../../../styles.scss";
 #error {
   box-sizing: border-box;
   display: flex;

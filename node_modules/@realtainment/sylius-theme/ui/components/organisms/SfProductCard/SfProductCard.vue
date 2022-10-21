@@ -178,6 +178,7 @@
     </slot>
   </div>
 </template>
+
 <script>
 import { colorsValues as SF_COLORS } from "../../../variables/colors";
 import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
@@ -240,6 +241,7 @@ export default {
       type: [String, Object],
       default: null,
     },
+
     /**
      * Link element tag
      * @deprecated will be removed in 1.0.0 use slot to replace content

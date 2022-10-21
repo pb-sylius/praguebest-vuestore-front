@@ -70,7 +70,7 @@
           </div>
           <div v-else key="empty-cart" class="empty-cart">
             <SfImage
-              :src="require('@storefront-ui/shared/icons/empty_cart.svg')"
+              :src="require('../../../assets/empty_cart.svg')"
               alt="Empty cart"
               class="empty-cart__image"
               :width="140"

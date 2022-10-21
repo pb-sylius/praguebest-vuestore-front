@@ -76,15 +76,15 @@
   </div>
 </template>
 <script>
-import {
-  SfHeading,
-  SfButton,
-  SfCollectedProduct,
-  SfProperty,
-  SfCharacteristic,
-  SfInput,
-  SfCircleIcon
-} from '@storefront-ui/vue';
+
+import SfHeading from "../../ui/components/atoms/SfHeading/SfHeading.vue";
+import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
+import SfCollectedProduct from "../../ui/components/organisms/SfCollectedProduct/SfCollectedProduct.vue";
+import SfProperty from "../../ui/components/atoms/SfProperty/SfProperty.vue";
+import SfCharacteristic from "../../ui/components/molecules/SfCharacteristic/SfCharacteristic.vue";
+import SfInput from "../../ui/components/atoms/SfInput/SfInput.vue";
+import SfCircleIcon from "../../ui/components/atoms/SfCircleIcon/SfCircleIcon.vue";
+
 import { onSSR } from '@vue-storefront/core';
 import { computed, ref } from '@vue/composition-api';
 import { useCart, cartGetters } from '@realtainment/sylius';

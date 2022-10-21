@@ -69,12 +69,12 @@
     </SfTabs>
   </transition>
 </template>
+
 <script>
-import {
-  SfTabs,
-  SfButton,
-  SfIcon
-} from '@storefront-ui/vue';
+import SfTabs from "../../ui/components/organisms/SfTabs/SfTabs.vue";
+import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
+import SfIcon from "../../ui/components/atoms/SfIcon/SfIcon.vue";
+
 import UserAddress from '~/components/UserAddress';
 import ShippingAddressForm from '~/components/MyAccount/ShippingAddressForm';
 import { useUserShipping, userShippingGetters } from '@realtainment/sylius';

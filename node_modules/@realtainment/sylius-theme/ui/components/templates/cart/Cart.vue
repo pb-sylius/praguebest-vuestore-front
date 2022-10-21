@@ -61,7 +61,7 @@
               class="empty-cart__image"
               :width="140"
               :height="200"
-              :src="require('@storefront-ui/shared/icons/empty_cart.svg')"
+              :src="require('../../../assets/empty_cart.svg')"
             />
             <SfHeading
               title="Your cart is empty"

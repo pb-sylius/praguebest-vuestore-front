@@ -187,15 +187,14 @@
 </template>
 
 <script>
-import {
-  SfHeading,
-  SfInput,
-  SfButton,
-  SfSelect,
-  SfRadio,
-  SfCheckbox
-} from '@storefront-ui/vue';
 import { ref, computed, onMounted } from '@vue/composition-api';
+import SfHeading from "../../ui/components/atoms/SfHeading/SfHeading.vue";
+import SfInput from "../../ui/components/atoms/SfInput/SfInput.vue";
+import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
+import SfSelect from "../../ui/components/molecules/SfSelect/SfSelect.vue";
+import SfRadio from "../../ui/components/molecules/SfRadio/SfRadio.vue";
+import SfCheckbox from "../../ui/components/molecules/SfCheckbox/SfCheckbox.vue";
+
 import { useBilling, useUser, useUserBilling, userBillingGetters } from '@realtainment/sylius';
 import { required, min, digits, email } from 'vee-validate/dist/rules';
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';

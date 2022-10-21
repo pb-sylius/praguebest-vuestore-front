@@ -29,9 +29,11 @@
     </div>
   </div>
 </template>
-<script>
 
-import { SfSteps, SfButton } from '@storefront-ui/vue';
+<script>
+import SfSteps from "../ui/components/molecules/SfSteps/SfSteps.vue";
+import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
+
 import CartPreview from '~/components/Checkout/CartPreview';
 import { computed } from '@vue/composition-api';
 

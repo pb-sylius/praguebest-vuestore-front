@@ -114,11 +114,11 @@ import { useUiHelpers } from '~/composables';
 import LocaleSelector from './LocaleSelector';
 import SearchResults from '~/components/SearchResults';
 import HeaderNavigation from './HeaderNavigation';
-import { clickOutside } from '@storefront-ui/vue/src/utilities/directives/click-outside/click-outside-directive.js';
+import { clickOutside } from '../ui/utilities/directives/click-outside/click-outside-directive';
 import {
   mapMobileObserver,
   unMapMobileObserver
-} from '@storefront-ui/vue/src/utilities/mobile-observer.js';
+} from '../ui/utilities/mobile-observer';
 import debounce from 'lodash.debounce';
 
 export default {
