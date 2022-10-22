@@ -1,5 +1,5 @@
 <template>
-  <div class="sf-header__navigation desktop" v-if="!isMobile">
+  <div class="sf-header__navigation desktop" v-if="!mainMenuToHamburger">
     <SfHeaderNavigationItem
       v-for="(category, index) in categories"
       :key="index"
@@ -43,6 +43,10 @@ export default {
   },
   props: {
     isMobile: {
+      type: Boolean,
+      default: false
+    },
+    mainMenuToHamburger: {
       type: Boolean,
       default: false
     }

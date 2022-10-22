@@ -12,7 +12,7 @@
         </nuxt-link>
       </template>
       <template #navigation>
-        <HeaderNavigation :isMobile="isMobile" />
+        <HeaderNavigation :isMobile="isMobile" :mainMenuToHamburger="mainMenuToHamburger" />
       </template>
       <template #aside>
         <LocaleSelector class="smartphone-only" />
@@ -115,10 +115,8 @@ import LocaleSelector from './LocaleSelector';
 import SearchResults from '~/components/SearchResults';
 import HeaderNavigation from './HeaderNavigation';
 import { clickOutside } from '../ui/utilities/directives/click-outside/click-outside-directive';
-import {
-  mapMobileObserver,
-  unMapMobileObserver
-} from '../ui/utilities/mobile-observer';
+import { mapMobileObserver, unMapMobileObserver } from '../ui/utilities/mobile-observer';
+import { mapMenuObserver } from "../ui/utilities/menu-observer";
 import debounce from 'lodash.debounce';
 
 export default {
@@ -135,6 +133,12 @@ export default {
     HeaderNavigation
   },
   directives: { clickOutside },
+  props: {
+    mainMenuToHamburger: {
+      type: Boolean,
+      default: false
+    }
+  },
   setup(props, { root }) {
     const { search: searchProducts, products: searchProductsResults } = useProduct('AppHeader');
     const { search: searchCategories, categories: searchCategoriesResults } = useCategory('AppHeader');
@@ -147,6 +151,7 @@ export default {
     const searchBarRef = ref(null);
     const result = ref(null);
     const isMobile = ref(mapMobileObserver().isMobile.get());
+    const mainMenuToHamburger = ref(mapMenuObserver().mainMenuToHamburger.get());
 
     const cartTotalItems = computed(() => {
       const count = cartGetters.getTotalItems(cart.value);

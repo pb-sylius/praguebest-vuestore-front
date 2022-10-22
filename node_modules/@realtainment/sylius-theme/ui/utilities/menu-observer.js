@@ -24,7 +24,7 @@ const checkSpaceForMenu = () => {
     headerIconsWidth = elementwidth('.sf-header__icons');
   }
 
-  if (headerWidth - logoWidth - searchBarWidth - headerIconsWidth < 50) {
+  if (headerWidth - logoWidth - searchBarWidth - headerIconsWidth < 1000) {
     observer.mainMenuToHamburger = true;
   } else {
     observer.mainMenuToHamburger = false;
