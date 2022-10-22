@@ -41,7 +41,8 @@
 
   &__button {
     position: absolute;
-    bottom: var(--spacer-xs);
+    height: 21px;
+    bottom: var(--spacer-2xs);
     right: var(--search-bar-button-right, 0);
   }
 
@@ -59,7 +60,7 @@
     height: 100%;
     @include font(--search-bar-font,
       var(--font-weight--normal),
-      var(--font-size--base),
+      var(--font-size--lg),
       1.6,
       var(--font-family--secondary));
     @include border(--search-bar-border,
@@ -87,6 +88,7 @@
 
     &[type="search"] {
       -webkit-appearance: none;
+      padding-bottom: 4px;
     }
 
     &::-ms-clear {

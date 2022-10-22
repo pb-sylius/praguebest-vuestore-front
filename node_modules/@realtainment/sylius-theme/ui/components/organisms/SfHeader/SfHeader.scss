@@ -122,7 +122,7 @@
     flex-wrap: var(--header-flex-wrap, wrap);
     align-items: center;
     justify-content: center;
-    padding: var(--header-padding, 0 var(--spacer-sm));
+    padding: var(--header-padding, 0 var(--spacer-base)) !important;
     max-width: var(--header-width, 77.5rem);
     margin: var(--header-margin,0 auto);
     @include for-desktop {

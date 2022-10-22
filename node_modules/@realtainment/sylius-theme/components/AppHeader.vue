@@ -235,6 +235,7 @@ export default {
       closeOrFocusSearchBar,
       searchBarRef,
       isMobile,
+      mainMenuToHamburger,
       isMobileMenuOpen,
       removeSearchResults
     };
@@ -245,9 +246,6 @@ export default {
 <style lang="scss" scoped>
 .sf-header {
   --header-padding:  var(--spacer-sm);
-  @include for-desktop {
-    --header-padding: 0;
-  }
   &__logo-image {
     height: 100%;
   }

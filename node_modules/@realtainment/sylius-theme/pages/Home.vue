@@ -294,7 +294,7 @@ export default {
 <style lang="scss" scoped>
 #home {
   box-sizing: border-box;
-  padding: 0 var(--spacer-sm);
+  padding: 0 var(--spacer-lg);
   @include for-desktop {
     max-width: 1240px;
     padding: 0;
