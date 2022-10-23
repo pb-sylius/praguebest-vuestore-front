@@ -111,9 +111,9 @@
     "autoprefixer": "^9.7.5",
     "babel-jest": "27.0",
     "concurrently": "^6.4.0",
-    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "5.2.0",
     "install": "^0.13.0",
+    "leaflet": "^1.9.2",
     "node-notifier": "10",
     "nuxt": "2.15",
     "react": "17",
@@ -123,6 +123,7 @@
     "vue": "2.6.14",
     "vue-server-renderer": "2.6.14",
     "vue-template-compiler": "2.6.14",
+    "vue2-leaflet": "^2.7.1",
     "yarn": "^1.22.19"
   }
 }

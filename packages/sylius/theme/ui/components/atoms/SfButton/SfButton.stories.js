@@ -156,6 +156,19 @@ Primary.parameters = {
   },
 };
 
+export const Rounded = Template.bind({});
+Rounded.args = {
+  ...Primary.args,
+  classes: "sf-button--rounded",
+};
+Rounded.parameters = {
+  docs: {
+    source: {
+      type: "dynamic",
+    },
+  },
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,

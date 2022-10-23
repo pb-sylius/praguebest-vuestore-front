@@ -156,6 +156,9 @@
       --button-background: transparent;
     }
   }
+  &--rounded {
+    border-radius: 1000px !important;
+  }
   &--underlined {
     --button-border-width: 0 0 1px 0;
     --button-border-color: var(--c-light);

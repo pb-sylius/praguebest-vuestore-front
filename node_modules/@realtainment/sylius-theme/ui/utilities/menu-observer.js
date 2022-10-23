@@ -41,6 +41,12 @@ const setupListener = () => {
   observer.isInitialized = true;
 };
 
+const tearDownListener = () => {
+  if (typeof window !== "undefined" && typeof document !== "undefined") {
+    window.removeListener(checkSpaceForMenu);
+  }
+};
+
 export const mapMenuObserver = () => {
   if (!observer) {
     observer = Vue.observable({
@@ -63,4 +69,8 @@ export const mapMenuObserver = () => {
       },
     },
   };
+};
+
+export const unMapMenuObserver = () => {
+  tearDownListener();
 };

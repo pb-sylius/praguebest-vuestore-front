@@ -45,7 +45,7 @@ export const mapMobileObserver = () => {
     isMobile: {
       get() {
         if (!useMobileObserver) {
-          // return false;
+          return false;
         }
         if (observer && !observer.isInitialized) {
           setupListener();

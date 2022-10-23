@@ -4,7 +4,7 @@
  * because of it sets only one css breakpoint.
  * Used by mobile-observer.js
  */
-export const useMobileObserver = false;
+export const useMobileObserver = true;
 
 /**
  * Necessary for the correct calculation of whether

@@ -116,7 +116,7 @@ import SearchResults from '~/components/SearchResults';
 import HeaderNavigation from './HeaderNavigation';
 import { clickOutside } from '../ui/utilities/directives/click-outside/click-outside-directive';
 import { mapMobileObserver, unMapMobileObserver } from '../ui/utilities/mobile-observer';
-import { mapMenuObserver } from "../ui/utilities/menu-observer";
+import { mapMenuObserver, unMapMenuObserver } from "../ui/utilities/menu-observer";
 import debounce from 'lodash.debounce';
 
 export default {
@@ -218,6 +218,7 @@ export default {
 
     onBeforeUnmount(() => {
       unMapMobileObserver();
+      unMapMenuObserver();
     });
 
     return {
