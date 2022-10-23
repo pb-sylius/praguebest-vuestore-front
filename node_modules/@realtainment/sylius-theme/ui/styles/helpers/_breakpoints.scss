@@ -5,6 +5,22 @@ $desktop-min: 1024px;
 $desktop-l-min: 1200px;
 $desktop-xl-min: 1440px;
 $desktop-xxl-min: 1920px;
+
+$breakpoint-xxxs: 320px;
+$breakpoint-xxs: 420px;
+$breakpoint-xs: 768px;
+$breakpoint-sm: 1024px;
+$breakpoint-md: 1376px;
+$breakpoint-lg: 1632px;
+$breakpoint-llg: 1920px;
+$breakpoint-lllg: 2560px;
+
+:root {
+  --breakpoint-xxxs: $breakpoint-xxxs;
+  --breakpoint-xxs: $breakpoint-xxs;
+  --breakpoint-xs: $breakpoint-xs;
+}
+
 // Media mixins
 @mixin for-mobile {
   @media (max-width: $desktop-min - 1px) {

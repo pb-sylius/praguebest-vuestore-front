@@ -60,7 +60,7 @@
             <SfImage
               alt="Empty bag"
               class="empty-cart__image"
-              src="/icons/empty-cart.svg"
+              :src="emptyCartImg"
             />
             <SfHeading
               title="Your cart is empty"
@@ -119,6 +119,7 @@ import SfPrice from "../ui/components/atoms/SfPrice/SfPrice.vue";
 import SfCollectedProduct from "../ui/components/organisms/SfCollectedProduct/SfCollectedProduct.stories";
 import SfImage from "../ui/components/atoms/SfImage/SfImage.vue";
 import SfQuantitySelector from "../ui/components/atoms/SfQuantitySelector/SfQuantitySelector.vue";
+import emptyCartImg from "../ui/icons/empty_cart.svg";
 
 import { computed } from '@vue/composition-api';
 import { useCart, useUser, cartGetters } from '@realtainment/sylius';
@@ -136,7 +137,7 @@ export default {
     SfPrice,
     SfCollectedProduct,
     SfImage,
-    SfQuantitySelector
+    SfQuantitySelector,
   },
   setup() {
     const { isCartSidebarOpen, toggleCartSidebar } = useUiState();
@@ -163,14 +164,22 @@ export default {
       totalItems,
       cartGetters
     };
+  },
+  data() {
+    return {
+      emptyCartImg: emptyCartImg
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+  @import "../ui/styles.scss";
+
   #cart {
     --sidebar-z-index: 3;
     --overlay-z-index: 3;
+    --sidebar-width: #{$breakpoint-xxs};
     @include for-desktop {
       & > * {
         --sidebar-bottom-padding: var(--spacer-base);
