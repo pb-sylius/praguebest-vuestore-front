@@ -133,12 +133,6 @@ export default {
     HeaderNavigation
   },
   directives: { clickOutside },
-  props: {
-    mainMenuToHamburger: {
-      type: Boolean,
-      default: false
-    }
-  },
   setup(props, { root }) {
     const { search: searchProducts, products: searchProductsResults } = useProduct('AppHeader');
     const { search: searchCategories, categories: searchCategoriesResults } = useCategory('AppHeader');

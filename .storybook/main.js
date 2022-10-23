@@ -16,12 +16,13 @@ module.exports = {
       },
     },
     "@storybook/addon-links",
-    {
-      name: '@storybook/addon-essentials',
-      options: {
-        actions: false,
-      },
-    },
+    "@storybook/addon-controls",
+    //"@storybook/addon-actions",
+    "@storybook/addon-backgrounds",
+    "@storybook/addon-viewport",
+    "@storybook/addon-toolbars",
+    "@storybook/addon-measure",
+    "@storybook/addon-outline",
     "@storybook/addon-interactions",
     {
       name: 'storybook-addon-sass-postcss',

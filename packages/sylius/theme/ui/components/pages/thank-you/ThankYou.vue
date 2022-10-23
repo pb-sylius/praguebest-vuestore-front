@@ -3,8 +3,8 @@
     <SfCallToAction
       class="banner"
       :image="{
-        mobile: '/assets/storybook/ThankYou/bannerM.png',
-        desktop: '/assets/storybook/ThankYou/bannerD.png',
+        mobile: bannerMImg,
+        desktop: bannerDImg,
       }"
       background="#f1f2f3"
     >
@@ -96,6 +96,8 @@
 import SfHeading from "../../atoms/SfHeading/SfHeading.vue";
 import SfButton from "../../atoms/SfButton/SfButton.vue";
 import SfCallToAction from "../../molecules/SfCallToAction/SfCallToAction.vue";
+import bannerDImg from "../../../assets/img/bannerD.png";
+import bannerMImg from "../../../assets//img/bannerM.png";
 
 export default {
   name: "Product",
@@ -106,6 +108,8 @@ export default {
   },
   data() {
     return {
+      bannerDImg: bannerDImg,
+      bannerMImg: bannerMImg,
       address: {
         name: "Divante Headquarter",
         street: "St. Dmowskiego 17, 53-534",

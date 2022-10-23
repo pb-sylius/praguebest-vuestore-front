@@ -3474,7 +3474,7 @@
     util-deprecate "^1.0.2"
     uuid-browser "^3.1.0"
 
-"@storybook/addon-backgrounds@6.5.12":
+"@storybook/addon-backgrounds@6.5.12", "@storybook/addon-backgrounds@^6.5.12":
   version "6.5.12"
   resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-6.5.12.tgz#a52bb4c4e02d2c5b2f9cd125d605eb311a2f78ea"
   integrity sha512-S0QThY1jnU7Q+HY+g9JgpAJszzNmNkigZ4+X/4qlUXE0WYYn9i2YG5H6me1+57QmIXYddcWWqqgF9HUXl667NA==
@@ -3493,7 +3493,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-controls@6.5.12":
+"@storybook/addon-controls@6.5.12", "@storybook/addon-controls@^6.5.12":
   version "6.5.12"
   resolved "https://registry.yarnpkg.com/@storybook/addon-controls/-/addon-controls-6.5.12.tgz#01978f624b3ef29610e8e573e93fa063be37d7af"
   integrity sha512-UoaamkGgAQXplr0kixkPhROdzkY+ZJQpG7VFDU6kmZsIgPRNfX/QoJFR5vV6TpDArBIjWaUUqWII+GHgPRzLgQ==
@@ -3619,7 +3619,7 @@
     core-js "^3.8.2"
     global "^4.4.0"
 
-"@storybook/addon-outline@6.5.12":
+"@storybook/addon-outline@6.5.12", "@storybook/addon-outline@^6.5.12":
   version "6.5.12"
   resolved "https://registry.yarnpkg.com/@storybook/addon-outline/-/addon-outline-6.5.12.tgz#27a7eef9c2d450a59458416055a1a55876229488"
   integrity sha512-jXwLz2rF/CZt6Cgy+QUTa+pNW0IevSONYwS3D533E9z5h0T5ZKJbbxG5jxM+oC+FpZ/nFk5mEmUaYNkxgIVdpw==
@@ -3654,7 +3654,7 @@
     react-syntax-highlighter "^15.4.5"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addon-toolbars@6.5.12":
+"@storybook/addon-toolbars@6.5.12", "@storybook/addon-toolbars@^6.5.12":
   version "6.5.12"
   resolved "https://registry.yarnpkg.com/@storybook/addon-toolbars/-/addon-toolbars-6.5.12.tgz#ea81c63ae56eae8bc1d3b5a358cff66ae5a2d66e"
   integrity sha512-+QjoEHkekz4wTy8zqxYdV9ijDJ5YcjDc/qdnV8wx22zkoVU93FQlo0CHHVjpyvc3ilQliZbdQDJx62BcHXw30Q==
@@ -3667,7 +3667,7 @@
     core-js "^3.8.2"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addon-viewport@6.5.12":
+"@storybook/addon-viewport@6.5.12", "@storybook/addon-viewport@^6.5.12":
   version "6.5.12"
   resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-6.5.12.tgz#7158647c006c6aabd86294d24e7209becbf30b88"
   integrity sha512-eQ1UrmbiMiPmWe+fdMWIc0F6brh/S2z4ADfwFz0tTd+vOLWRZp1xw8JYQ9P2ZasE+PM3WFOVT9jvNjZj/cHnfw==
