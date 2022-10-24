@@ -15,12 +15,6 @@ $breakpoint-lg: 1632px;
 $breakpoint-llg: 1920px;
 $breakpoint-lllg: 2560px;
 
-:root {
-  --breakpoint-xxxs: $breakpoint-xxxs;
-  --breakpoint-xxs: $breakpoint-xxs;
-  --breakpoint-xs: $breakpoint-xs;
-}
-
 // Media mixins
 @mixin for-mobile {
   @media (max-width: $desktop-min - 1px) {
@@ -29,6 +23,54 @@ $breakpoint-lllg: 2560px;
 }
 @mixin for-desktop {
   @media (min-width: $desktop-min) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xxxs {
+  @media (max-width: $breakpoint-xxxs) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xxs {
+  @media (max-width: $breakpoint-xxs) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xs {
+  @media (max-width: $breakpoint-xs) {
+    @content;
+  }
+}
+
+@mixin breakpoint-sm {
+  @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin breakpoint-md {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin breakpoint-lg {
+  @media (max-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin breakpoint-llg {
+  @media (max-width: $breakpoint-llg) {
+    @content;
+  }
+}
+
+@mixin breakpoint-lllg {
+  @media (max-width: $breakpoint-lllg) {
     @content;
   }
 }
