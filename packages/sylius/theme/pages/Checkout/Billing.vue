@@ -199,7 +199,8 @@ import { useBilling, useUser, useUserBilling, userBillingGetters } from '@realta
 import { required, min, digits, email } from 'vee-validate/dist/rules';
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
 import { onSSR, useVSFContext } from '@vue-storefront/core';
-import { useUiNotification, useUiState } from '~/composables/';
+import useUiState from '../../composables/useUiState';
+import useUiNotification from '../../composables/useUiNotification';
 
 extend('required', {
   ...required,

@@ -7,7 +7,7 @@
   --icon-color: var(--c-white) !important;
   --button-padding: 0 !important;
   --icon-size: 1.5rem !important;
-  --button-size: 3.25rem !important;
+  --button-size: var(--diameter, 3.25rem );
   --button-background: var(--c-primary) !important;
   --button-border-radius: 100% !important;
   position: var(--circle-icon-position, relative);

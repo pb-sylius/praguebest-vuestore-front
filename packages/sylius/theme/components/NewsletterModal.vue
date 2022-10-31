@@ -62,7 +62,7 @@ import SfBar from "../ui/components/molecules/SfBar/SfBar.vue";
 import SfLink from "../ui/components/atoms/SfLink/SfLink.vue";
 
 import { ref } from '@nuxtjs/composition-api';
-import { useUiState } from '~/composables';
+import useUiState from '../composables/useUiState';
 
 export default {
   name: 'NewsletterModal',

@@ -1,16 +1,24 @@
-const elementwidth = (element, withMargins = true) => {
+const elementwidth = (element, withMargins = true, withoutPadding = true) => {
 
   const elementToMeasure = (typeof element === 'string') ? document.querySelector(element) : element;
 
-  const styles = window.getComputedStyle(elementToMeasure);
+  if (elementToMeasure) {
 
-  let margins = 0;
+    const styles = window.getComputedStyle(elementToMeasure);
 
-  if (withMargins) {
-    margins = parseFloat(styles.marginLeft) + parseFloat(styles.marginRight);
+    let margins = 0;
+    let paddings = 0;
+
+    if (withMargins) {
+      margins = parseFloat(styles.marginLeft) + parseFloat(styles.marginRight);
+    }
+
+    if (withoutPadding) {
+      paddings = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+    }
+
+    return Math.ceil(elementToMeasure.clientWidth + margins - paddings);
   }
-
-  return Math.ceil(elementToMeasure.offsetWidth + margins);
 }
 
 export default elementwidth;

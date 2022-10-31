@@ -80,11 +80,12 @@
     z-index: 1;
     display: var(--sidebar-circle-icon-display, flex);
     left: var(--sidebar-circle-icon-left);
-    top: var(--sidebar-circle-icon-top, var(--spacer-xl));
-    right: var(--sidebar-circle-icon-right, 0);
-    transform: var(--sidebar-circle-icon-transform, translate3d(50%, 0, 0));
+    top: var(--sidebar-circle-icon-top, var(--spacer-sm));
+    right: var(--sidebar-circle-icon-right, var(--spacer-sm));
+    transform: var(--sidebar-circle-icon-transform, none);
+    --button-size: 2.3rem;
   }
-  @include for-desktop {
+  @include breakpoint-full-width {
     --sidebar-top-padding: var(--spacer-xl) var(--spacer-xl) var(--spacer-sm)
       var(--spacer-xl);
     --sidebar-content-padding: var(--spacer-base) var(--spacer-xl);

@@ -3,14 +3,14 @@
     <SfSidebar
       v-e2e="'sidebar-cart'"
       :visible="isCartSidebarOpen"
-      title="My Cart"
+      :title="$t('My Cart')"
       class="sf-sidebar--right"
       @close="toggleCartSidebar"
     >
       <template #content-top>
         <SfProperty
           v-if="totalItems"
-          class="sf-property--large cart-summary desktop-only"
+          class="sf-property--large cart-summary"
           name="Total items"
           :value="totalItems"
         />
@@ -123,7 +123,7 @@ import emptyCartImg from "../ui/icons/empty_cart.svg";
 
 import { computed } from '@vue/composition-api';
 import { useCart, useUser, cartGetters } from '@realtainment/sylius';
-import { useUiState } from '~/composables';
+import useUiState from '../composables/useUiState';
 import debounce from 'lodash.debounce';
 
 export default {
@@ -174,13 +174,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import "../ui/styles.scss";
-
   #cart {
     --sidebar-z-index: 3;
     --overlay-z-index: 3;
-    --sidebar-width: #{$breakpoint-xxs};
-    @include for-desktop {
+    --sidebar-width: #{$breakpoint-2xs};
+    --sidebar-right: 0;
+    --sidebar-left: auto;
+    @include breakpoint-xs {
+      --sidebar-width: 100%;
+    }
+    @include breakpoint-full-width {
       & > * {
         --sidebar-bottom-padding: var(--spacer-base);
         --sidebar-content-padding: var(--spacer-base);

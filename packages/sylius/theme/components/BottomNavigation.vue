@@ -36,7 +36,7 @@ import SfIcon from "../ui/components/atoms/SfIcon/SfIcon.vue";
 import SfCircleIcon from "../ui/components/atoms/SfCircleIcon/SfCircleIcon.vue";
 import SfBadge from "../ui/components/atoms/SfBadge/SfBadge.vue";
 
-import { useUiState } from '~/composables';
+import useUiState from '../composables/useUiState';
 import { useUser, useCart, cartGetters } from '@realtainment/sylius';
 import { computed, useRoute, useRouter } from '@nuxtjs/composition-api';
 

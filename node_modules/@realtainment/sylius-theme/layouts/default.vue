@@ -1,7 +1,7 @@
 <template>
   <div>
     <LazyHydrate when-visible>
-      <TopBar class="desktop-only" />
+      <TopBar v-if="!mainMenuToHamburger" />
     </LazyHydrate>
 
     <AppHeader />
@@ -9,7 +9,7 @@
     <div id="layout">
       <nuxt :key="route.fullPath"/>
 
-      <BottomNavigation />
+      <BottomNavigation v-if="useBottomNavigation"/>
       <CartSidebar />
       <WishlistSidebar />
       <LoginModal />
@@ -34,6 +34,8 @@ import Notification from '~/components/Notification.vue';
 import { onSSR } from '@vue-storefront/core';
 import { useRoute } from '@nuxtjs/composition-api';
 import { useCart, useStore, useUser, useWishlist } from '@realtainment/sylius';
+import { useBottomNavigation } from "../ui/config";
+import { mapMenuObserver} from "../ui/utilities/menu-observer";
 
 export default {
   name: 'DefaultLayout',
@@ -67,9 +69,13 @@ export default {
     });
 
     return {
-      route
+      route,
+      useBottomNavigation,
     };
-  }
+  },
+  computed: {
+    ...mapMenuObserver(),
+  },
 };
 </script>
 

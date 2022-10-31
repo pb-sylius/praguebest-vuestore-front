@@ -1,5 +1,7 @@
 <template>
-  <div class="sf-header" :class="{ 'is-sticky': sticky, 'is-hidden': hidden }">
+  <div class="sf-header"
+    :class="{ 'is-sticky': sticky, 'is-hidden': hidden }">
+
     <div class="sf-header__wrapper">
       <header ref="header" class="sf-header__header">
         <slot name="logo" v-bind="{ logo, title }">
@@ -27,6 +29,7 @@
           </nav>
           <slot name="search" v-bind="{ searchValue, searchPlaceholder }">
             <SfSearchBar
+              v-if="useMobileSearch"
               :value="searchValue"
               :placeholder="searchPlaceholder"
               aria-label="Search"
@@ -105,22 +108,25 @@
     </div>
   </div>
 </template>
+
 <script>
 import Vue from "vue";
 import SfHeaderNavigationItem from "./_internal/SfHeaderNavigationItem.vue";
 import SfHeaderNavigation from "./_internal/SfHeaderNavigation.vue";
 Vue.component("SfHeaderNavigation", SfHeaderNavigation);
 Vue.component("SfHeaderNavigationItem", SfHeaderNavigationItem);
-import {
-  mapMobileObserver,
-  unMapMobileObserver,
-} from "../../../utilities/mobile-observer";
+
+import { mapMobileObserver, unMapMobileObserver} from "../../../utilities/mobile-observer";
+import { mapMenuObserver } from "../../../utilities/menu-observer";
+import { useMobileSearch } from "../../../../ui/config";
+
 import { isClient } from "../../../utilities/helpers";
 import SfImage from "../../atoms/SfImage/SfImage.vue";
 import SfSearchBar from "../../molecules/SfSearchBar/SfSearchBar.vue";
 import SfButton from "../../atoms/SfButton/SfButton.vue";
 import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
 import SfLink from "../../atoms/SfLink/SfLink.vue";
+
 export default {
   name: "SfHeader",
   components: {
@@ -201,10 +207,12 @@ export default {
       animationStart: null,
       animationLong: null,
       animationDuration: 300,
+      useMobileSearch,
     };
   },
   computed: {
     ...mapMobileObserver(),
+    ...mapMenuObserver(),
     cartHasProducts() {
       return parseInt(this.cartItemsQty, 10) > 0;
     },

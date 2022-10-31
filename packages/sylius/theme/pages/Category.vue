@@ -211,7 +211,8 @@ import SfProperty from "../ui/components/atoms/SfProperty/SfProperty.vue";
 
 import { computed, ref } from '@nuxtjs/composition-api';
 import { useCart, useWishlist, productGetters, useFacet, facetGetters, wishlistGetters } from '@realtainment/sylius';
-import { useUiHelpers, useUiState } from '~/composables';
+import useUiState from '../composables/useUiState';
+import useUiHelpers from '../composables/useUiHelpers';
 import { onSSR } from '@vue-storefront/core';
 import LazyHydrate from 'vue-lazy-hydration';
 import CategoryPageHeader from '~/components/CategoryPageHeader';
@@ -226,6 +227,9 @@ export default {
     const { addItem: addItemToCart, isInCart } = useCart();
     const { result, search, loading, error } = useFacet();
     const { addItem: addItemToWishlist, isInWishlist, removeItem: removeItemFromWishlist, wishlist } = useWishlist();
+
+    const { toggleHamburgerMenu } = useUiState();
+    toggleHamburgerMenu(false);
 
     const productsQuantity = ref({});
     const products = computed(() => facetGetters.getProducts(result.value));

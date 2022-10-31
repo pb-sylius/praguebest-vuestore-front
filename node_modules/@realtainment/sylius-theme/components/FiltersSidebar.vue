@@ -90,7 +90,9 @@ import SfColor from "../ui/components/atoms/SfColor/SfColor.vue";
 
 import { ref, computed, onMounted } from '@nuxtjs/composition-api';
 import { useFacet, facetGetters } from '@realtainment/sylius';
-import { useUiHelpers, useUiState } from '~/composables';
+import useUiState from '../composables/useUiState';
+import useUiHelpers from '../composables/useUiHelpers';
+
 import Vue from 'vue';
 
 export default {

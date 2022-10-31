@@ -16,6 +16,7 @@
       :alt="alt"
       @load="onLoad"
       v-on="$listeners"
+      :placeholder="placeholder"
     />
     <img
       :class="{ 'display-none': loaded || (loaded && placeholder) }"
@@ -43,6 +44,7 @@
     </noscript>
   </span>
 </template>
+
 <script>
 import placeholderSvg from "../../../assets/product_placeholder.svg";
 

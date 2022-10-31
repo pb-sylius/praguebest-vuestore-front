@@ -88,7 +88,7 @@ import SfCircleIcon from "../../ui/components/atoms/SfCircleIcon/SfCircleIcon.vu
 import { onSSR } from '@vue-storefront/core';
 import { computed, ref } from '@vue/composition-api';
 import { useCart, cartGetters } from '@realtainment/sylius';
-import { useUiNotification } from '~/composables/';
+import useUiNotification from "../../composables/useUiNotification";
 
 export default {
   name: 'CartPreview',

@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  margin: 0 -5px;
+  margin: 0 0;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;

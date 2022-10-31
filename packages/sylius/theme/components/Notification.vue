@@ -21,7 +21,7 @@
 import SfNotification from "../ui/components/molecules/SfNotification/SfNotification.vue";
 import SfIcon from "../ui/components/atoms/SfIcon/SfIcon.vue";
 
-import { useUiNotification } from '~/composables';
+import useUiNotification from "../composables/useUiNotification";
 
 export default {
   name: 'Notification',

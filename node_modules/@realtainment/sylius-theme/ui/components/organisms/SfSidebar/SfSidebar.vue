@@ -9,21 +9,13 @@
         v-click-outside="checkPersistence"
         class="sf-sidebar__aside"
       >
-        <slot name="bar">
-          <SfBar
-            :title="title"
-            class="smartphone-only"
-            :back="true"
-            @click:back="close"
-          />
-        </slot>
         <slot name="circle-icon" v-bind="{ close, button }">
           <SfCircleIcon
             :class="{ 'display-none': !button }"
             icon-size="12px"
             aria-label="Close sidebar"
             icon="cross"
-            class="sf-sidebar__circle-icon desktop-only"
+            class="sf-sidebar__circle-icon"
             @click="close"
           />
         </slot>
@@ -40,7 +32,6 @@
               class="
                 sf-heading--left sf-heading--no-underline
                 sf-sidebar__title
-                desktop-only
               "
             />
           </slot>
@@ -157,6 +148,7 @@ export default {
   methods: {
     close() {
       this.$emit("close");
+      console.log(event)
     },
     checkPersistence() {
       if (!this.persistent) this.close();

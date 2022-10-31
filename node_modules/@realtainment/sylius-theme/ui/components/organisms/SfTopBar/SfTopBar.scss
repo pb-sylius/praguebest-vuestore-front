@@ -2,6 +2,7 @@
 
 .sf-top-bar {
   background-color: var(--top-bar-background, var(--c-light));
+  padding: var(--header-padding, 0 var(--spacer-base)) !important;
   &__container {
     padding: var(--top-bar-padding, 0 var(--spacer-base));
     box-sizing: border-box;

@@ -1,10 +1,7 @@
 <template>
   <div class="sf-header-navigation-item" v-on="$listeners">
     <div
-      v-if="!isVisibleOnMobile"
-      class="
-        sf-header-navigation-item__item sf-header-navigation-item__item--desktop
-      "
+      class="sf-header-navigation-item__item sf-header-navigation-item__item--desktop"
     >
       <slot name="desktop-navigation-item">
         <SfLink class="sf-header-navigation-item__link" :link="link">{{
@@ -14,10 +11,8 @@
       <slot />
     </div>
     <div
-      v-else
-      class="
-        sf-header-navigation-item__item sf-header-navigation-item__item--mobile
-      "
+      v-if="mainMenuToHamburger"
+      class="sf-header-navigation-item__item sf-header-navigation-item__item--mobile"
     >
       <slot name="mobile-navigation-item">
         <SfMenuItem :label="label" class="sf-header-navigation-item__menu-item">
@@ -33,10 +28,8 @@
 <script>
 import SfLink from "../../../atoms/SfLink/SfLink";
 import SfMenuItem from "../../../molecules/SfMenuItem/SfMenuItem";
-import {
-  mapMobileObserver,
-  unMapMobileObserver,
-} from "../../../../utilities/mobile-observer";
+import { mapMobileObserver, unMapMobileObserver} from "../../../../utilities/mobile-observer";
+import { mapMenuObserver } from "../../../../utilities/menu-observer";
 
 export default {
   name: "SfHeaderNavigationItem",
@@ -56,9 +49,7 @@ export default {
   },
   computed: {
     ...mapMobileObserver(),
-    isVisibleOnMobile() {
-      return this.isMobile;
-    },
+    ...mapMenuObserver(),
   },
   beforeDestroy() {
     unMapMobileObserver();

@@ -208,7 +208,7 @@ import SfBar from "../ui/components/molecules/SfBar/SfBar.vue";
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
 import { required, email } from 'vee-validate/dist/rules';
 import { useUser, useForgotPassword } from '@realtainment/sylius';
-import { useUiState } from '~/composables';
+import useUiState from '../composables/useUiState';
 
 extend('email', {
   ...email,

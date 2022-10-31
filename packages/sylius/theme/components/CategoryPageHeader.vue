@@ -77,7 +77,9 @@
 
 <script>
 import { computed } from '@nuxtjs/composition-api';
-import { useUiHelpers, useUiState } from '~/composables';
+import useUiState from '../composables/useUiState';
+import useUiHelpers from '../composables/useUiHelpers';
+
 import { useFacet, facetGetters } from '@realtainment/sylius';
 import FiltersSidebar from '~/components/FiltersSidebar';
 import LazyHydrate from 'vue-lazy-hydration';

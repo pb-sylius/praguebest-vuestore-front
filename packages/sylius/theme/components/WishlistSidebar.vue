@@ -86,7 +86,7 @@ import SfImage from "../ui/components/atoms/SfImage/SfImage.vue";
 
 import { computed } from '@nuxtjs/composition-api';
 import { useWishlist, useUser, wishlistGetters } from '@realtainment/sylius';
-import { useUiState } from '~/composables';
+import useUiState from '../composables/useUiState';
 import { addBasePath } from '@vue-storefront/core';
 
 export default {
