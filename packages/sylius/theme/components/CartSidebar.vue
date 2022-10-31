@@ -17,7 +17,7 @@
       </template>
       <transition name="sf-fade" mode="out-in">
         <div v-if="totalItems" key="my-cart" class="my-cart">
-          <div class="collected-product-list">
+          <div class="collected-product-list">                                        
             <transition-group name="sf-fade" tag="div">
               <SfCollectedProduct
                 v-for="product in products"
@@ -229,7 +229,7 @@ export default {
       --image-width: 16rem;
       margin: 0 0 var(--spacer-2xl) 7.5rem;
     }
-    @include for-desktop {
+    @include breakpoint-full-width {
       --heading-title-font-size: var(--font-size--xl);
       --heading-title-margin: 0 0 var(--spacer-sm) 0;
     }
@@ -270,7 +270,7 @@ export default {
     &:hover {
       --cp-save-opacity: 1;
       --cp-compare-opacity: 1;
-      @include for-desktop {
+      @include breakpoint-full-width {
         .collected-product__properties {
           display: none;
         }

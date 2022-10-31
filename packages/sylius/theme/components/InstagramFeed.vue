@@ -59,7 +59,7 @@ export default {
   --section-margin: var(--spacer-xl) 0;
   --section-content-margin: var(--spacer-xl) 0;
   --heading-title-font-size: var(--h2-font-size);
-  @include for-desktop {
+  @include breakpoint-full-width {
     --section-margin: var(--spacer-2xl) 0;
     --section-content-margin: var(--spacer-2xl) 0;
   }
@@ -70,7 +70,7 @@ export default {
   width: 100%;
   justify-content: center;
   margin: 0;
-  @include for-desktop {
+  @include breakpoint-full-width {
     max-height: 40.625rem;
     max-width: 60rem;
     margin: 0 auto;
@@ -80,7 +80,7 @@ export default {
     flex-direction: column;
     & + & {
       margin-left: var(--spacer-xs);
-      @include for-desktop {
+      @include breakpoint-full-width {
         margin-left: var(--spacer-sm);
       }
     }
@@ -88,7 +88,7 @@ export default {
   &__col {
     width: 10rem;
     height: 10rem;
-    @include for-desktop {
+    @include breakpoint-full-width {
       &.small {
         height: 10rem;
       }
@@ -97,7 +97,7 @@ export default {
     }
     & + & {
       margin-top: var(--spacer-xs);
-      @include for-desktop {
+      @include breakpoint-full-width {
         margin-top: var(--spacer-sm);
       }
     }

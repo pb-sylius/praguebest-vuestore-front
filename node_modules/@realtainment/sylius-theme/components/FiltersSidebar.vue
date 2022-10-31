@@ -173,7 +173,7 @@ export default {
   --overlay-z-index: 3;
   --sidebar-title-display: none;
   --sidebar-top-padding: 0;
-  @include for-desktop {
+  @include breakpoint-full-width {
     --sidebar-content-padding: 0 var(--spacer-xl);
     --sidebar-bottom-padding: 0 var(--spacer-xl);
   }
@@ -213,7 +213,7 @@ export default {
     &:last-child {
       border-bottom: 0;
     }
-    @include for-desktop {
+    @include breakpoint-full-width {
       --checkbox-padding: 0;
       margin: var(--spacer-sm) 0;
       border: 0;
