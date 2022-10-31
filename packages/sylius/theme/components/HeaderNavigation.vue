@@ -4,15 +4,6 @@
       <SfHeaderNavigationItem v-for="(category, index) in categories" :key="index" class="nav-item"
         v-e2e="`app-header-url_${category.slug}`" :label="category.name" :link="localePath(`/c/${category.slug}`)" />
     </div>
-    <SfModal v-if="mainMenuToHamburger" :visible="isMobileMenuOpen">
-      <SfHeaderNavigationItem v-for="(category, index) in categories" :key="index" class="nav-item"
-        v-e2e="`app-header-url_${category.slug}`">
-        <template #mobile-navigation-item>
-          <SfMenuItem :label="category.name" class="sf-header-navigation-item__menu-item"
-            :link="localePath(`/c/${category.slug}`)" @click.native="toggleMobileMenu"/>
-        </template>
-      </SfHeaderNavigationItem>
-    </SfModal>
 </div>
 </template>
 

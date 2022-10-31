@@ -30,7 +30,7 @@ export const logoBaseHeight = 34;
   * or false otherwise.
   * Used by menu-observer.js
   */
-export const includeSearchBar = true;
+export const includeSearchBar = false;
 
 /**
   * Necessary for the correct calculation of whether
@@ -89,8 +89,9 @@ export const showPrice = false;
 /**
  * If true, full width serach bar will be shown on mobile.
  * If false, search button and widget will be shown on mobile.
+ * Don't forget set includeSearchBar to false if this is false
  */
-export const useMobileSearch = true;
+export const useMobileSearch = false;
 
 // --------------------------BOTTOM NAVIGATION--------------------------
 
@@ -98,3 +99,7 @@ export const useMobileSearch = true;
  * If true, bottom navigation will be used on mobile and vice versa
  */
 export const useBottomNavigation = false;
+
+// --------------------------HERO--------------------------
+
+export const useHero = true;

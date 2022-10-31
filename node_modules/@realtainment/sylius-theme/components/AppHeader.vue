@@ -14,6 +14,9 @@
         <HeaderNavigation />
       </template>
       <template #aside>
+        <SfButton v-if="!useMobileSearch && mainMenuToHamburger" class="sf-header__action sf-mobile_search" @click="toggleCartSidebar">
+          <SfIcon class="sf-header__icon" icon="search" size="24px" />
+        </SfButton>
         <SfButton v-if="mainMenuToHamburger" v-e2e="'app-header-cart'" class="sf-header__action sf-mobile_cart"
           @click="toggleCartSidebar">
           <SfIcon class="sf-header__icon" icon="empty_cart" size="24px" color="white" />
@@ -67,7 +70,6 @@ import { clickOutside } from '../ui/utilities/directives/click-outside/click-out
 import { mapMobileObserver, unMapMobileObserver } from '../ui/utilities/mobile-observer';
 import { mapMenuObserver, unMapMenuObserver } from "../ui/utilities/menu-observer";
 import debounce from 'lodash.debounce';
-import { useMenuText } from "../ui/config"
 
 import headerLogo from "../assets/logo.svg";
 import headerLogoSymbol from "../assets/logo-symbol.svg";
@@ -76,9 +78,9 @@ import {
   logoBaseHeight,
   reducedLogoWidth,
   reducedLogoHeight,
-  useMobileSearch
+  useMobileSearch,
+  useMenuText
 } from "../ui/config";
-console.log(useMobileSearch)
 
 export default {
   components: {
@@ -225,7 +227,12 @@ export default {
 
   & .sf-mobile_cart {
     --button-padding: var(--spacer-2xs) var(--spacer-sm);
-    --button-background: var(--_c-gray-primary)
+    --button-background: var(--_c-gray-primary);
+    margin-left: var(--spacer-2xs);
+  }
+  & .sf-mobile_search {
+    --button-padding: var(--spacer-2xs) var(--spacer-sm);
+    --button-background: var(--c-white)
   }
 }
 

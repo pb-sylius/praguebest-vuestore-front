@@ -12,7 +12,7 @@
           class="open-action"
           @click="toggleWishlistSidebar"
         >
-          <span>{{$t('My Wishlist')}}</span>
+          {{$t('My Wishlist')}}
           <SfChevron class="sf-chevron--right" />
         </SfButton>
       </div>
@@ -21,16 +21,16 @@
           class="open-action"
           @click="toggleLoginModal"
         >
-          <span>{{$t('My Account')}}</span>
+          {{$t('My Account')}}
           <SfChevron class="sf-chevron--right" />
         </SfButton>
       </div>
       <div class="mobile-menu-item" v-for="(category, index) in categories" :key="index" :link="localePath(`/c/${category.slug}`)">
         <SfButton
-          class="sf-button--pure"
+          class="sf-button--nonpure"
           :link="localePath(`/c/${category.slug}`)"
         >
-          <span>{{category.name}}</span>
+          {{category.name}}
           <SfChevron class="sf-chevron--right" />
         </SfButton>
       </div>

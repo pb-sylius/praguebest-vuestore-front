@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <LazyHydrate when-idle>
-      <SfHero class="hero">
+      <SfHero v-if="useHero" class="hero">
         <SfHeroItem
           v-for="(hero, i) in heroes"
           :key="i"
@@ -123,6 +123,7 @@ import NewsletterModal from '~/components/NewsletterModal.vue';
 import LazyHydrate from 'vue-lazy-hydration';
 import useUiState from '../composables/useUiState';
 import { addBasePath } from '@vue-storefront/core';
+import { useHero } from "../ui/config";
 
 export default {
   name: 'Home',
@@ -285,7 +286,8 @@ export default {
       addBasePath,
       banners,
       heroes,
-      products
+      products,
+      useHero,
     };
   }
 };
