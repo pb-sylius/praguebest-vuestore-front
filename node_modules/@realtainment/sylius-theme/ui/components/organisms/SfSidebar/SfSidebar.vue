@@ -148,7 +148,6 @@ export default {
   methods: {
     close() {
       this.$emit("close");
-      console.log(event)
     },
     checkPersistence() {
       if (!this.persistent) this.close();
