@@ -152,12 +152,10 @@
 </template>
 
 <script>
-import {
-  SfInput,
-  SfButton,
-  SfSelect,
-  SfCheckbox
-} from '@storefront-ui/vue';
+import SfInput from "../../ui/components/atoms/SfInput/SfInput.vue";
+import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
+import SfSelect from "../../ui/components/molecules/SfSelect/SfSelect.vue";
+import SfCheckbox from "../../ui/components/molecules/SfCheckbox/SfCheckbox.vue";
 import { required, min, oneOf } from 'vee-validate/dist/rules';
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
 import { reactive } from '@vue/composition-api';

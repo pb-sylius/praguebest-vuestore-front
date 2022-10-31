@@ -103,12 +103,11 @@
 </template>
 
 <script>
-import {
-  SfTabs,
-  SfTable,
-  SfButton,
-  SfProperty
-} from '@storefront-ui/vue';
+import SfTabs from "../../ui/components/organisms/SfTabs/SfTabs.vue";
+import SfTable from "../../ui/components/organisms/SfTable/SfTable.vue";
+import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
+import SfProperty from "../../ui/components/atoms/SfProperty/SfProperty.vue";
+
 import { computed, ref } from '@vue/composition-api';
 import { useUserOrder, orderGetters, productGetters } from '@realtainment/sylius';
 import { AgnosticOrderStatus } from '@vue-storefront/core';

@@ -32,8 +32,10 @@ import { extend } from 'vee-validate';
 import { email, required, min, confirmed } from 'vee-validate/dist/rules';
 import ProfileUpdateForm from '~/components/MyAccount/ProfileUpdateForm';
 import PasswordResetForm from '~/components/MyAccount/PasswordResetForm';
-import { SfTabs, SfInput, SfButton } from '@storefront-ui/vue';
 import { useUser, userGetters } from '@realtainment/sylius';
+import SfTabs from "../../ui/components/organisms/SfTabs/SfTabs.vue";
+import SfInput from "../../ui/components/atoms/SfInput/SfInput.vue";
+import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
 
 extend('email', {
   ...email,

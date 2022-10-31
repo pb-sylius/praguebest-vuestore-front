@@ -76,7 +76,10 @@
 </template>
 
 <script>
-import { SfHeading, SfButton, SfCallToAction } from '@storefront-ui/vue';
+import SfHeading from "../../ui/components/atoms/SfHeading/SfHeading.vue";
+import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
+import SfCallToAction from "../../ui/components/molecules/SfCallToAction/SfCallToAction.vue";
+
 import { ref, computed } from '@vue/composition-api';
 import { useMakeOrder } from '@realtainment/sylius';
 export default {

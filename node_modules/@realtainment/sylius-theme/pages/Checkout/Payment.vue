@@ -106,19 +106,18 @@
 </template>
 
 <script>
-import {
-  SfHeading,
-  SfTable,
-  SfCheckbox,
-  SfButton,
-  SfDivider,
-  SfImage,
-  SfIcon,
-  SfPrice,
-  SfProperty,
-  SfAccordion,
-  SfLink
-} from '@storefront-ui/vue';
+import SfHeading from "../../ui/components/atoms/SfHeading/SfHeading.vue";
+import SfTable from "../../ui/components/organisms/SfTable/SfTable.vue";
+import SfCheckbox from "../../ui/components/molecules/SfCheckbox/SfCheckbox.vue";
+import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
+import SfDivider from "../../ui/components/atoms/SfDivider/SfDivider.vue";
+import SfImage from "../../ui/components/atoms/SfImage/SfImage.vue";
+import SfIcon from "../../ui/components/atoms/SfIcon/SfIcon.vue";
+import SfPrice from "../../ui/components/atoms/SfPrice/SfPrice.vue";
+import SfProperty from "../../ui/components/atoms/SfProperty/SfProperty.vue";
+import SfAccordion from "../../ui/components/organisms/SfAccordion/SfAccordion.vue";
+import SfLink from "../../ui/components/atoms/SfLink/SfLink.vue";
+
 import { onSSR } from '@vue-storefront/core';
 import { ref, computed } from '@vue/composition-api';
 import { useMakeOrder, useCart, cartGetters, orderGetters } from '@realtainment/sylius';

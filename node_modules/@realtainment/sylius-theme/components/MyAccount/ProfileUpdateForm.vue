@@ -102,7 +102,10 @@
 import { ref, onMounted } from '@vue/composition-api';
 import { ValidationProvider, ValidationObserver } from 'vee-validate';
 import { useUser, userGetters } from '@realtainment/sylius';
-import { SfInput, SfButton, SfSelect, SfCheckbox } from '@storefront-ui/vue';
+import SfInput from "../../ui/components/atoms/SfInput/SfInput.vue";
+import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
+import SfSelect from "../../ui/components/molecules/SfSelect/SfSelect.vue";
+import SfCheckbox from "../../ui/components/molecules/SfCheckbox/SfCheckbox.vue";
 import { parse as parseDate, format as formatDate } from 'date-fns';
 export default {
   name: 'ProfileUpdateForm',

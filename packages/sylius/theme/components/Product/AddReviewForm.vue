@@ -43,7 +43,10 @@
 
 <script>
 import { ref } from '@vue/composition-api';
-import { SfTextarea, SfInput, SfButton } from '@storefront-ui/vue';
+import SfTextarea from "../../ui/components/atoms/SfTextarea/SfTextarea.vue";
+import SfInput from "../../ui/components/atoms/SfInput/SfInput.vue";
+import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
+
 import { ValidationProvider, ValidationObserver } from 'vee-validate';
 export default {
   name: 'AddReviewForm',

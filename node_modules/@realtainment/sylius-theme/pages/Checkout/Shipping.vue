@@ -196,15 +196,14 @@
 </template>
 
 <script>
-import {
-  SfHeading,
-  SfInput,
-  SfButton,
-  SfSelect,
-  SfCheckbox
-} from '@storefront-ui/vue';
+import SfHeading from "../../ui/components/atoms/SfHeading/SfHeading.vue";
+import SfInput from "../../ui/components/atoms/SfInput/SfInput.vue";
+import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
+import SfSelect from "../../ui/components/molecules/SfSelect/SfSelect.vue";
+import SfCheckbox from "../../ui/components/molecules/SfCheckbox/SfCheckbox.vue";
+
 import { ref, computed, onMounted } from '@vue/composition-api';
-import { useUiNotification } from '~/composables/';
+import useUiNotification from "../../composables/useUiNotification";
 import { useBilling, useShipping, useUserShipping, userShippingGetters, useUser } from '@realtainment/sylius';
 import { required, min, digits } from 'vee-validate/dist/rules';
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';

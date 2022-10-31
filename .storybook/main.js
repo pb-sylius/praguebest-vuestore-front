@@ -1,22 +1,12 @@
 
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-const rootPath = path.resolve(__dirname, '../../');
 
 module.exports = {
   "stories": [
-    "../packages/sylius/theme/ui/**/*.stories.mdx",
-    "../packages/sylius/theme/ui/**/*.stories.@(js|jsx|ts|tsx|vue)"
+    "../packages/sylius/theme/ui/components/**/*.stories.mdx",
+    "../packages/sylius/theme/ui/components/**/*.stories.@(js|jsx|ts|tsx|vue)"
   ],
   "addons": [
-    "@storybook/addon-links",
-    {
-      name: '@storybook/addon-essentials',
-      options: {
-        actions: false,
-      },
-    },
     {
       name: '@storybook/addon-docs',
       options: {
@@ -25,6 +15,14 @@ module.exports = {
         },
       },
     },
+    "@storybook/addon-links",
+    "@storybook/addon-controls",
+    //"@storybook/addon-actions",
+    "@storybook/addon-backgrounds",
+    "@storybook/addon-viewport",
+    "@storybook/addon-toolbars",
+    "@storybook/addon-measure",
+    "@storybook/addon-outline",
     "@storybook/addon-interactions",
     {
       name: 'storybook-addon-sass-postcss',

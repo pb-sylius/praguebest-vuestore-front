@@ -10,9 +10,10 @@ Installation:
 
 Open packages\sylius\theme\middleware.config.js and change paths for api and imagePaths to your running server.
 
-You will probably need repair those dependencies:
+Go to packages\sylius\theme\middleware.config.js and replace api and imagePaths.
 
-A) node_modules\rollup-plugin-graphql\package.json
+npm run build:sylius
+- buids production ready version
 
 "peerDependencies": {
     "graphql": "^0.9.0 || ^0.10.0"

@@ -44,7 +44,8 @@
 <script>
 import { ref } from '@vue/composition-api';
 import { ValidationProvider, ValidationObserver } from 'vee-validate';
-import { SfInput, SfButton } from '@storefront-ui/vue';
+import SfInput from "../../ui/components/atoms/SfInput/SfInput.vue";
+import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
 
 export default {
   name: 'PasswordResetForm',

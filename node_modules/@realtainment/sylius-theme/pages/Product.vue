@@ -146,26 +146,25 @@
 
   </div>
 </template>
+
 <script>
-import {
-  SfProperty,
-  SfHeading,
-  SfPrice,
-  SfRating,
-  SfSelect,
-  SfAddToCart,
-  SfTabs,
-  SfGallery,
-  SfIcon,
-  SfImage,
-  SfBanner,
-  SfAlert,
-  SfSticky,
-  SfReview,
-  SfBreadcrumbs,
-  SfButton,
-  SfColor
-} from '@storefront-ui/vue';
+import SfProperty from "../ui/components/atoms/SfProperty/SfProperty.vue";
+import SfHeading from "../ui/components/atoms/SfHeading/SfHeading.vue";
+import SfPrice from "../ui/components/atoms/SfPrice/SfPrice.vue";
+import SfRating from "../ui/components/atoms/SfRating/SfRating.vue";
+import SfSelect from "../ui/components/molecules/SfSelect/SfSelect.vue";
+import SfAddToCart from "../ui/components/molecules/SfAddToCart/SfAddToCart.vue";
+import SfTabs from "../ui/components/organisms/SfTabs/SfTabs.vue";
+import SfGallery from "../ui/components/molecules/SfGallery/SfGallery.vue";
+import SfIcon from "../ui/components/atoms/SfIcon/SfIcon.vue";
+import SfImage from "../ui/components/atoms/SfImage/SfImage.vue";
+import SfBanner from "../ui/components/molecules/SfBanner/SfBanner.vue";
+import SfAlert from "../ui/components/molecules/SfAlert/SfAlert.vue";
+import SfSticky from "../ui/components/molecules/SfSticky/SfSticky.vue";
+import SfReview from "../ui/components/molecules/SfReview/SfReview.vue";
+import SfBreadcrumbs from "../ui/components/atoms/SfBreadcrumbs/SfBreadcrumbs.vue";
+import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
+import SfColor from "../ui/components/atoms/SfColor/SfColor.vue";
 
 import InstagramFeed from '~/components/InstagramFeed.vue';
 import RelatedProducts from '~/components/RelatedProducts.vue';

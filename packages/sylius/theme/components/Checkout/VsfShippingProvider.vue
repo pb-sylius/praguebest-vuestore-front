@@ -55,7 +55,10 @@
 </template>
 
 <script>
-import { SfButton, SfRadio, SfHeading } from '@storefront-ui/vue';
+import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
+import SfRadio from "../../ui/components/molecules/SfRadio/SfRadio.vue";
+import SfHeading from "../../ui/components/atoms/SfHeading/SfHeading.vue";
+
 import { ref, onMounted } from '@vue/composition-api';
 import { useCart, useShippingProvider } from '@realtainment/sylius';
 export default {

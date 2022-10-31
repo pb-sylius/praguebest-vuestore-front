@@ -3,21 +3,21 @@
     <SfSidebar
       v-e2e="'sidebar-cart'"
       :visible="isCartSidebarOpen"
-      title="My Cart"
+      :title="$t('My Cart')"
       class="sf-sidebar--right"
       @close="toggleCartSidebar"
     >
       <template #content-top>
         <SfProperty
           v-if="totalItems"
-          class="sf-property--large cart-summary desktop-only"
+          class="sf-property--large cart-summary"
           name="Total items"
           :value="totalItems"
         />
       </template>
       <transition name="sf-fade" mode="out-in">
         <div v-if="totalItems" key="my-cart" class="my-cart">
-          <div class="collected-product-list">
+          <div class="collected-product-list">                                        
             <transition-group name="sf-fade" tag="div">
               <SfCollectedProduct
                 v-for="product in products"
@@ -60,7 +60,7 @@
             <SfImage
               alt="Empty bag"
               class="empty-cart__image"
-              src="/icons/empty-cart.svg"
+              :src="emptyCartImg"
             />
             <SfHeading
               title="Your cart is empty"
@@ -108,21 +108,22 @@
     </SfSidebar>
   </div>
 </template>
+
 <script>
-import {
-  SfSidebar,
-  SfHeading,
-  SfButton,
-  SfIcon,
-  SfProperty,
-  SfPrice,
-  SfCollectedProduct,
-  SfImage,
-  SfQuantitySelector
-} from '@storefront-ui/vue';
+import SfSidebar from "../ui/components/organisms/SfSidebar/SfSidebar.vue";
+import SfHeading from "../ui/components/atoms/SfHeading/SfHeading.vue";
+import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
+import SfIcon from "../ui/components/atoms/SfIcon/SfIcon.vue";
+import SfProperty from "../ui/components/atoms/SfProperty/SfProperty.vue";
+import SfPrice from "../ui/components/atoms/SfPrice/SfPrice.vue";
+import SfCollectedProduct from "../ui/components/organisms/SfCollectedProduct/SfCollectedProduct.stories";
+import SfImage from "../ui/components/atoms/SfImage/SfImage.vue";
+import SfQuantitySelector from "../ui/components/atoms/SfQuantitySelector/SfQuantitySelector.vue";
+import emptyCartImg from "../ui/icons/empty_cart.svg";
+
 import { computed } from '@vue/composition-api';
 import { useCart, useUser, cartGetters } from '@realtainment/sylius';
-import { useUiState } from '~/composables';
+import useUiState from '../composables/useUiState';
 import debounce from 'lodash.debounce';
 
 export default {
@@ -136,7 +137,7 @@ export default {
     SfPrice,
     SfCollectedProduct,
     SfImage,
-    SfQuantitySelector
+    SfQuantitySelector,
   },
   setup() {
     const { isCartSidebarOpen, toggleCartSidebar } = useUiState();
@@ -163,6 +164,11 @@ export default {
       totalItems,
       cartGetters
     };
+  },
+  data() {
+    return {
+      emptyCartImg: emptyCartImg
+    }
   }
 };
 </script>
@@ -171,7 +177,13 @@ export default {
   #cart {
     --sidebar-z-index: 3;
     --overlay-z-index: 3;
-    @include for-desktop {
+    --sidebar-width: #{$breakpoint-2xs};
+    --sidebar-right: 0;
+    --sidebar-left: auto;
+    @include breakpoint-xs {
+      --sidebar-width: 100%;
+    }
+    @include breakpoint-full-width {
       & > * {
         --sidebar-bottom-padding: var(--spacer-base);
         --sidebar-content-padding: var(--spacer-base);
@@ -217,7 +229,7 @@ export default {
       --image-width: 16rem;
       margin: 0 0 var(--spacer-2xl) 7.5rem;
     }
-    @include for-desktop {
+    @include breakpoint-full-width {
       --heading-title-font-size: var(--font-size--xl);
       --heading-title-margin: 0 0 var(--spacer-sm) 0;
     }
@@ -258,7 +270,7 @@ export default {
     &:hover {
       --cp-save-opacity: 1;
       --cp-compare-opacity: 1;
-      @include for-desktop {
+      @include breakpoint-full-width {
         .collected-product__properties {
           display: none;
         }

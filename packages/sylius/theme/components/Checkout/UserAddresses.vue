@@ -30,9 +30,7 @@
 </template>
 
 <script>
-import {
-  SfAddressPicker
-} from '@storefront-ui/vue';
+import SfAddressPicker from '../../ui/components/molecules/SfAddressPicker/SfAddressPicker.vue';
 export default {
   name: 'UserAddresses',
   props: {

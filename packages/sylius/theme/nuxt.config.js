@@ -122,7 +122,7 @@ export default {
     }
   },
   styleResources: {
-    scss: [require.resolve('@storefront-ui/shared/styles/_helpers.scss', { paths: [process.cwd()] })]
+    scss: [require.resolve('./ui/styles.scss', { paths: [process.cwd()] })]
   },
   build: {
     babel: {
