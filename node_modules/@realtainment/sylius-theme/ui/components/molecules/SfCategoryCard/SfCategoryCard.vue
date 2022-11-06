@@ -16,9 +16,9 @@
     </slot>
   </SfLink>
 </template>
+
 <script>
 import SfLink from "../../atoms/SfLink/SfLink.vue";
-
 import {
   mapMobileObserver,
   unMapMobileObserver,
@@ -77,6 +77,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfCategoryCard.scss";
 </style>

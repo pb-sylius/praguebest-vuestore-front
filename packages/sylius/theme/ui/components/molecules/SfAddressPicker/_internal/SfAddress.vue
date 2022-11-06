@@ -12,12 +12,13 @@
     </template>
   </SfRadio>
 </template>
+
 <script>
 import SfRadio from "../../SfRadio/SfRadio.vue";
 import SfIcon from "../../../atoms/SfIcon/SfIcon.vue";
 
 export default {
-  name: "SfAddressPicker",
+  name: "SfAddress",
   components: {
     SfRadio,
     SfIcon,

@@ -30,6 +30,7 @@
     </div>
   </transition>
 </template>
+
 <script>
 import Vue from "vue";
 import SfMegaMenuColumn from "./_internal/SfMegaMenuColumn.vue";
@@ -40,6 +41,7 @@ import {
   mapMobileObserver,
   unMapMobileObserver,
 } from "../../../utilities/mobile-observer";
+
 export default {
   name: "SfMegaMenu",
   components: {
@@ -114,6 +116,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfMegaMenu.scss";
 </style>

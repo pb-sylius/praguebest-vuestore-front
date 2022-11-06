@@ -10,8 +10,10 @@
     </slot>
   </div>
 </template>
+
 <script>
 import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
+
 export default {
   name: "SfAlert",
   components: {
@@ -62,6 +64,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfAlert.scss";
 </style>

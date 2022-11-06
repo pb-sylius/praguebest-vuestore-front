@@ -20,9 +20,11 @@
     </slot>
   </div>
 </template>
+
 <script>
 import SfButton from "../../atoms/SfButton/SfButton.vue";
 import SfQuantitySelector from "../../atoms/SfQuantitySelector/SfQuantitySelector.vue";
+
 export default {
   name: "SfAddToCart",
   components: {
@@ -44,6 +46,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfAddToCart.scss";
 </style>

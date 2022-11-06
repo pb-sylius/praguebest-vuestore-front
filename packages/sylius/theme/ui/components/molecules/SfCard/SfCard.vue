@@ -26,6 +26,7 @@
     </slot>
   </div>
 </template>
+
 <script>
 import SfButton from "../../atoms/SfButton/SfButton.vue";
 import SfHeading from "../../atoms/SfHeading/SfHeading.vue";
@@ -74,6 +75,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfCard.scss";
 </style>

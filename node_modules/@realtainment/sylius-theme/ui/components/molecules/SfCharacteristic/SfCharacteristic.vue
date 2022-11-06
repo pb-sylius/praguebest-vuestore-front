@@ -22,8 +22,10 @@
     </slot>
   </div>
 </template>
+
 <script>
 import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
+
 export default {
   name: "SfCharacteristic",
   components: {
@@ -53,6 +55,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfCharacteristic.scss";
 </style>

@@ -195,6 +195,7 @@ import {
   unMapMobileObserver,
 } from "../../../utilities/mobile-observer";
 import productPlaceholder from "../../../assets/product_placeholder.svg";
+
 export default {
   name: "SfProductCard",
   components: {
@@ -360,6 +361,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfProductCard.scss";
 </style>

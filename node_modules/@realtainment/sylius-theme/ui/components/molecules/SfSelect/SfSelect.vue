@@ -48,12 +48,14 @@
     </div>
   </div>
 </template>
+
 <script>
 import { focus } from "../../../utilities/directives";
 import SfSelectOption from "./_internal/SfSelectOption.vue";
 import Vue from "vue";
 
 Vue.component("SfSelectOption", SfSelectOption);
+
 export default {
   name: "SfSelect",
   directives: { focus },
@@ -94,6 +96,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfSelect.scss";
 </style>

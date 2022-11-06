@@ -33,11 +33,14 @@
     </div>
   </div>
 </template>
+
 <script>
 import Vue from "vue";
 import SfStep from "./_internal/SfStep.vue";
 import SfButton from "../../atoms/SfButton/SfButton.vue";
+
 Vue.component("SfStep", SfStep);
+
 export default {
   name: "SfSteps",
   components: {
@@ -113,6 +116,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfSteps.scss";
 </style>

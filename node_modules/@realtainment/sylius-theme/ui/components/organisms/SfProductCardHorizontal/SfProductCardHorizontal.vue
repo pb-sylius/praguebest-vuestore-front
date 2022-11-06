@@ -116,6 +116,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import SfPrice from "../../atoms/SfPrice/SfPrice.vue";
 import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
@@ -244,6 +245,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfProductCardHorizontal.scss";
 </style>

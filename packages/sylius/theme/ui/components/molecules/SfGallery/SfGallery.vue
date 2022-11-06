@@ -69,10 +69,12 @@
     </div>
   </div>
 </template>
+
 <script>
 import Glide from "@glidejs/glide";
 import SfImage from "../../atoms/SfImage/SfImage.vue";
 import SfButton from "../../atoms/SfButton/SfButton.vue";
+
 export default {
   name: "SfGallery",
   components: {
@@ -232,6 +234,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfGallery.scss";
 </style>

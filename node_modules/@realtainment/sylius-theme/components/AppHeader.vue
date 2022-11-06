@@ -29,6 +29,9 @@
       </template>
       <template #header-icons>
         <div class="sf-header__icons">
+          <SfButton v-e2e="'app-header-cart'" class="sf-button--pure sf-header__action" @click="toggleCartSidebar" v-if="!useMobileSearch" >
+            <SfIcon class="sf-header__icon" icon="search" size="1.2rem" />
+          </SfButton>
           <SfButton v-e2e="'app-header-account'" class="sf-button--pure sf-header__action" @click="handleAccountClick">
             <SfIcon :icon="accountIcon" size="1.25rem" />
           </SfButton>
@@ -232,7 +235,8 @@ export default {
   }
   & .sf-mobile_search {
     --button-padding: var(--spacer-2xs) var(--spacer-sm);
-    --button-background: var(--c-white)
+    --button-background: var(--c-white);
+    margin-left: var(--spacer-2xs);
   }
 }
 

@@ -16,8 +16,10 @@
     </div>
   </section>
 </template>
+
 <script>
 import SfHeading from "../../atoms/SfHeading/SfHeading.vue";
+
 export default {
   name: "SfSection",
   components: {
@@ -39,6 +41,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfSection.scss";
 </style>

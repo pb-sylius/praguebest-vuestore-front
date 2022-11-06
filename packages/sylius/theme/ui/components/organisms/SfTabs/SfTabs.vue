@@ -3,9 +3,11 @@
     <slot />
   </div>
 </template>
+
 <script>
 import Vue from "vue";
 import SfTab from "./_internal/SfTab.vue";
+
 Vue.component("SfTab", SfTab);
 
 export default {
@@ -77,6 +79,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfTabs.scss";
 </style>

@@ -33,9 +33,11 @@
     </div>
   </div>
 </template>
+
 <script>
 import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
 import SfButton from "../../atoms/SfButton/SfButton.vue";
+
 export default {
   name: "SfBar",
   components: {
@@ -58,6 +60,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfBar.scss";
 </style>

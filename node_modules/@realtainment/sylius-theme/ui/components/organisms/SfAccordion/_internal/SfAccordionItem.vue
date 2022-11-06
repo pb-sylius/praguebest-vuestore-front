@@ -35,11 +35,13 @@
     </SfExpand>
   </div>
 </template>
+
 <script>
 import { focus } from "../../../../utilities/directives";
 import SfExpand from "../../../../utilities/transitions/component/SfExpand";
 import SfChevron from "../../../atoms/SfChevron/SfChevron.vue";
 import SfButton from "../../../atoms/SfButton/SfButton.vue";
+
 export default {
   name: "SfAccordionItem",
   directives: { focus },

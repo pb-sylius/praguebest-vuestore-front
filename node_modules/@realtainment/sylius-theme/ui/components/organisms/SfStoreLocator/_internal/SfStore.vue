@@ -65,11 +65,13 @@
     </div>
   </div>
 </template>
+
 <script>
 import { focus } from "../../../../utilities/directives";
 import SfImage from "../../../atoms/SfImage/SfImage.vue";
 import SfIcon from "../../../atoms/SfIcon/SfIcon.vue";
 import SfCharacteristic from "../../../molecules/SfCharacteristic/SfCharacteristic.vue";
+
 export default {
   name: "SfStore",
   inject: [

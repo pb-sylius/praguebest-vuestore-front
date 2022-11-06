@@ -52,9 +52,11 @@
     </div>
   </transition>
 </template>
+
 <script>
 import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
 import SfButton from "../../atoms/SfButton/SfButton.vue";
+
 export default {
   name: "SfNotification",
   components: {
@@ -130,6 +132,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfNotification.scss";
 </style>

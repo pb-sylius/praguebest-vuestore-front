@@ -40,6 +40,7 @@
     </component>
   </section>
 </template>
+
 <script>
 import SfButton from "../../atoms/SfButton/SfButton.vue";
 import SfLink from "../../atoms/SfLink/SfLink.vue";
@@ -47,6 +48,7 @@ import {
   mapMobileObserver,
   unMapMobileObserver,
 } from "../../../utilities/mobile-observer";
+
 export default {
   name: "SfBanner",
   components: {
@@ -114,6 +116,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfBanner.scss";
 </style>

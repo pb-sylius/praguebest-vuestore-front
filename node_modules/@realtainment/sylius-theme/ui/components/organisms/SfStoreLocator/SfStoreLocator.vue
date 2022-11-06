@@ -63,13 +63,16 @@
     </div>
   </div>
 </template>
+
 <script>
 import Vue from "vue";
 import { focus } from "../../../utilities/directives";
 import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
 import SfLoader from "../../atoms/SfLoader/SfLoader.vue";
 import SfStore from "./_internal/SfStore.vue";
+
 Vue.component("SfStore", SfStore);
+
 export default {
   name: "SfStoreLocator",
   provide() {
@@ -261,6 +264,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfStoreLocator.scss";
 </style>

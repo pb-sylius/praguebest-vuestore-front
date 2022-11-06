@@ -56,6 +56,7 @@
     </section>
   </div>
 </template>
+
 <script>
 import Vue from "vue";
 import SfContentPage from "./_internal/SfContentPage.vue";
@@ -70,6 +71,7 @@ import {
   mapMobileObserver,
   unMapMobileObserver,
 } from "../../../utilities/mobile-observer";
+
 export default {
   name: "SfContentPages",
   components: {
@@ -150,6 +152,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfContentPages.scss";
 </style>

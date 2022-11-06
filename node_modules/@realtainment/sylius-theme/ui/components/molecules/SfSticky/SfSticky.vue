@@ -9,6 +9,7 @@
     <slot />
   </div>
 </template>
+
 <script>
 export default {
   name: "SfSticky",
@@ -138,6 +139,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfSticky.scss";
 </style>

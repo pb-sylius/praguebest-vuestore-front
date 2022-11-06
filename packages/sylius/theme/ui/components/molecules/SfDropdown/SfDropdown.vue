@@ -31,6 +31,7 @@
     </transition>
   </div>
 </template>
+
 <script>
 import { clickOutside } from "../../../utilities/directives/";
 import SfOverlay from "../../atoms/SfOverlay/SfOverlay.vue";
@@ -91,6 +92,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfDropdown.scss";
 </style>

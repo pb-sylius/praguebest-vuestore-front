@@ -96,7 +96,8 @@ export default {
         const { perView } = glide.settings;
         if (!perView > 1) return;
         const { direction } = move;
-        let page, newIndex;
+        let page;
+        let newIndex;
         switch (direction) {
           case ">":
           case "<":

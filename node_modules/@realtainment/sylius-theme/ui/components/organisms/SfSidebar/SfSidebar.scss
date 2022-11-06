@@ -85,7 +85,7 @@
     transform: var(--sidebar-circle-icon-transform, none);
     --button-size: 2.3rem;
   }
-  @include breakpoint-full-width {
+  @include for-desktop {
     --sidebar-top-padding: var(--spacer-xl) var(--spacer-xl) var(--spacer-sm)
       var(--spacer-xl);
     --sidebar-content-padding: var(--spacer-base) var(--spacer-xl);

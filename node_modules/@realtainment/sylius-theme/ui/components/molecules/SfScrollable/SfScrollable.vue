@@ -19,6 +19,7 @@
 <script>
 import Simplebar from "simplebar-vue";
 import SfButton from "../../atoms/SfButton/SfButton.vue";
+
 export default {
   name: "SfScrollable",
   components: {
@@ -74,6 +75,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfScrollable.scss";
 </style>

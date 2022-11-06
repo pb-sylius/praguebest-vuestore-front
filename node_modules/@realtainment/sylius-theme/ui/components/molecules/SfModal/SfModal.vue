@@ -41,6 +41,7 @@
     </transition>
   </section>
 </template>
+
 <script>
 import SfBar from "../../molecules/SfBar/SfBar.vue";
 import SfOverlay from "../../atoms/SfOverlay/SfOverlay.vue";
@@ -50,6 +51,7 @@ import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 import { focusTrap } from "../../../utilities/directives";
 import { clickOutside } from "../../../utilities/directives";
 import { isClient } from "../../../utilities/helpers";
+
 export default {
   name: "SfModal",
   directives: { focusTrap, clickOutside },
@@ -144,6 +146,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfModal.scss";
 </style>

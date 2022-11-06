@@ -10,6 +10,7 @@
     </slot>
   </SfLink>
 </template>
+
 <script>
 import {
   mapMobileObserver,
@@ -17,6 +18,7 @@ import {
 } from "../../../utilities/mobile-observer";
 import SfHeading from "../../atoms/SfHeading/SfHeading.vue";
 import SfLink from "../../atoms/SfLink/SfLink.vue";
+
 export default {
   name: "SfTile",
   components: {
@@ -66,6 +68,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfTile.scss";
 </style>

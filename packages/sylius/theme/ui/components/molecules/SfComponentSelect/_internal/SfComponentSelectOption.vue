@@ -12,8 +12,10 @@
     <slot />
   </li>
 </template>
+
 <script>
 import { focus } from "../../../../utilities/directives";
+
 export default {
   name: "SfComponentSelectOption",
   directives: { focus },

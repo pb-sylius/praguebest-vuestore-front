@@ -43,6 +43,7 @@
     </transition>
   </div>
 </template>
+
 <script>
 import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
 import SfButton from "../../atoms/SfButton/SfButton.vue";
@@ -85,6 +86,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfColorPicker.scss";
 </style>

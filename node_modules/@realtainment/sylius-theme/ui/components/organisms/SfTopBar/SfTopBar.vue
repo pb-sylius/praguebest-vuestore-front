@@ -13,11 +13,13 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: "SFTopBar",
 };
 </script>
+
 <style lang="scss">
 @import "./SfTopBar.scss";
 </style>

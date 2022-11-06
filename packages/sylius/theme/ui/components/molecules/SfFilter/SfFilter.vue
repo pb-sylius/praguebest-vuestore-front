@@ -26,9 +26,11 @@
     </template>
   </SfCheckbox>
 </template>
+
 <script>
 import SfCheckbox from "../../molecules/SfCheckbox/SfCheckbox.vue";
 import SfColor from "../../atoms/SfColor/SfColor.vue";
+
 export default {
   name: "SfFilter",
   components: {
@@ -55,6 +57,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfFilter.scss";
 </style>

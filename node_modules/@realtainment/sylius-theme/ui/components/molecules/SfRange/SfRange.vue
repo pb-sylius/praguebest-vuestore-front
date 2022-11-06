@@ -3,6 +3,7 @@
     <slot v-bind="$attrs" />
   </div>
 </template>
+
 <script>
 import noUiSlider from "nouislider";
 import "nouislider/dist/nouislider.css";
@@ -72,6 +73,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfRange.scss";
 </style>

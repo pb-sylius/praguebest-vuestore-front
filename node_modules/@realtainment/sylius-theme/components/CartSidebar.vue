@@ -270,7 +270,7 @@ export default {
     &:hover {
       --cp-save-opacity: 1;
       --cp-compare-opacity: 1;
-      @include breakpoint-full-width {
+      @include for-desktop {
         .collected-product__properties {
           display: none;
         }

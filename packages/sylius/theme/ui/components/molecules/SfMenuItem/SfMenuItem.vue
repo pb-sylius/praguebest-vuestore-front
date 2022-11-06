@@ -23,10 +23,12 @@
     </slot>
   </component>
 </template>
+
 <script>
 import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
 import SfLink from "../../atoms/SfLink/SfLink.vue";
 import SfButton from "../../atoms/SfButton/SfButton.vue";
+
 export default {
   name: "SfMenuItem",
   components: {
@@ -68,6 +70,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfMenuItem.scss";
 </style>

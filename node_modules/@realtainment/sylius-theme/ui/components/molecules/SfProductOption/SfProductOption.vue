@@ -12,6 +12,7 @@
     </slot>
   </div>
 </template>
+
 <script>
 export default {
   name: "SfProductOption",
@@ -27,6 +28,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfProductOption.scss";
 </style>

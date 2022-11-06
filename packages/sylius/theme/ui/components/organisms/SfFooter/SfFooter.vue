@@ -8,6 +8,7 @@
     </div>
   </footer>
 </template>
+
 <script>
 import Vue from "vue";
 import SfFooterColumn from "./_internal/SfFooterColumn.vue";
@@ -17,6 +18,7 @@ import {
 } from "../../../utilities/mobile-observer";
 
 Vue.component("SfFooterColumn", SfFooterColumn);
+
 export default {
   name: "SfFooter",
   props: {
@@ -75,6 +77,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfFooter.scss";
 </style>

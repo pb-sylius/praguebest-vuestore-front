@@ -51,9 +51,11 @@
     </div>
   </div>
 </template>
+
 <script>
 import SfIcon from "../../atoms/SfIcon/SfIcon";
 import { focus } from "../../../utilities/directives";
+
 export default {
   name: "SfCheckbox",
   directives: {
@@ -166,6 +168,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfCheckbox.scss";
 </style>

@@ -3,10 +3,13 @@
     <slot />
   </div>
 </template>
+
 <script>
 import Vue from "vue";
 import SfAccordionItem from "./_internal/SfAccordionItem.vue";
+
 Vue.component("SfAccordionItem", SfAccordionItem);
+
 export default {
   name: "SfAccordion",
   props: {
@@ -105,6 +108,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfAccordion.scss";
 </style>

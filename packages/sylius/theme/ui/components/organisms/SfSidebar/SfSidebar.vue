@@ -47,6 +47,7 @@
     </transition>
   </div>
 </template>
+
 <script>
 import { focusTrap } from "../../../utilities/directives/";
 import { clickOutside } from "../../../utilities/directives/";
@@ -56,6 +57,7 @@ import SfBar from "../../molecules/SfBar/SfBar.vue";
 import SfCircleIcon from "../../atoms/SfCircleIcon/SfCircleIcon.vue";
 import SfOverlay from "../../atoms/SfOverlay/SfOverlay.vue";
 import SfHeading from "../../atoms/SfHeading/SfHeading.vue";
+
 export default {
   name: "SfSidebar",
   directives: { focusTrap, clickOutside },
@@ -177,6 +179,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfSidebar.scss";
 </style>

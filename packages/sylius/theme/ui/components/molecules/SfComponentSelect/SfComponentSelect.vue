@@ -80,6 +80,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import SfComponentSelectOption from "./_internal/SfComponentSelectOption.vue";
 import SfChevron from "../../atoms/SfChevron/SfChevron.vue";
@@ -89,6 +90,7 @@ import { focus } from "../../../utilities/directives";
 import { clickOutside } from "../../../utilities/directives";
 import Vue from "vue";
 Vue.component("SfComponentSelectOption", SfComponentSelectOption);
+
 export default {
   name: "SfComponentSelect",
   directives: { focus, clickOutside },
@@ -267,6 +269,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfComponentSelect.scss";
 </style>

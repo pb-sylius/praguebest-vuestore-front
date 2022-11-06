@@ -3,11 +3,13 @@
     <slot />
   </div>
 </template>
+
 <script>
 import SfAddress from "./_internal/SfAddress.vue";
 import Vue from "vue";
 
 Vue.component("SfAddress", SfAddress);
+
 export default {
   name: "SfAddressPicker",
   model: {
@@ -48,6 +50,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfAddressPicker.scss";
 </style>

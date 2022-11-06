@@ -40,10 +40,12 @@
     </slot>
   </section>
 </template>
+
 <script>
 import SfRating from "../../atoms/SfRating/SfRating.vue";
 import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
 import SfButton from "../../atoms/SfButton/SfButton.vue";
+
 export default {
   name: "SfReview",
   components: {
@@ -114,6 +116,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfReview.scss";
 </style>

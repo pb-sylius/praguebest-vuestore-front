@@ -3,6 +3,7 @@
     <slot />
   </table>
 </template>
+
 <script>
 import Vue from "vue";
 import SfTableRow from "./_internal/SfTableRow.vue";
@@ -13,6 +14,7 @@ Vue.component("SfTableRow", SfTableRow);
 Vue.component("SfTableData", SfTableData);
 Vue.component("SfTableHeader", SfTableHeader);
 Vue.component("SfTableHeading", SfTableHeading);
+
 export default {
   name: "SfTable",
   provide() {
@@ -32,6 +34,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfTable.scss";
 </style>

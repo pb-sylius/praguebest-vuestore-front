@@ -97,6 +97,7 @@
     </slot>
   </div>
 </template>
+
 <script>
 import SfPrice from "../../atoms/SfPrice/SfPrice.vue";
 import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
@@ -106,6 +107,7 @@ import SfButton from "../../atoms/SfButton/SfButton.vue";
 import SfQuantitySelector from "../../atoms/SfQuantitySelector/SfQuantitySelector.vue";
 import SfLink from "../../atoms/SfLink/SfLink.vue";
 import SfProperty from "../../atoms/SfProperty/SfProperty.vue";
+
 export default {
   name: "SfCollectedProduct",
   components: {
@@ -189,6 +191,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfCollectedProduct.scss";
 </style>

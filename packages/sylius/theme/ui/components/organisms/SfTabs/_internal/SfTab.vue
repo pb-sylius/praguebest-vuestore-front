@@ -29,11 +29,13 @@
     </div>
   </div>
 </template>
+
 <script>
 import { isClient } from "../../../../utilities/helpers";
 import SfChevron from "../../../atoms/SfChevron/SfChevron.vue";
 import SfButton from "../../../atoms/SfButton/SfButton.vue";
 import SfScrollable from "../../../molecules/SfScrollable/SfScrollable.vue";
+
 export default {
   name: "SfTab",
   components: {
