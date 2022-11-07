@@ -52,6 +52,7 @@
     </component>
   </div>
 </template>
+
 <script>
 import SfInput from "../SfInput/SfInput.vue";
 import SfButton from "../SfButton/SfButton.vue";
@@ -106,6 +107,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfQuantitySelector.scss";
 </style>

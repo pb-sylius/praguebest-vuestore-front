@@ -39,10 +39,12 @@
     </transition>
   </component>
 </template>
+
 <script>
 import SfBadge from "../SfBadge/SfBadge.vue";
 import SfIcon from "../SfIcon/SfIcon.vue";
 import SfButton from "../SfButton/SfButton.vue";
+
 export default {
   name: "SfColor",
   inject: {
@@ -70,6 +72,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfColor.scss";
 </style>

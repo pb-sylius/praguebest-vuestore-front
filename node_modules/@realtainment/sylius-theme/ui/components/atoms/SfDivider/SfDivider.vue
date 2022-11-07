@@ -4,11 +4,13 @@
     :style="[data.style, data.staticStyle]"
   />
 </template>
+
 <script>
 export default {
   name: "SfDivider",
 };
 </script>
+
 <style lang="scss">
 @import "./SfDivider.scss";
 </style>

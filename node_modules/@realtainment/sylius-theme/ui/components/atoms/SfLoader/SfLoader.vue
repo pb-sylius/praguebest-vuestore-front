@@ -40,6 +40,7 @@
     </transition>
   </div>
 </template>
+
 <script>
 export default {
   name: "SfLoader",
@@ -51,6 +52,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfLoader.scss";
 </style>

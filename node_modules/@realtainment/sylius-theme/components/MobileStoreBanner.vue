@@ -40,7 +40,7 @@ import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
 import { addBasePath } from '@vue-storefront/core';
 
 export default {
-  name: 'AppStoreBanner',
+  name: 'MobileStoreBanner',
   components: {
     SfBanner,
     SfImage,

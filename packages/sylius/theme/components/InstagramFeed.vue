@@ -34,6 +34,7 @@ import {
   mapMobileObserver,
   unMapMobileObserver
 } from '../ui/utilities/mobile-observer';
+
 export default {
   name: 'InstagramFeed',
   components: {
@@ -53,6 +54,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .title {
   --heading-title-font-weight: var(--font-weight--semibold);

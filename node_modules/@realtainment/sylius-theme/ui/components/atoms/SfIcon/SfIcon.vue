@@ -37,11 +37,14 @@
     </slot>
   </span>
 </template>
+
 <script>
 import { icons } from "../../../icons/icons";
 import { iconColorsValues as SF_COLORS } from "../../../variables/colors";
 import { sizesValues as SF_SIZES } from "../../../variables/sizes";
+
 const SF_ICONS = Object.keys(icons);
+
 export default {
   name: "SfIcon",
   props: {
@@ -141,6 +144,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfIcon.scss";
 </style>

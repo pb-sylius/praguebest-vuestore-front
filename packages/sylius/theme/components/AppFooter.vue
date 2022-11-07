@@ -94,7 +94,7 @@ export default {
 
 .footer {
   margin-bottom: 3.75rem;
-  @include breakpoint-full-width {
+  @include for-desktop {
     margin-bottom: 0;
   }
   &__socials {
@@ -102,7 +102,7 @@ export default {
     justify-content: space-between;
     margin: 0 auto var(--spacer-lg);
     padding: var(--spacer-base) var(--spacer-xl);
-    @include breakpoint-full-width {
+    @include for-desktop {
       justify-content: flex-start;
       padding: var(--spacer-xs) 0;
       margin: 0 auto;
@@ -113,14 +113,14 @@ export default {
   }
 }
 .sf-footer {
-  @include breakpoint-full-width {
+  @include for-desktop {
     border-top: var(--spacer-xs) solid var(--c-primary);
     padding-bottom: 0;
     margin-top: var(--spacer-2xl);
   }
   &__container {
     margin: var(--spacer-sm);
-    @include breakpoint-full-width {
+    @include for-desktop {
       max-width: 69rem;
       margin: 0 auto;
     }

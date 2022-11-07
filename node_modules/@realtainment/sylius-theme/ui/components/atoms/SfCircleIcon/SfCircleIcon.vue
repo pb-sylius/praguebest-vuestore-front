@@ -17,9 +17,11 @@
     </slot>
   </component>
 </template>
+
 <script>
 import SfButton from "../SfButton/SfButton.vue";
 import SfIcon from "../SfIcon/SfIcon.vue";
+
 export default {
   name: "SfCircleIcon",
   inject: {
@@ -46,6 +48,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfCircleIcon.scss";
 </style>

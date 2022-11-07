@@ -32,6 +32,7 @@ import SfHeading from "../../ui/components/atoms/SfHeading/SfHeading.vue";
 import { ref, onMounted } from '@vue/composition-api';
 import { useVSFContext } from '@vue-storefront/core';
 import { useCart } from '@realtainment/sylius';
+
 export default {
   name: 'VsfPaymentProvider',
 

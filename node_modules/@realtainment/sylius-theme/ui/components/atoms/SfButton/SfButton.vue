@@ -22,9 +22,11 @@
     <slot />
   </component>
 </template>
+
 <script>
 import { focus } from "../../../utilities/directives/index";
 import SfLink from "../SfLink/SfLink.vue";
+
 export default {
   name: "SfButton",
   inject: {
@@ -53,6 +55,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfButton.scss";
 </style>

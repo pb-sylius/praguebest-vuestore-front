@@ -8,6 +8,7 @@
     ></div>
   </transition>
 </template>
+
 <script>
 export default {
   name: "SfOverlay",
@@ -23,6 +24,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfOverlay.scss";
 </style>

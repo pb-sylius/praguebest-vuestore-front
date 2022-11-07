@@ -26,6 +26,7 @@
     </slot>
   </div>
 </template>
+
 <script>
 export default {
   name: "SfHeading",
@@ -51,6 +52,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfHeading.scss";
 </style>

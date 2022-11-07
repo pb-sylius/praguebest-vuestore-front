@@ -3,6 +3,7 @@
     <slot />
   </div>
 </template>
+
 <script>
 export default {
   name: "SfSkeleton",
@@ -20,6 +21,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfSkeleton.scss";
 </style>

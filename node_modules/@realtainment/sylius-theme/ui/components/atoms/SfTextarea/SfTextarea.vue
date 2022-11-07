@@ -40,6 +40,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: "SfTextarea",
@@ -115,6 +116,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfTextarea.scss";
 </style>

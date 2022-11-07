@@ -37,8 +37,10 @@
     </slot>
   </div>
 </template>
+
 <script>
 import SfIcon from "../SfIcon/SfIcon.vue";
+
 export default {
   name: "SfRating",
   inject: {
@@ -70,6 +72,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfRating.scss";
 </style>

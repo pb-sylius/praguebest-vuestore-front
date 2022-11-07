@@ -8,12 +8,15 @@
     <slot />
   </span>
 </template>
+
 <script>
 export default {
   name: "SfBadge",
 };
+
 </script>
 <style lang="scss">
 @import "./SfBadge.scss";
 </style>
+
 <include-source />

@@ -195,6 +195,7 @@
     </transition>
   </SfModal>
 </template>
+
 <script>
 import { ref, watch, reactive, computed } from '@vue/composition-api';
 import SfModal from "../ui/components/molecules/SfModal/SfModal.vue";

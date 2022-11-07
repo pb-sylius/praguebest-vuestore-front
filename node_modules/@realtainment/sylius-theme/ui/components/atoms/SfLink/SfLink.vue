@@ -9,8 +9,10 @@
     <slot />
   </component>
 </template>
+
 <script>
 import { focus } from "../../../utilities/directives/index";
+
 export default {
   name: "SfLink",
   directives: { focus },
@@ -39,6 +41,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfLink.scss";
 </style>

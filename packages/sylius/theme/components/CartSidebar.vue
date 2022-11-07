@@ -17,7 +17,7 @@
       </template>
       <transition name="sf-fade" mode="out-in">
         <div v-if="totalItems" key="my-cart" class="my-cart">
-          <div class="collected-product-list">                                        
+          <div class="collected-product-list">
             <transition-group name="sf-fade" tag="div">
               <SfCollectedProduct
                 v-for="product in products"
@@ -183,7 +183,7 @@ export default {
     @include breakpoint-xs {
       --sidebar-width: 100%;
     }
-    @include breakpoint-full-width {
+    @include for-desktop {
       & > * {
         --sidebar-bottom-padding: var(--spacer-base);
         --sidebar-content-padding: var(--spacer-base);
@@ -229,7 +229,7 @@ export default {
       --image-width: 16rem;
       margin: 0 0 var(--spacer-2xl) 7.5rem;
     }
-    @include breakpoint-full-width {
+    @include for-desktop {
       --heading-title-font-size: var(--font-size--xl);
       --heading-title-margin: 0 0 var(--spacer-sm) 0;
     }

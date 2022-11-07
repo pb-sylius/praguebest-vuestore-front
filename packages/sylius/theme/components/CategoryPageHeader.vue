@@ -128,12 +128,12 @@ export default {
   display: flex;
   border: 1px solid var(--c-light);
   border-width: 0 0 1px 0;
-  @include breakpoint-full-width {
+  @include for-desktop {
     border-width: 1px 0 1px 0;
   }
   &.section {
     padding: var(--spacer-sm);
-    @include breakpoint-full-width {
+    @include for-desktop {
       padding: 0;
     }
   }
@@ -143,14 +143,14 @@ export default {
     align-items: center;
     padding: 0;
     justify-content: space-between;
-    @include breakpoint-full-width {
+    @include for-desktop {
       padding: var(--spacer-xs) var(--spacer-xl);
     }
   }
   &__filters-icon {
     margin: 0 0 0 var(--spacer-xs);
     order: 1;
-    @include breakpoint-full-width {
+    @include for-desktop {
       margin: 0 var(--spacer-xs) 0 0;
       order: 0;
     }
@@ -180,7 +180,7 @@ export default {
     font-family: var(--font-family--secondary);
     font-weight: var(--font-weight--normal);
     color: var(--c-text-muted);
-    @include breakpoint-full-width {
+    @include for-desktop {
       color: var(--c-link);
       margin: 0 var(--spacer-2xs) 0 0;
     }
@@ -211,7 +211,7 @@ export default {
   &__counter {
     font-family: var(--font-family--secondary);
     order: 1;
-    @include breakpoint-full-width {
+    @include for-desktop {
       order: 0;
     }
   }
@@ -219,7 +219,7 @@ export default {
     display: flex;
     align-items: center;
     order: 0;
-    @include breakpoint-full-width {
+    @include for-desktop {
       margin: 0 0 0 var(--spacer-2xl);
       order: 0;
     }

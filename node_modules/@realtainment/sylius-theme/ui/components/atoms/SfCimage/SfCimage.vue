@@ -3,7 +3,7 @@ import { buildImageUrl, getConfig } from "cloudinary-build-url";
 import { placeholderTypes } from "./helpers";
 
 export default {
-  name: "SfCimg",
+  name: "SfCimage",
   functional: true,
   props: {
     publicId: {
@@ -101,6 +101,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfCimage.scss";
 </style>

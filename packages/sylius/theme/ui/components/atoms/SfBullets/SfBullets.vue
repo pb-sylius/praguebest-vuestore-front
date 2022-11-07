@@ -68,8 +68,10 @@
     </template>
   </ol>
 </template>
+
 <script>
 import SfButton from "../SfButton/SfButton.vue";
+
 export default {
   name: "SfBullets",
   inject: {
@@ -95,6 +97,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfBullets.scss";
 </style>

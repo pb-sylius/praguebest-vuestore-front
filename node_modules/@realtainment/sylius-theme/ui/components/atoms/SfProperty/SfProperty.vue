@@ -17,6 +17,7 @@
     </slot>
   </div>
 </template>
+
 <script>
 export default {
   name: "SfProperty",
@@ -32,6 +33,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfProperty.scss";
 </style>

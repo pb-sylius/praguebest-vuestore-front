@@ -11,8 +11,10 @@
     </slot>
   </span>
 </template>
+
 <script>
 import { focus } from "../../../utilities/directives";
+
 export default {
   name: "SfChevron",
   directives: {
@@ -20,6 +22,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfChevron.scss";
 </style>

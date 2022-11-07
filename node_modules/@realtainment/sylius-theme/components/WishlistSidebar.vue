@@ -90,7 +90,7 @@ import useUiState from '../composables/useUiState';
 import { addBasePath } from '@vue-storefront/core';
 
 export default {
-  name: 'Wishlist',
+  name: 'WishlistSidebar',
   components: {
     SfSidebar,
     SfButton,

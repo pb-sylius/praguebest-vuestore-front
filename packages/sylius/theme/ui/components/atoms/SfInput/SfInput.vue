@@ -63,10 +63,12 @@
     </div>
   </div>
 </template>
+
 <script>
 import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
 import SfButton from "../../atoms/SfButton/SfButton.vue";
 import { focus } from "../../../utilities/directives";
+
 export default {
   name: "SfInput",
   directives: {
@@ -173,6 +175,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfInput.scss";
 </style>

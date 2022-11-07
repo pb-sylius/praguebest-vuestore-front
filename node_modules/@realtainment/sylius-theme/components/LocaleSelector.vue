@@ -73,7 +73,7 @@ export default {
   .sf-bottom-modal {
     z-index: 2;
     left: 0;
-    @include breakpoint-full-width {
+    @include for-desktop {
       --bottom-modal-height: 100vh;
     }
   }
@@ -89,7 +89,7 @@ export default {
         margin-right: var(--spacer-sm);
       }
     }
-    @include breakpoint-full-width {
+    @include for-desktop {
       display: flex;
     }
   }

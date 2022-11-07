@@ -42,6 +42,7 @@
     </ol>
   </nav>
 </template>
+
 <script>
 import SfLink from "../SfLink/SfLink";
 export default {
@@ -62,6 +63,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfBreadcrumbs.scss";
 </style>
