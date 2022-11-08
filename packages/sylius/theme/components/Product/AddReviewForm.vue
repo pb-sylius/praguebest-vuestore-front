@@ -48,6 +48,7 @@ import SfInput from "../../ui/components/atoms/SfInput/SfInput.vue";
 import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
 
 import { ValidationProvider, ValidationObserver } from 'vee-validate';
+
 export default {
   name: 'AddReviewForm',
   components: {
