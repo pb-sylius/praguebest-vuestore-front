@@ -54,7 +54,6 @@ export default {
     MyProfile,
     ShippingDetails,
     OrderHistory,
-    MyReviews
   },
   middleware: [
     'is-authenticated'

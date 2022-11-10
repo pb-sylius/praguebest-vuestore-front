@@ -185,28 +185,28 @@ export default {
       return this.order.shipping
         ? this.order.shipping
         : {
-            streetName: "",
-            apartment: "",
-            zipCode: "",
-            city: "",
-            country: "",
-            phoneNumber: "",
-            shippingMethod: "",
-          };
+          streetName: "",
+          apartment: "",
+          zipCode: "",
+          city: "",
+          country: "",
+          phoneNumber: "",
+          shippingMethod: "",
+        };
     },
     payment() {
       return this.order.payment
         ? this.order.payment
         : {
-            streetName: "",
-            apartment: "",
-            zipCode: "",
-            city: "",
-            country: "",
-            phoneNumber: "",
-            paymentMethod: "",
-            shippingMethod: "",
-          };
+          streetName: "",
+          apartment: "",
+          zipCode: "",
+          city: "",
+          country: "",
+          phoneNumber: "",
+          paymentMethod: "",
+          shippingMethod: "",
+        };
     },
     shippingMethod() {
       return this.shipping.shippingMethod;
@@ -217,6 +217,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
 @import "./SfOrderReview.scss";
 </style>

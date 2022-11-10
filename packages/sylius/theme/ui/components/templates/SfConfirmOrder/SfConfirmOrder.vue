@@ -128,6 +128,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import SfHeading from "../../atoms/SfHeading/SfHeading.vue";
 import SfTable from "../../organisms/SfTable/SfTable.vue";
@@ -142,6 +143,7 @@ import {
   mapMobileObserver,
   unMapMobileObserver,
 } from "../../../utilities/mobile-observer";
+
 export default {
   name: "SfConfirmOrder",
   components: {
@@ -195,13 +197,13 @@ export default {
       const orderItems = this.orderItems;
       const subtotal = this.orderItems
         ? orderItems.reduce((previous, current) => {
-            const qty = current.qty;
-            const price = current.price.special
-              ? current.price.special
-              : current.price.regular;
-            const total = qty * parseFloat(price.replace("$", ""));
-            return previous + total;
-          }, 0)
+          const qty = current.qty;
+          const price = current.price.special
+            ? current.price.special
+            : current.price.regular;
+          const total = qty * parseFloat(price.replace("$", ""));
+          return previous + total;
+        }, 0)
         : 0;
       return "$" + subtotal.toFixed(2);
     },
@@ -218,6 +220,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
 @import "./SfConfirmOrder.scss";
 </style>

@@ -144,8 +144,8 @@ export default {
     totalItems() {
       return this.products
         ? this.products.reduce((previous, current) => {
-            return previous + current.qty;
-          }, 0)
+          return previous + current.qty;
+        }, 0)
         : 0;
     },
     shipping() {
@@ -158,13 +158,13 @@ export default {
       const products = this.products;
       const subtotal = this.products
         ? products.reduce((previous, current) => {
-            const qty = current.qty;
-            const price = current.price.special
-              ? current.price.special
-              : current.price.regular;
-            const total = qty * parseFloat(price.replace("$", ""));
-            return previous + total;
-          }, 0)
+          const qty = current.qty;
+          const price = current.price.special
+            ? current.price.special
+            : current.price.regular;
+          const total = qty * parseFloat(price.replace("$", ""));
+          return previous + total;
+        }, 0)
         : 0;
       return "$" + subtotal.toFixed(2);
     },
@@ -177,6 +177,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
 @import "./SfOrderSummary.scss";
 </style>
