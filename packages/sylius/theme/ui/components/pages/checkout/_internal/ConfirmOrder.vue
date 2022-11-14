@@ -123,7 +123,7 @@ import SfProperty from "../../../atoms/SfProperty/SfProperty.vue";
 import SfLink from "../../../atoms/SfLink/SfLink.vue";
 
 export default {
-  name: "ReviewOrder",
+  name: "ConfirmOrder",
   components: {
     SfHeading,
     SfTable,

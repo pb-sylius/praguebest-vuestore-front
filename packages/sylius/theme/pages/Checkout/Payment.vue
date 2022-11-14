@@ -123,7 +123,7 @@ import { ref, computed } from '@vue/composition-api';
 import { useMakeOrder, useCart, cartGetters, orderGetters } from '@realtainment/sylius';
 
 export default {
-  name: 'ReviewOrder',
+  name: 'Payment',
   components: {
     SfHeading,
     SfTable,

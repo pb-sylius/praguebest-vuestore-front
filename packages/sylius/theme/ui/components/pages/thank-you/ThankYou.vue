@@ -100,7 +100,7 @@ import bannerDImg from "../../../assets/img/bannerD.png";
 import bannerMImg from "../../../assets//img/bannerM.png";
 
 export default {
-  name: "Product",
+  name: "ThankYou",
   components: {
     SfHeading,
     SfButton,

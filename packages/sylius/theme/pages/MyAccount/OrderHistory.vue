@@ -114,7 +114,7 @@ import { AgnosticOrderStatus } from '@vue-storefront/core';
 import { onSSR } from '@vue-storefront/core';
 
 export default {
-  name: 'PersonalDetails',
+  name: 'OrderHistory',
   components: {
     SfTabs,
     SfTable,

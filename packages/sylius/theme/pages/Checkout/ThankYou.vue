@@ -83,6 +83,7 @@ import SfCallToAction from "../../ui/components/molecules/SfCallToAction/SfCallT
 import { ref, computed } from '@vue/composition-api';
 import { useMakeOrder } from '@realtainment/sylius';
 export default {
+  name: 'ThankYou',
   components: {
     SfHeading,
     SfButton,
