@@ -21,6 +21,7 @@
     </transition>
   </div>
 </template>
+
 <script>
 import SfChevron from "../../../atoms/SfChevron/SfChevron.vue";
 import SfButton from "../../../atoms/SfButton/SfButton.vue";

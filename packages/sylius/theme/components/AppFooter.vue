@@ -48,6 +48,30 @@
         </SfListItem>
       </SfList>
     </SfFooterColumn>
+    <SfFooterColumn :title="$t('Payment & Delivery 2')">
+      <SfList>
+        <SfListItem
+          v-for="item in paymentsDelivery2"
+          :key="item"
+        >
+          <SfMenuItem
+            :label="$t(item)"
+          />
+        </SfListItem>
+      </SfList>
+    </SfFooterColumn>
+    <SfFooterColumn :title="$t('Help 2')">
+      <SfList>
+        <SfListItem
+          v-for="item in help2"
+          :key="item"
+        >
+          <SfMenuItem
+            :label="$t(item)"
+          />
+        </SfListItem>
+      </SfList>
+    </SfFooterColumn>
     <SfFooterColumn title="Social">
       <div class="footer__socials">
         <SfImage class="footer__social-image" v-for="item in social" :key="item" :src="addBasePath('/icons/'+item+'.svg')" :alt="item" width="32" height="32" />
@@ -82,9 +106,11 @@ export default {
       departments: ['Women fashion', 'Men fashion', 'Kidswear', 'Home'],
       help: ['Customer service', 'Size guide', 'Contact us'],
       paymentsDelivery: ['Purchase terms', 'Guarantee'],
+      paymentsDelivery2: ['Purchase terms', 'Guarantee'],
+      help2: ['Customer service', 'Size guide', 'Contact us'],
       social: ['facebook', 'pinterest', 'google', 'twitter', 'youtube'],
       isMobile: false,
-      desktopMin: 1024
+      desktopMin: 800
     };
   }
 };
@@ -93,10 +119,7 @@ export default {
 <style lang="scss">
 
 .footer {
-  margin-bottom: 3.75rem;
-  @include for-desktop {
-    margin-bottom: 0;
-  }
+  margin-bottom: 0;
   &__socials {
     display: flex;
     justify-content: space-between;
@@ -119,7 +142,6 @@ export default {
     margin-top: var(--spacer-2xl);
   }
   &__container {
-    margin: var(--spacer-sm);
     @include for-desktop {
       max-width: 69rem;
       margin: 0 auto;

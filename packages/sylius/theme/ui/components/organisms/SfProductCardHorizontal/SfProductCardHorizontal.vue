@@ -46,7 +46,7 @@
           </SfLink>
         </slot>
         <slot name="description">
-          <p class="sf-product-card-horizontal__description desktop-only">
+          <p class="sf-product-card-horizontal__description">
             {{ description }}
           </p>
         </slot>
@@ -92,27 +92,13 @@
           <slot name="add-to-cart">
             <SfAddToCart
               v-model="itemQuantity"
-              class="sf-product-card-horizontal__add-to-cart desktop-only"
+              class="sf-product-card-horizontal__add-to-cart"
               @input="$emit('input', $event)"
               @click="$emit('click:add-to-cart', itemQuantity)"
             />
           </slot>
         </div>
       </div>
-      <SfButton
-        v-if="wishlistIcon !== false"
-        :aria-label="`${ariaLabel} ${title}`"
-        class="sf-button--pure smartphone-only"
-        @click="toggleIsInWishlist"
-      >
-        <slot name="wishlist-icon" v-bind="{ currentWishlistIcon }">
-          <SfIcon
-            :icon="currentWishlistIcon"
-            size="19px"
-            data-test="sf-wishlist-icon"
-          />
-        </slot>
-      </SfButton>
     </div>
   </div>
 </template>

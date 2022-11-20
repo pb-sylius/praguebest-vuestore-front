@@ -1,7 +1,7 @@
 <template>
   <footer class="sf-footer">
     <div
-      class="sf-footer__container"
+      class="sf-footer__container padded_content"
       :style="{ 'grid-template-columns': ' 1fr'.repeat(column) }"
     >
       <slot />

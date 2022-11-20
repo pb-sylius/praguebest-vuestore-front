@@ -1,5 +1,9 @@
 @import "../../../styles/helpers";
 
+tbody.table__row:nth-child(odd) {
+  background-color: var(--_c-light-primary);
+}
+
 .sf-table {
   box-sizing: border-box;
   width: var(--table-width, 100%);
@@ -56,7 +60,7 @@
   &--no-border {
     --table-row-border-width: 0;
   }
-  @include for-desktop {
+  @include generic-breakpoint {
     --table-row-padding: var(--spacer-sm) var(--spacer-sm);
     --table-heading-padding: var(--spacer-sm) var(--spacer-sm);
     --table-heading-background: transparent;
@@ -68,7 +72,7 @@
     }
     &__row {
       &:hover {
-        --table-row-box-shadow: 0px 4px 11px rgba(29, 31, 34, 0.1);
+        background-color: var(--_c-light-secondary);
       }
     }
   }

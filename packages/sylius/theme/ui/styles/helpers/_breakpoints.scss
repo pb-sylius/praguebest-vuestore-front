@@ -15,6 +15,10 @@ $breakpoint-lg: 1632px;
 $breakpoint-2lg: 1920px;
 $breakpoint-3lg: 2560px;
 
+$outer-edges: 2560px;
+
+$generic-breakpoint: 800px;
+
 // Media mixins
 @mixin for-mobile {
   @media (max-width: $desktop-min - 1px) {
@@ -75,8 +79,14 @@ $breakpoint-3lg: 2560px;
   }
 }
 
-@mixin breakpoint-full-width {
-  @media (max-width: none) {
+@mixin generic-breakpoint {
+  @media (min-width: $generic-breakpoint) {
+    @content;
+  }
+}
+
+@mixin outer-edges {
+  @media (max-width: $outer-edges) {
     @content;
   }
 }

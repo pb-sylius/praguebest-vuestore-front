@@ -28,12 +28,15 @@
     </div>
   </div>
 </template>
+
 <script>
 import Vue from "vue";
 import SfCarouselItem from "./_internal/SfCarouselItem.vue";
 import SfArrow from "../../atoms/SfArrow/SfArrow.vue";
 import Glide from "@glidejs/glide";
+
 Vue.component("SfCarouselItem", SfCarouselItem);
+
 export default {
   name: "SfCarousel",
   components: {
@@ -56,7 +59,7 @@ export default {
         gap: 0,
         breakpoints: {
           1023: {
-            perView: 2,
+            perView: 4,
             peek: {
               before: 0,
               after: 50,
@@ -139,6 +142,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 @import "./SfCarousel.scss";
 </style>

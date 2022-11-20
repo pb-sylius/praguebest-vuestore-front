@@ -222,8 +222,6 @@ export default {
 
 <style lang="scss" scoped>
 .sf-header {
-  --header-padding: var(--spacer-sm);
-
   &__logo-image {
     height: 100%;
   }

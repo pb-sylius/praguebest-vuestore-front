@@ -3,7 +3,7 @@
     :class="{ 'is-sticky': sticky, 'is-hidden': hidden }">
 
     <div class="sf-header__wrapper">
-      <header ref="header" class="sf-header__header">
+      <header ref="header" class="sf-header__header padded_content">
         <slot name="logo" v-bind="{ logo, title }">
           <SfLink link="/">
             <SfImage

@@ -1,0 +1,36 @@
+$outer-edges: 2560px;
+@use "../helpers/breakpoints";
+@use "../helpers/sizes";
+@use "sass:map";
+
+/* wrapper for outer page content */
+.outer_edges {
+  max-width: breakpoints.$outer-edges;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: map.get(sizes.$sizes, "zero");
+  padding-right: map.get(sizes.$sizes, "zero");
+}
+
+/* wrapper for inner page content */
+#layout, .sf-header {
+  max-width: breakpoints.$breakpoint-md;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: map.get(sizes.$sizes, "zero");
+  padding-right: map.get(sizes.$sizes, "zero");
+}
+
+/* padding for mobile devices */
+.padded_content {
+  padding-left: map.get(sizes.$sizes, "md");
+  padding-right: map.get(sizes.$sizes, "md");
+}
+
+.products__product-card {
+    min-width: 155px;
+    flex-basis: 20%;
+    flex-shrink: 1;
+    flex-grow: 1;
+}

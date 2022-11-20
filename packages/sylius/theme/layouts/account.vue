@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="outer_edges">
     <TopBar class="desktop-only" />
     <div id="layout" >
       <AppHeader />

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="outer_edges">
     <LazyHydrate when-visible>
       <TopBar v-if="!mainMenuToHamburger" />
     </LazyHydrate>
@@ -80,15 +80,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/styles.scss";
-
-#layout {
-  box-sizing: border-box;
-  @include for-desktop {
-    max-width: 1240px;
-    margin: auto;
-  }
-}
+@import "../ui/styles.scss";
 
 .no-scroll {
   overflow: hidden;

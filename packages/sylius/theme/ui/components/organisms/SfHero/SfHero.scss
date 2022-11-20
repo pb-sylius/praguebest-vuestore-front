@@ -1,4 +1,5 @@
 @import "../../../styles/helpers";
+
 .sf-hero-item {
   display: flex;
   justify-content: flex-start;
@@ -75,7 +76,7 @@
   &--position-bg-bottom-left {
     background-position: bottom left;
   }
-  @include for-desktop {
+  @include generic-breakpoint {
     &__wrapper {
       width: 50%;
       min-height: 36.625rem;
@@ -118,7 +119,7 @@
       margin: 0;
     }
   }
-  @include for-desktop {
+  @include generic-breakpoint {
     &__control--left, &__control--right {
       display: block;
     }

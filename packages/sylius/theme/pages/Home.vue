@@ -41,7 +41,7 @@
     </LazyHydrate>
 
     <LazyHydrate when-visible>
-        <SfCarousel class="carousel" :settings="{ peek: 16, breakpoints: { 1023: { peek: 0, perView: 2 } } }">
+        <SfCarousel class="carousel" :settings="{ peek: 16, breakpoints: { 1023: { peek: 0, perView: 3 }, 850: { peek: 0, perView: 2 }  } }">
           <template #prev="{go}">
             <SfArrow
               aria-label="prev"
@@ -77,7 +77,7 @@
       <SfCallToAction
         title="Subscribe to Newsletters"
         button-text="Subscribe"
-        description="Be aware of upcoming sales and events. Receive gifts and special offers!"
+        description="Be aware of upcoming sales and events. Receive gifts and special offers! Be aware of upcoming sales and events. Receive gifts and special offers!"
         :image="addBasePath('/homepage/newsletter.webp')"
         class="call-to-action"
       >
@@ -202,7 +202,14 @@ export default {
         price: { regular: '50.00 $' },
         rating: { max: 5, score: 4 },
         isInWishlist: false
-      }
+      },
+      {
+        title: 'Cream Beach Bag New',
+        image: addBasePath('/homepage/productC.webp'),
+        price: { regular: '50.00 $' },
+        rating: { max: 5, score: 4 },
+        isInWishlist: false
+      },
     ]);
     const heroes = [
       {
@@ -238,7 +245,7 @@ export default {
           mobile: addBasePath($config.theme.home.bannerA.image.mobile),
           desktop: addBasePath($config.theme.home.bannerA.image.desktop)
         },
-        class: 'sf-banner--slim desktop-only',
+        class: 'sf-banner--slim',
         link: $config.theme.home.bannerA.link
       },
       {
@@ -249,7 +256,7 @@ export default {
           'Find stunning women\'s cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.',
         buttonText: 'Shop now',
         image: addBasePath($config.theme.home.bannerB.image),
-        class: 'sf-banner--slim banner-central desktop-only',
+        class: 'sf-banner--slim banner-central',
         link: $config.theme.home.bannerB.link
       },
       {
@@ -325,7 +332,6 @@ export default {
 
 .banner-grid {
   --banner-container-width: 50%;
-  margin: var(--spacer-xl) var(--spacer-xl);
   ::v-deep .sf-link:hover {
     color: var(--c-white);
   }

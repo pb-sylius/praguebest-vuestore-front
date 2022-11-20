@@ -9,7 +9,7 @@
     align-items: center;
     width: 100%;
     border: 0;
-    padding: var(--spacer-base);
+    padding: var(--spacer-base) 0 0 0;
     background: var(--c-secondary);
     text-transform: uppercase;
     @include font(
@@ -25,10 +25,10 @@
     --chevron-color: var(--c-white);  
   }  
   & .sf-list__item {
-    --list-item-margin: var(--spacer-base) var(--spacer-xs);
+    --list-item-margin: var(--spacer-base) 0 var(--spacer-xs) var(--spacer-lg);
     --menu-item-label-color: var(--c-white);
   }
-  @include for-desktop {
+  @include generic-breakpoint {
     margin: 0 0 var(--spacer-xl) 0;
     padding: var(--spacer-sm) 0;
     background: var(--c-secondary);
@@ -46,6 +46,7 @@
 }
 .sf-footer {
   background: var(--c-secondary);  
+  padding-bottom: var(--spacer-lg);
   &__container {
     box-sizing: border-box;
     display: flex;
@@ -65,7 +66,7 @@
       padding: var(--spacer-xl) 0 0 0;
     }
   }  
-  @include for-desktop {       
+  @include generic-breakpoint {       
     padding: var(--spacer-2xl) 10%;
     &__container {
       display: grid;

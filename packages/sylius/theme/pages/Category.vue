@@ -1,11 +1,11 @@
 <template>
   <div id="category">
     <SfBreadcrumbs
-      class="breadcrumbs desktop-only"
+      class="breadcrumbs"
       :breadcrumbs="breadcrumbs"
     />
     <div class="navbar section">
-      <div class="navbar__aside desktop-only">
+      <div class="navbar__aside">
         <LazyHydrate never>
           <SfHeading
             :level="3"
@@ -17,7 +17,7 @@
     </div>
 
     <div class="main section">
-      <div class="sidebar desktop-only">
+      <div class="sidebar">
         <LazyHydrate when-idle>
           <SfLoader
           :class="{ 'loading--categories': loading }"
@@ -133,16 +133,15 @@
             >
               <template #configuration>
                 <SfProperty
-                  class="desktop-only"
                   name="Size"
                   value="XS"
                   style="margin: 0 0 1rem 0;"
                 />
-                <SfProperty class="desktop-only" name="Color" value="white" />
+                <SfProperty name="Color" value="white" />
               </template>
               <template #actions>
                 <SfButton
-                  class="sf-button--text desktop-only"
+                  class="sf-button--text"
                   style="margin: 0 0 1rem auto; display: block;"
                   @click="() => {}"
                 >
@@ -155,7 +154,7 @@
           <LazyHydrate on-interaction>
             <SfPagination
               v-if="!loading"
-              class="products__pagination desktop-only"
+              class="products__pagination"
               v-show="pagination.totalPages > 1"
               :current="pagination.currentPage"
               :total="pagination.totalPages"
@@ -310,19 +309,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../ui/styles/helpers";
+
 #category {
   box-sizing: border-box;
-  @include for-desktop {
-    max-width: 1240px;
-    margin: 0 auto;
-  }
+  max-width: $breakpoint-md;
+  margin: 0 auto;
 }
 .main {
   &.section {
     padding: var(--spacer-xs);
-    @include for-desktop {
-      padding: 0;
-    }
+    padding: 0;
   }
 }
 .breadcrumbs {
@@ -333,14 +330,10 @@ export default {
   display: flex;
   border: 1px solid var(--c-light);
   border-width: 0 0 1px 0;
-  @include for-desktop {
-    border-width: 1px 0 1px 0;
-  }
+  border-width: 1px 0 1px 0;
   &.section {
     padding: var(--spacer-sm);
-    @include for-desktop {
-      padding: 0;
-    }
+    padding: 0;
   }
   &__aside {
     display: flex;
@@ -355,6 +348,10 @@ export default {
     --heading-title-font-weight: var(--font-weight--semibold);
     --heading-title-font-size: var(--font-size--xl);
   }
+  &__main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .main {
   display: flex;
@@ -367,78 +364,6 @@ export default {
     }
     .nuxt-link-exact-active {
       text-decoration: underline;
-    }
-  }
-}
-.products {
-  box-sizing: border-box;
-  flex: 1;
-  margin: 0;
-  &__grid {
-    justify-content: center;
-    @include for-desktop {
-      justify-content: flex-start;
-    }
-  }
-  &__grid,
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  &__product-card {
-    --product-card-title-margin: var(--spacer-base) 0 0 0;
-    --product-card-title-font-weight: var(--font-weight--medium);
-    --product-card-title-margin: var(--spacer-xs) 0 0 0;
-    flex: 1 1 50%;
-    @include for-desktop {
-      --product-card-title-font-weight: var(--font-weight--normal);
-      --product-card-add-button-bottom: var(--spacer-base);
-      --product-card-title-margin: var(--spacer-sm) 0 0 0;
-    }
-  }
-  &__product-card-horizontal {
-    flex: 0 0 100%;
-    @include for-mobile {
-      ::v-deep .sf-image {
-        --image-width: 5.3125rem;
-        --image-height: 7.0625rem;
-      }
-    }
-  }
-  &__slide-enter {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  &__slide-enter-active {
-    transition: all 0.2s ease;
-    transition-delay: calc(0.1s * var(--index));
-  }
-  @include for-desktop {
-    &__grid {
-      margin: var(--spacer-sm) 0 0 var(--spacer-sm);
-    }
-    &__pagination {
-      display: flex;
-      justify-content: flex-start;
-      margin: var(--spacer-xl) 0 0 0;
-    }
-    &__product-card-horizontal {
-      margin: var(--spacer-lg) 0;
-    }
-    &__product-card {
-      flex: 1 1 25%;
-    }
-    &__list {
-      margin: 0 0 0 var(--spacer-sm);
-    }
-  }
-  &__show-on-page {
-    display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
-    &__label {
-      font-family: var(--font-family--secondary);
-      font-size: var(--font-size--sm);
     }
   }
 }

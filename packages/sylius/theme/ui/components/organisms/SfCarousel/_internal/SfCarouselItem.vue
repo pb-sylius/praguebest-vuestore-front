@@ -3,6 +3,7 @@
     <slot />
   </li>
 </template>
+
 <script>
 export default {
   name: "SfCarouselItem",
