@@ -2,7 +2,7 @@
   <section
     class="sf-banner"
     :style="style"
-    v-on="isMobileView ? $listeners : {}"
+    v-on="$listeners"
   >
     <component :is="wrapper" class="sf-banner__wrapper" :link="link">
       <slot name="subtitle" v-bind="{ subtitle }">
@@ -32,7 +32,7 @@
           :link="link"
           class="sf-banner__call-to-action color-secondary"
           data-testid="banner-cta-button"
-          v-on="!isMobileView ? $listeners : {}"
+          v-on="$listeners"
         >
           {{ buttonText }}
         </SfButton>
@@ -84,6 +84,21 @@ export default {
       type: [String, Object],
       default: "",
     },
+    /** if false, image will be rendered as image element */
+    useImageAsBackground: {
+      type: Boolean,
+      default: true,
+    },
+    /** if image rendered as image element, how much space reserve for it in percentages */
+    imageWidth: {
+      type: Number,
+      default: 0,
+    },
+    /** media breakpoint for banner elements reposition (mobile layout) */
+    breakpoint: {
+      type: Number,
+      default: 600
+    }
   },
   data() {
     return {
@@ -95,12 +110,13 @@ export default {
     style() {
       const image = this.image;
       const background = this.background;
+
       return {
-        "--_banner-background-image": image.mobile
+        "--_banner-background-image": image.mobile && this.useImageAsBackground
           ? `url(${image.mobile})`
           : `url(${image})`,
         "--_banner-background-desktop-image":
-          image.desktop && `url(${image.desktop})`,
+          image.desktop && this.useImageAsBackground && `url(${image.desktop})`,
         "--_banner-background-color": background,
       };
     },

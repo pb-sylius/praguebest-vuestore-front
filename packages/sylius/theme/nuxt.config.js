@@ -4,8 +4,8 @@ import theme from './themeConfig';
 
 export default {
   server: {
-    port: process.env.PORT || 3000,
-    host: '0.0.0.0'
+    port: process.env.PORT,
+    host: process.env.HOST,
   },
   head: {
     title: 'Vue Storefront',
@@ -68,7 +68,10 @@ export default {
         replace: {
           apiClient: '@realtainment/sylius-api',
           composables: '@realtainment/sylius'
-        }
+        },
+        exclude: [
+          /^\/api/
+        ]
       }
     }],
     // @core-development-only-end
@@ -183,6 +186,7 @@ export default {
     }
   },
   publicRuntimeConfig: {
-    theme
+    theme,
+    middlewareUrl: process.env.middlewareUrl,
   }
 };

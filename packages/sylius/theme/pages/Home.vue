@@ -32,6 +32,20 @@
     </LazyHydrate>
 
     <LazyHydrate when-visible>
+           <SfBanner
+            :key="banners[0].slot"
+            :title="banners[0].title"
+            :subtitle="banners[0].subtitle"
+            :description="banners[0].description"
+            :button-text="banners[0].buttonText"
+            :link="localePath(banners[0].link)"
+            :image="banners[0].image"
+            :class="banners[0].class"
+            :useImageAsBackground="banners[0].useImageAsBackground"
+          />
+    </LazyHydrate>
+
+    <LazyHydrate when-visible>
       <div class="similar-products">
         <SfHeading title="Match with it" :level="2"/>
         <nuxt-link :to="localePath('/c/women')" class="smartphone-only">
@@ -146,10 +160,11 @@ export default {
   setup() {
     const { $config } = useContext();
     const { toggleNewsletterModal } = useUiState();
+
     const products = ref([
       {
         title: 'Cream Beach Bag',
-        image: addBasePath('/homepage/productA.webp'),
+        image: addBasePath('/homepage/category-cardD.jpg'),
         price: { regular: '50.00 $' },
         rating: { max: 5, score: 4 },
         isInWishlist: true
@@ -234,6 +249,23 @@ export default {
       }
     ];
     const banners = [
+      {
+        slot: 'banner-0',
+        subtitle: 'Dresses',
+        title: 'Cocktail & Party',
+        description:
+          'Find stunning women\'s cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.',
+        buttonText: 'Shop now',
+        image: {
+          mobile: addBasePath('homepage/category-cardD.jpg'),
+          desktop: addBasePath('homepage/category-cardD.jpg'),
+        },
+        class: 'sf-banner',
+        link: $config.theme.home.bannerA.link,
+        useImageAsBackground: false,
+        imageWidth: 30,
+        breakpoint: 500,
+      },
       {
         slot: 'banner-A',
         subtitle: 'Dresses',

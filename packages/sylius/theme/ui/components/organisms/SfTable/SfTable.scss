@@ -1,7 +1,11 @@
 @import "../../../styles/helpers";
 
 tbody.table__row:nth-child(odd) {
-  background-color: var(--_c-light-primary);
+  background-color: var(--_c-light-secondary);
+}
+
+tbody.table__row:hover {
+    background-color: var(--_c-light-primary);
 }
 
 .sf-table {
@@ -69,11 +73,6 @@ tbody.table__row:nth-child(odd) {
     --table-header-font-weight: var(--font-weight--normal);
     &--no-border {
       --table-row-border-width: 0;
-    }
-    &__row {
-      &:hover {
-        background-color: var(--_c-light-secondary);
-      }
-    }
+    }    
   }
 }

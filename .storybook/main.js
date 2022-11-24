@@ -38,6 +38,15 @@ module.exports = {
   ],
   "framework": "@storybook/vue",
   webpackFinal: async (config) => {
+    config.resolve.extensions = ['.mjs', '.ts', '.tsx', ...config.resolve.extensions];
+    config.module.rules = [
+      ...config.module.rules,
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto",
+      },
+    ];
     config.module.rules.push({
       resourceQuery: /blockType=include-source/,
       loader: path.resolve(__dirname, '../packages/sylius/theme/ui/utilities/source-loader.js'),

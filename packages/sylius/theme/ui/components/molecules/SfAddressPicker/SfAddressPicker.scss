@@ -1,10 +1,33 @@
 @import "../../../styles/helpers";
 
+.sf-address-picker {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shadow_element {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 10px;
+  max-width: 23.375rem;
+  min-width: 15rem;
+  flex-basis: 20%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: 0;
+}
+
 .sf-address {
   box-sizing: border-box;
   width: 100%;
   border: 1px solid var(--c-light);
   transition: border 150ms linear;
+  margin: 10px 10px;
+  max-width: 23.375rem;
+  min-width: 18rem;
+  flex-basis: 20%;
+  flex-grow: 1;
+  flex-shrink: 1;
   @include font(
     --address-font,
     var(--font-weight--normal),
@@ -15,6 +38,8 @@
   color: var(--c-link);
   span {
     display: block;
+    line-height: 1.4;
+    padding-bottom: 7px;
   }
   &__icon-container {
     width: 1.5rem;
@@ -57,8 +82,5 @@
     .sf-address__icon-container {
       background: var(--c-primary);
     }
-  }
-  @include for-desktop {
-    width: 23.375rem;
   }
 }

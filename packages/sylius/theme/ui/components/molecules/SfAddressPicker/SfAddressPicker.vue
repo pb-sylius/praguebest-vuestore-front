@@ -1,6 +1,7 @@
 <template>
   <div class="sf-address-picker">
     <slot />
+    <div class="shadow_element"></div>
   </div>
 </template>
 
