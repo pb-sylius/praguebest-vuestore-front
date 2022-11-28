@@ -211,7 +211,6 @@ export default {
     };
   },
   computed: {
-    ...mapMobileObserver(),
     ...mapMenuObserver(),
     cartHasProducts() {
       return parseInt(this.cartItemsQty, 10) > 0;

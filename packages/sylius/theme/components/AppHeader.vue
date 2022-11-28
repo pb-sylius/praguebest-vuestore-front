@@ -1,6 +1,7 @@
 <template>
   <div>
-    <SfHeader class="sf-header--has-mobile-search sf-use-mobile-observer" :class="{'header-on-top': isSearchOpen, 'use-hamburger-menu': mainMenuToHamburger}"
+    <SfHeader class="sf-header--has-mobile-search sf-use-mobile-observer"
+      :class="{ 'header-on-top': isSearchOpen, 'use-hamburger-menu': mainMenuToHamburger }"
       :isNavVisible="isMobileMenuOpen">
       <template #logo>
         <nuxt-link :to="localePath({ name: 'home' })" class="sf-header__logo">
@@ -14,13 +15,14 @@
         <HeaderNavigation />
       </template>
       <template #aside>
-        <SfButton v-if="!useMobileSearch && mainMenuToHamburger" class="sf-header__action sf-mobile_search" @click="toggleCartSidebar">
+        <SfButton v-if="!useMobileSearch && mainMenuToHamburger" class="sf-header__action sf-mobile_search"
+          @click="toggleCartSidebar">
           <SfIcon class="sf-header__icon" icon="search" size="24px" />
         </SfButton>
         <SfButton v-if="mainMenuToHamburger" v-e2e="'app-header-cart'" class="sf-header__action sf-mobile_cart"
           @click="toggleCartSidebar">
           <SfIcon class="sf-header__icon" icon="empty_cart" size="24px" color="white" />
-          <SfBadge v-if="cartTotalItems > 0" key="cart_badge" class="sf-badge--number cart-badge">{{cartTotalItems}}
+          <SfBadge v-if="cartTotalItems > 0" key="cart_badge" class="sf-badge--number cart-badge">{{ cartTotalItems }}
           </SfBadge>
         </SfButton>
         <SfMobileMenu v-if="mainMenuToHamburger" class="sf-header__action">
@@ -29,7 +31,8 @@
       </template>
       <template #header-icons>
         <div class="sf-header__icons">
-          <SfButton v-e2e="'app-header-cart'" class="sf-button--pure sf-header__action" @click="toggleCartSidebar" v-if="!useMobileSearch" >
+          <SfButton v-e2e="'app-header-cart'" class="sf-button--pure sf-header__action" @click="toggleCartSidebar"
+            v-if="!useMobileSearch">
             <SfIcon class="sf-header__icon" icon="search" size="1.2rem" />
           </SfButton>
           <SfButton v-e2e="'app-header-account'" class="sf-button--pure sf-header__action" @click="handleAccountClick">
@@ -40,11 +43,12 @@
           </SfButton>
           <SfButton v-e2e="'app-header-cart'" class="sf-button--pure sf-header__action" @click="toggleCartSidebar">
             <SfIcon class="sf-header__icon" icon="empty_cart" size="1.25rem" />
-            <SfBadge v-if="cartTotalItems > 0" key="cart_badge" class="sf-badge--number cart-badge">{{cartTotalItems}}
+            <SfBadge v-if="cartTotalItems > 0" key="cart_badge" class="sf-badge--number cart-badge">{{ cartTotalItems }}
             </SfBadge>
           </SfButton>
         </div>
       </template>
+
     </SfHeader>
     <SearchResults :visible="isSearchOpen" :result="result" @close="closeSearch"
       @removeSearchResults="removeSearchResults" />
@@ -64,10 +68,10 @@ import SfMobileMenu from "../ui/components/organisms/SfMobileMenu/SfMobileMenu.v
 
 import useUiState from '../composables/useUiState';
 import { useCart, useUser, cartGetters, useProduct, useCategory } from '@realtainment/sylius';
-import { computed, ref, onBeforeUnmount, watch } from '@vue/composition-api';
+import { computed, ref, onBeforeUnmount, watch, onMounted } from '@vue/composition-api';
 import useUiHelpers from '../composables/useUiHelpers';
 import LocaleSelector from './LocaleSelector';
-import SearchResults from '~/components/SearchResults';
+import SearchResults from '../components/SearchResults.vue';
 import HeaderNavigation from './HeaderNavigation';
 import { clickOutside } from '../ui/utilities/directives/click-outside/click-outside-directive';
 import { mapMobileObserver, unMapMobileObserver } from '../ui/utilities/mobile-observer';
@@ -112,8 +116,7 @@ export default {
     const searchBarRef = ref(null);
     const result = ref(null);
     const isMobile = ref(mapMobileObserver().isMobile.get());
-    const mainMenuToHamburger = ref(mapMenuObserver().mainMenuToHamburger.get());
-    const implementLogoSymbol = ref(mapMenuObserver().implementLogoSymbol.get());
+    loadUser();
 
     const cartTotalItems = computed(() => {
       const count = cartGetters.getTotalItems(cart.value);
@@ -121,8 +124,6 @@ export default {
     });
 
     const accountIcon = computed(() => isAuthenticated.value ? 'profile_fill' : 'profile');
-
-    loadUser();
 
     // TODO: https://github.com/DivanteLtd/vue-storefront/issues/4927
     const handleAccountClick = async () => {
@@ -159,12 +160,8 @@ export default {
     }, 1000);
 
     const closeOrFocusSearchBar = () => {
-      if (mainMenuToHamburger.value) {
-        return closeSearch();
-      } else {
-        term.value = '';
-        return searchBarRef.value.$el.children[0].focus();
-      }
+      term.value = '';
+      return searchBarRef.value.$el.children[0].focus();
     };
 
     watch(() => term.value, (newVal, oldVal) => {
@@ -200,8 +197,6 @@ export default {
       searchBarRef,
       isMobile,
       isMobileMenuOpen,
-      mainMenuToHamburger,
-      implementLogoSymbol,
       removeSearchResults,
       headerLogo,
       headerLogoSymbol,
@@ -215,7 +210,6 @@ export default {
   },
   computed: {
     ...mapMenuObserver(),
-    console: () => console,
   },
 };
 </script>
@@ -231,6 +225,7 @@ export default {
     --button-background: var(--_c-gray-primary);
     margin-left: var(--spacer-2xs);
   }
+
   & .sf-mobile_search {
     --button-padding: var(--spacer-2xs) var(--spacer-sm);
     --button-background: var(--c-white);

@@ -93,6 +93,7 @@
     "node": "14.19.0"
   },
   "dependencies": {
+    "@apollo/client": "3.7.0",
     "@bissolli/storybook-css-properties": "^0.0.14",
     "@glidejs/glide": "3.5.1",
     "@jest/console": "27.5.1",
@@ -123,13 +124,13 @@
     "nuxt": "2.15",
     "react": "17",
     "react-dom": "17",
+    "react-scripts": "^5.0.1",
     "simplebar-vue": "^1.6.10",
     "transform": "^1.1.2",
     "vue": "2.6.14",
     "vue-server-renderer": "2.6.14",
     "vue-template-compiler": "2.6.14",
     "vue2-leaflet": "^2.7.1",
-    "yarn": "^1.22.19",
-    "react-scripts": "^5.0.1"
+    "yarn": "^1.22.19"
   }
 }

@@ -99,7 +99,3 @@ export const useMobileSearch = true;
  * If true, bottom navigation will be used on mobile and vice versa
  */
 export const useBottomNavigation = false;
-
-// --------------------------HERO--------------------------
-
-export const useHero = true;

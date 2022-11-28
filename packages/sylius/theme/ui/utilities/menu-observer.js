@@ -109,13 +109,14 @@ const setupListener = () => {
   }
   observer.mainMenuToHamburger = false;
   window.addEventListener('resize', checkSpaceForMenu);
-  if ("fonts" in document) {
+  /*if ("fonts" in document) {
     document.fonts.ready.then(function () {
       checkSpaceForMenu();
     });
   } else {
     window.addEventListener('load', checkSpaceForMenu);
-  }
+  }*/
+  window.addEventListener('load', checkSpaceForMenu);
   observer.isInitialized = true;
   window.dispatchEvent(new Event("resize"));
 };

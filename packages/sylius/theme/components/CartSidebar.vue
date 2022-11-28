@@ -116,7 +116,7 @@ import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
 import SfIcon from "../ui/components/atoms/SfIcon/SfIcon.vue";
 import SfProperty from "../ui/components/atoms/SfProperty/SfProperty.vue";
 import SfPrice from "../ui/components/atoms/SfPrice/SfPrice.vue";
-import SfCollectedProduct from "../ui/components/organisms/SfCollectedProduct/SfCollectedProduct.stories";
+import SfCollectedProduct from "../ui/components/organisms/SfCollectedProduct/SfCollectedProduct.vue";
 import SfImage from "../ui/components/atoms/SfImage/SfImage.vue";
 import SfQuantitySelector from "../ui/components/atoms/SfQuantitySelector/SfQuantitySelector.vue";
 import emptyCartImg from "../ui/icons/empty_cart.svg";

@@ -1,5 +1,5 @@
 <template>
-  <div id="product">
+  <div id="product" class="padded_content">
     <SfBreadcrumbs
       class="breadcrumbs desktop-only"
       :breadcrumbs="breadcrumbs"
