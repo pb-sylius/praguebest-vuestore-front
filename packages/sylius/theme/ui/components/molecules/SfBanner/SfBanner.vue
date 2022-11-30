@@ -206,7 +206,6 @@ export default {
         "--banner-min-subtitle": this.subTitleMinSize,
         "--banner-max-text": this.textMaxSize,
         "--banner-min-text": this.textMinSize,
-        "--banner-breakpoint": this.breakpoint,
       };
     },
     imageElementStyle() {

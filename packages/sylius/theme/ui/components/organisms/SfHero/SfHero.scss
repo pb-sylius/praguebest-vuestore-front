@@ -15,6 +15,9 @@
     top: 0;
     left: 0;
   }
+  & * {
+    text-decoration: none !important;
+  }
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -118,6 +121,9 @@
     &__slides {
       margin: 0;
     }
+  }
+  .sf-link {
+    text-decoration: none !important;
   }
   @include generic-breakpoint {
     &__control--left, &__control--right {
