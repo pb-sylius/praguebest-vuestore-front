@@ -72,6 +72,28 @@
               @click="updateFilter({color})"
             />
           </div>
+          <SfColorPicker
+            :class="{ 'display-none': !colors.length }"
+            class="sf-product-card__colors"
+            label="Choose color"
+            :is-open="!isMobile || openColorPicker"
+            @click:toggle="toggleColorPicker"
+          >
+            <SfColor
+              v-for="(color, i) in colors"
+              :key="color.value"
+              :color="color.color"
+              :selected="color.selected"
+              class="sf-product-card__color"
+              :class="{ 'display-none': i > 3 && showBadge }"
+            />
+            <SfBadge
+              v-if="showBadge"
+              class="sf-product-card__colors-badge color-secondary"
+            >
+              {{ `+${colors.length - 4}` }}
+            </SfBadge>
+          </SfColorPicker>
           <SfAddToCart
             v-e2e="'product_add-to-cart'"
             :stock="product.selectedVariant.onHand"
@@ -165,6 +187,8 @@ import SfReview from "../ui/components/molecules/SfReview/SfReview.vue";
 import SfBreadcrumbs from "../ui/components/atoms/SfBreadcrumbs/SfBreadcrumbs.vue";
 import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
 import SfColor from "../ui/components/atoms/SfColor/SfColor.vue";
+import SfColorPicker from "../ui/components/molecules/SfColorPicker/SfColorPicker.vue";
+import SfBadge from "../ui/components/atoms/SfBadge/SfBadge.vue";
 
 import InstagramFeed from '~/components/InstagramFeed.vue';
 import RelatedProducts from '~/components/RelatedProducts.vue';
@@ -178,6 +202,34 @@ import LazyHydrate from 'vue-lazy-hydration';
 export default {
   name: 'Product',
   transition: 'fade',
+  props: {
+    colors: {
+      type: Array,
+      default: () => [
+        { label: "Sand", value: "sand", color: "#EDCBB9", selected: false },
+        { label: "Mint", value: "mint", color: "#ABD9D8", selected: false },
+        {
+          label: "Light Gray",
+          value: "light gray",
+          color: "#F1F2F3",
+          selected: false,
+        },
+        {
+          label: "Vivid rose",
+          value: "vivid rose",
+          color: "#DB5593",
+          selected: false,
+        },
+        { label: "Peach", value: "peach", color: "#F59F93", selected: false },
+        {
+          label: "Citrus",
+          value: "citrus",
+          color: "#FFEE97",
+          selected: false,
+        },
+      ],
+    },
+  },
   setup(props, context) {
     const qty = ref(1);
     const { id, slug } = context.root.$route.params;
@@ -286,7 +338,9 @@ export default {
     RelatedProducts,
     MobileStoreBanner,
     LazyHydrate,
-    AddReviewForm
+    AddReviewForm,
+    SfColorPicker,
+    SfBadge,
   },
   data() {
     return {

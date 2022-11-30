@@ -23,10 +23,10 @@
     position: absolute !important;
   }
   @include for-desktop {
-    --color-size: 0.75rem;
+    --color-size: 1.5rem;
     &.is-active,
     &:hover {
-      transform: scale(1.667);
+      transform: scale(1.4);
       --color-box-shadow-opacity: 0.25;
     }
     &:active {

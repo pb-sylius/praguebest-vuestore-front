@@ -4,7 +4,7 @@
       <div
         v-if="!isOpen"
         key="color-picker-button"
-        class="sf-color-picker__button smartphone-only"
+        class="sf-color-picker__button"
       >
         <slot name="open" v-bind="{ toggle }">
           <SfButton
@@ -15,14 +15,10 @@
         </slot>
       </div>
       <div v-else key="color-picker-colors" class="sf-color-picker__colors">
-        <SfOverlay
-          :visible="isOpen"
-          class="sf-color-picker__colors__overlay smartphone-only"
-        />
         <slot name="label" v-bind="{ label }">
           <div
             :class="{ 'display-none': !label }"
-            class="sf-color-picker__label smartphone-only"
+            class="sf-color-picker__label "
           >
             {{ label }}
           </div>
@@ -31,7 +27,7 @@
         <slot name="close" v-bind="{ hasClose, toggle, isOpen }">
           <SfButton
             :class="{ 'display-none': !hasClose }"
-            class="sf-button--text sf-color-picker__close smartphone-only"
+            class="sf-button--text sf-color-picker__close"
             aria-label="Close button"
             :aria-pressed="!isOpen"
             @click="toggle"

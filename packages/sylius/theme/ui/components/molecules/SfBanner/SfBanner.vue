@@ -124,6 +124,10 @@ export default {
       type: Number,
       default: 600
     },
+    imgHeightAfterBreakpoint: {
+      type: Number,
+      default: 230
+    },
     /** Max width of the text block */
     textMaxWidth: {
       type: Number,
@@ -206,6 +210,7 @@ export default {
         "--banner-min-subtitle": this.subTitleMinSize,
         "--banner-max-text": this.textMaxSize,
         "--banner-min-text": this.textMinSize,
+        "--banner-img-height-after-breakpoint": this.imgHeightAfterBreakpoint + 'px',
       };
     },
     imageElementStyle() {

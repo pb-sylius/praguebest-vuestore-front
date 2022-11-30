@@ -99,7 +99,7 @@
 
 .banner_img_element {
   width: var(--_image_width, 50%);
-  flex-grow: 1;
+  flex-grow: 0;
   flex-shrink: 0;
   align-self: stretch;
   overflow: hidden;
@@ -129,9 +129,13 @@
   align-items: center;
 }
 
+.sf-banner.to_column .sf-banner__description {
+  text-align: center;
+}
+
 .sf-banner.to_column .banner_img_element {
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  height: var(--banner-img-height-after-breakpoint);
 }
 
 $calc-target: calc((100vw - breakpoints.$min-calc-width) / (strip(breakpoints.$inner-content-edges) - strip(breakpoints.$min-calc-width)));

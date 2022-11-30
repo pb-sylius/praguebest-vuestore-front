@@ -232,7 +232,29 @@ export default {
     },
     colors: {
       type: Array,
-      default: () => [],
+      default: () => [
+        { label: "Sand", value: "sand", color: "#EDCBB9", selected: false },
+        { label: "Mint", value: "mint", color: "#ABD9D8", selected: false },
+        {
+          label: "Light Gray",
+          value: "light gray",
+          color: "#F1F2F3",
+          selected: false,
+        },
+        {
+          label: "Vivid rose",
+          value: "vivid rose",
+          color: "#DB5593",
+          selected: false,
+        },
+        { label: "Peach", value: "peach", color: "#F59F93", selected: false },
+        {
+          label: "Citrus",
+          value: "citrus",
+          color: "#FFEE97",
+          selected: false,
+        },
+      ],
     },
     title: {
       type: String,
