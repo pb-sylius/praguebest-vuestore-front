@@ -8,7 +8,7 @@
   --property-value-font-weight: var(--font-weight--normal);
 
   &:nth-child(even) {
-    background-color: transparent;
+    background-color: var(--_c-light-secondary);
   }
 
   &__link {
@@ -139,7 +139,7 @@
   }
 
   &:hover {
-    box-shadow: var(--product-card-horizontal-box-shadow, 0px 4px 11px rgba(29, 31, 34, 0.1));
+    background-color: var(--_c-light-primary);
   }
 
   --product-card-horizontal-flex-direction: row;
