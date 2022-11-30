@@ -39,31 +39,6 @@
           />
         </SfButton>
       </slot>
-      <slot name="colors" v-bind="{ colors }">
-        <SfColorPicker
-          :class="{ 'display-none': !colors.length }"
-          class="sf-product-card__colors"
-          label="Choose color"
-          :is-open="!isMobile || openColorPicker"
-          @click:toggle="toggleColorPicker"
-        >
-          <SfColor
-            v-for="(color, i) in colors"
-            :key="color.value"
-            :color="color.color"
-            :selected="color.selected"
-            class="sf-product-card__color"
-            :class="{ 'display-none': i > 3 && showBadge }"
-            @click="handleSelectedColor(i)"
-          />
-          <SfBadge
-            v-if="showBadge"
-            class="sf-product-card__colors-badge color-secondary"
-          >
-            {{ `+${colors.length - 4}` }}
-          </SfBadge>
-        </SfColorPicker>
-      </slot>
       <slot name="badge" v-bind="{ badgeLabel, badgeColor }">
         <SfBadge
           class="sf-product-card__badge"
