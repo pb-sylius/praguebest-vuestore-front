@@ -1,3 +1,7 @@
+@use 'sass:math';
+@use "sass:meta";
+@use "sass:string";
+
 $mobile-max: 767px;
 $tablet-min: 768px;
 $tablet-max: 1023px;
@@ -15,9 +19,17 @@ $breakpoint-lg: 1632px;
 $breakpoint-2lg: 1920px;
 $breakpoint-3lg: 2560px;
 
+//max page width
 $outer-edges: 2560px;
 
+//max content width
+$inner-content-edges: 1400px;
+
+//will be replaced
 $generic-breakpoint: 800px;
+
+//min value for fluid calculations
+$min-calc-width: 320px;
 
 // Media mixins
 @mixin for-mobile {
@@ -89,4 +101,14 @@ $generic-breakpoint: 800px;
   @media (max-width: $outer-edges) {
     @content;
   }
+}
+
+@function strip($value) {
+  @if meta.type-of($value) != "number" {
+      @error "Invalid `#{meta.type-of($value)}` type. Use a number type instead.";
+  } @else if meta.type-of($value) == "number" and not math.is-unitless($value) {
+      @return math.div($value, ($value * 0 + 1));
+  }
+
+  @return $value;
 }

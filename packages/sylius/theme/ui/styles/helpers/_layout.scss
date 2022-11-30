@@ -25,6 +25,12 @@
   background-size: var(#{$element}-size, $size);
 }
 
+@mixin assignValue($properties, $value) {
+  @each $property in $properties {
+      #{$property}: $value
+  }
+}
+
 @function _box-shadow(
   $element,
   $shadow-h-offset,

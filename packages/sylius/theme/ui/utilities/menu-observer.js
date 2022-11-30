@@ -2,6 +2,7 @@ import Vue from "vue";
 import { includeLogo, logoBaseWidth, includeSearchBar, includeHeaderIcons, reduceLogo } from "../config";
 import elementwidth from "./element-width";
 import useUiState from '../../composables/useUiState';
+import debounce from 'lodash.debounce';
 
 let observer;
 let observedWidth = 0;
@@ -69,6 +70,7 @@ const checkSpaceForMenu = () => {
   } else {
     toggleWindowWidthChanged(false);
   }
+  observer.observedWidth = actualWidth;
 
   if (headerWidth - logoWidth - searchBarWidth - headerIconsWidth - menuWidth < 10) {
     observer.mainMenuToHamburger = true;
@@ -134,6 +136,7 @@ export const mapMenuObserver = () => {
       mainMenuToHamburger: false,
       isInitialized: false,
       implementLogoSymbol: false,
+      observedWidth: 0
     });
   }
   return {
@@ -153,6 +156,11 @@ export const mapMenuObserver = () => {
     implementLogoSymbol: {
       get() {
         return observer ? observer.implementLogoSymbol : false;
+      }
+    },
+    observedWidth: {
+      get() {
+        return observer ? observer.observedWidth : 0;
       }
     }
   };

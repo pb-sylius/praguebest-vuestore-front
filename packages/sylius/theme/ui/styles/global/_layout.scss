@@ -13,8 +13,8 @@ $outer-edges: 2560px;
 }
 
 /* wrapper for inner page content */
-#layout, .sf-header {
-  max-width: breakpoints.$breakpoint-md;
+#layout, .sf-header, .sf-top-bar {
+  max-width: breakpoints.$inner-content-edges;
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;

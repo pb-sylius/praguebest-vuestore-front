@@ -64,7 +64,7 @@ div.header__navigation {
         box-sizing: border-box;
         flex: 1;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         padding: var(--header-navigation-item-padding, calc(var(--spacer-sm) - 1px) var(--spacer-sm));
         margin: var(--header-navigation-item-margin, 0);
         @include border(--header-navigation-item-border, 0 0 2px 0, solid, transparent);
@@ -141,8 +141,7 @@ div.sf-header__navigation {
     display: flex;
     flex-wrap: var(--header-flex-wrap, nowrap);
     align-items: center;
-    justify-content: center;
-    max-width: var(--header-width, 77.5rem);
+    justify-content: space-between;
     margin: 0 auto;
 
     & .sf-image--placeholder {

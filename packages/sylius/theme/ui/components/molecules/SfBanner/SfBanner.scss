@@ -1,103 +1,169 @@
+@use "sass:map";
+@use "sass:string";
+@use "../../../styles/helpers/breakpoints";
 @import "../../../styles/helpers";
+
 .sf-banner {
   box-sizing: border-box;
   display: var(--banner-display, flex);
   justify-content: var(--banner-justify-content, flex-start);
   width: var(--banner-width, 100%);
-  min-height: var(--banner-height, 21.4375rem);
-  @include background(
-    --banner-background,
+  min-height: calc(var(--banner-min-height-max) * 1px);
+  @include background(--banner-background,
     var(--_banner-background-color, transparent),
-    var(--_banner-background-image)
-  );
+    var(--_banner-background-image));
   --banner-background-position: 60%;
+  align-items: var(--banner-align-items, center);
+  margin-top: calc(var(--banner-max-margin) * 1px);
+  margin-bottom: calc(var(--banner-max-margin) * 1px);
+
+  &.with_img_element {
+    min-height: auto;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
+    flex-shrink: 1;
     align-items: var(--banner-align-items, flex-start);
     justify-content: var(--banner-wrapper-justify-content, flex-start);
     flex-direction: var(--banner-wrapper-flex-direction, column);
     padding: var(--banner-padding, var(--spacer-xl));
     flex: 0 0 var(--banner-wrapper-width, 100%);
     text-decoration: none;
+    box-sizing: border-box;
+    flex-shrink: 1;
+
     &.sf-button,
     &.sf-button:hover,
     &.sf-button:active {
       --button-background: transparent;
       --button-box-shadow-opacity: 0;
     }
+
+    &.left {
+      order: 0;
+    }
+
+    &.right {
+      order: 1;
+    }
   }
+
   &__subtitle {
     margin: var(--banner-subtitle-margin, 0);
-    color: var(
-      --banner-color,
-      var(--banner-subtitle-color, var(--c-dark-variant))
-    );
-    @include font(
-      --banner-subtitle-font,
+    color: var(--banner-color,
+        var(--banner-subtitle-color, var(--c-dark-variant)));
+    @include font(--banner-subtitle-font,
       var(--font-weight--normal),
-      var(--font-size--base),
+      calc(var(--banner-max-subtitle) * 1px),
       1.4,
-      var(--font-family--secondary)
-    );
+      var(--font-family--secondary));
     text-transform: var(--banner-subtitle-text-transform, uppercase);
   }
+
   &__title {
     margin: var(--banner-title-margin, var(--spacer-2xs) 0 0 0);
     color: var(--banner-color, var(--banner-title-color, var(--c-text)));
-    @include font(
-      --banner-title-font,
+    @include font(--banner-title-font,
       var(--font-weight--normal),
-      var(--h2-font-size),
+      calc(var(--banner-max-title) * 1px),
       1.4,
-      var(--font-family--secondary)
-    );
+      var(--font-family--secondary));
     text-transform: var(--banner-title-text-transform, uppercase);
   }
+
   &__description {
-    display: var(--banner-description-display, none);
-    margin: var(
-      --banner-description-margin,
-      var(--spacer-sm) 0 var(--spacer-base) 0
-    );
+    margin: var(--banner-description-margin,
+        var(--spacer-sm) 0 var(--spacer-base) 0);
     color: var(--banner-color, var(--banner-description-color, var(--c-text)));
     text-align: var(--banner-description-text-align, left);
-    @include font(
-      --banner-description-font,
+    @include font(--banner-description-font,
       var(--font-weight--light),
-      var(--font-size--base),
+      calc(var(--banner-max-text) * 1px),
       1.6,
-      var(--font-family--primary)
-    );
+      var(--font-family--primary));
   }
+
   &__call-to-action {
     --button-color: var(--c-light-variant);
-    display: var(--banner-display-call-to-action, none);
   }
-  @include for-desktop {
-    --banner-background-image: var(
-      --_banner-background-desktop-image,
-      var(--_banner-background-image)
-    );
-    --banner-wrapper-width: 50%;
-    --banner-description-display: block;
-    --banner-display-call-to-action: block;
-    --banner-title-margin: var(--spacer-sm) 0 0 0;
-    --banner-subtitle-color: var(--c-gray);
-    align-items: var(--banner-align-items, center);
-    min-height: var(--banner-height, 25rem);
+
+  &.to_column {
+    flex-direction: column;
     &__wrapper {
-      pointer-events: none;
-      & > * {
-        pointer-events: initial;
-      }
+      flex: 0 0 0;
     }
-    &__call-to-action {
-      --button-padding: var(--spacer-sm) var(--spacer-xl);
-      pointer-events: auto;
+  }
+}
+
+.banner_img_element {
+  width: var(--_image_width, 50%);
+  flex-grow: 1;
+  flex-shrink: 0;
+  align-self: stretch;
+  overflow: hidden;
+
+  & img.sf-image-loaded {
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-position: center;
+  }
+
+  &.right {
+    justify-self: flex-end;
+    order: 1;
+  }
+
+  &.left {
+    justify-self: flex-start;
+    order: 0;
+  }
+}
+
+.sf-banner.to_column .sf-banner__wrapper {
+  flex: 0 0 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.sf-banner.to_column .banner_img_element {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+$calc-target: calc((100vw - breakpoints.$min-calc-width) / (strip(breakpoints.$inner-content-edges) - strip(breakpoints.$min-calc-width)));
+
+@media screen and (max-width: breakpoints.$inner-content-edges) {
+  .sf-banner {
+    min-height: calc(
+      var(--banner-min-height-min) * 1px 
+      + (var(--banner-min-height-max) - var(--banner-min-height-min)) 
+      * $calc-target);
+    @include assignValue(margin-top margin-bottom, 
+      calc(
+        var(--banner-min-margin) * 1px 
+        + (var(--banner-max-margin) - var(--banner-min-margin)) 
+        * $calc-target));
+    &__title {
+      font-size: calc(
+        var(--banner-min-title) * 1px 
+        + (var(--banner-max-title) - var(--banner-min-title)) 
+        * $calc-target);
     }
-    &--right {
-      --banner-justify-content: flex-end;
+    &__subtitle {
+      font-size: calc(
+        var(--banner-min-subtitle) * 1px 
+        + (var(--banner-max-subtitle) - var(--banner-min-subtitle)) 
+        * $calc-target);
+    }
+    &__description {
+      font-size: calc(
+        var(--banner-min-text) * 1px 
+        + (var(--banner-max-text) - var(--banner-min-text)) 
+        * $calc-target);
     }
   }
 }

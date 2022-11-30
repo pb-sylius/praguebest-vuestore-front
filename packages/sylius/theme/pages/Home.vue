@@ -42,6 +42,13 @@
             :image="banners[0].image"
             :class="banners[0].class"
             :useImageAsBackground="banners[0].useImageAsBackground"
+            :background="banners[0].background"
+            :imageWidth="banners[0].imageWidth"
+            :breakpoint="banners[0].breakpoint"
+            :textMaxWidth="banners[0].textMaxWidth"
+            :imageElementPosition="banners[0].imageElementPosition"
+            :maxMargin="banners[0].maxMargin"
+            :minMargin="banners[0].minMargin"
           />
     </LazyHydrate>
 
@@ -166,7 +173,7 @@ export default {
         image: addBasePath('/homepage/category-cardD.jpg'),
         price: { regular: '50.00 $' },
         rating: { max: 5, score: 4 },
-        isInWishlist: true
+        isInWishlist: true,
       },
       {
         title: 'Cream Beach Bag 2',
@@ -262,8 +269,13 @@ export default {
         class: 'sf-banner',
         link: $config.theme.home.bannerA.link,
         useImageAsBackground: false,
-        imageWidth: 30,
-        breakpoint: 500,
+        imageWidth: 50,
+        breakpoint: 600,
+        background: '#f1f1f1',
+        textMaxWidth: 700,
+        imageElementPosition: 'left',
+        maxMargin: 70,
+        minMargin: 30
       },
       {
         slot: 'banner-A',

@@ -2,12 +2,9 @@
 
 .sf-top-bar {
   background-color: var(--top-bar-background, var(--c-light));
-  padding: var(--header-padding, 0 var(--spacer-base)) !important;
   &__container {
-    padding: var(--top-bar-padding, 0 var(--spacer-base));
     box-sizing: border-box;
     justify-content: var(--topbar-justify-content, space-between);
-    max-width: var(--sf-topbar-width, 77.5rem);
     height: var(--top-bar-height, 2.5rem);
     margin: 0 auto;
     @include font(

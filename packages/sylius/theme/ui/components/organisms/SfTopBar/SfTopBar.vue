@@ -1,6 +1,6 @@
 <template>
   <div class="sf-top-bar">
-    <div class="sf-top-bar__container">
+    <div class="sf-top-bar__container padded_content">
       <div class="sf-top-bar__left">
         <slot name="left" />
       </div>
