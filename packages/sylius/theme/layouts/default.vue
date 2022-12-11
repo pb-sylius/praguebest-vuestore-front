@@ -52,7 +52,7 @@ export default {
     Notification
   },
 
-  setup() {
+  setup(props, context) {
     const route = useRoute();
     const { load: loadStores } = useStore();
     const { load: loadUser } = useUser();

@@ -4,12 +4,13 @@ import {
   useCartFactory,
   UseCartFactoryParams
 } from '@vue-storefront/core';
-//import util from 'util';
+
 import type {
   Cart,
   CartItem,
   Product
 } from '@realtainment/sylius-api';
+
 const params: UseCartFactoryParams<Cart, CartItem, Product> = {
   load: async (context: Context) => {
     const apiState = context.$sylius.config.state;
@@ -22,6 +23,7 @@ const params: UseCartFactoryParams<Cart, CartItem, Product> = {
     };
 
     try {
+
       // create new cart object in the backend
       if (!cartId) cartId = await createCart();
 

@@ -8,6 +8,27 @@ type ProductSort = {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default async function getProduct(context, params, customQuery?: CustomQuery) {
+
+  let key;
+
+  if ('categorySlug' in params) {
+    key = params.categorySlug + params.page + 'product';
+  }
+  if ('slug' in params) {
+    key = params.slug + 'product';
+  }
+
+  let cached;
+  let productData;
+
+  const getKey = async (key) => {
+    return context.config.lruCache.get(key);
+  }
+
+  if (key) {
+    cached = await getKey(key);
+  }
+
   if (params.sort) {
     const sortObject = {} as ProductSort;
 
@@ -24,7 +45,7 @@ export default async function getProduct(context, params, customQuery?: CustomQu
   let pagination = {};
   let products = [];
 
-  try {
+  if (!cached) {
     const { productsQuery } = context.extendQuery(
       customQuery,
       {
@@ -81,14 +102,17 @@ export default async function getProduct(context, params, customQuery?: CustomQu
         delete item.imagesRef;
       }
       return item;
-    });
-  } catch (err) {
-    console.log('Sylius getProduct error', err);
+    })
+    context.config.lruCache.set(key, JSON.stringify({ products, pagination }));
+  } else {
+    productData = JSON.parse(cached);
+    products = productData.products;
+    pagination = productData.pagination;
   }
 
   return {
     products,
-    pagination
+    pagination,
   };
 }
 

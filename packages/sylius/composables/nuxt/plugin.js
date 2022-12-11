@@ -27,7 +27,7 @@ export default integrationPlugin(({ app, integration }) => {
       app.$cookies.remove(cartCookieName);
       return;
     }
-    app.$cookies.set(cartCookieName, id);
+    app.$cookies.set(cartCookieName, id, { expires: new Date(Date.now() + (1000 * 60 * 60 * 24 * 365)) });
   };
 
   const getCustomerToken = () => app.$cookies.get(customerCookieName);

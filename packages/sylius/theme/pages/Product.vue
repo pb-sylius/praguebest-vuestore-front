@@ -76,8 +76,7 @@
             :class="{ 'display-none': !colors.length }"
             class="sf-product-card__colors"
             label="Choose color"
-            :is-open="!isMobile || openColorPicker"
-            @click:toggle="toggleColorPicker"
+            :is-open="openColorPicker"
           >
             <SfColor
               v-for="(color, i) in colors"
@@ -313,7 +312,9 @@ export default {
       productGetters,
       productGallery,
       isAuthenticated,
-      handleReviewSubmit
+      handleReviewSubmit,
+      showBadge: false,
+      openColorPicker: true,
     };
   },
   components: {

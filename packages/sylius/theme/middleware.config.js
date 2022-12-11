@@ -1,3 +1,5 @@
+const lruCache = require('stale-lru-cache');
+
 module.exports = {
   integrations: {
     sylius: {
@@ -9,8 +11,9 @@ module.exports = {
           thumbnail: 'http://serve-sylius.test',
           regular: 'http://serve-sylius.test'
         },
+        lruCache: new lruCache(),
         customHeaders: {}
-      }
+      },
     }
   }
 };

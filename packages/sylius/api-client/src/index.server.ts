@@ -6,7 +6,7 @@ import { Config, ClientInstance } from './types';
 import * as api from './api';
 import ApolloClient from 'apollo-client';
 
-const onCreate = (settings: Config): { config: Config, client: ClientInstance} => {
+const onCreate = (settings: Config): { config: Config, client: ClientInstance } => {
   const config = {
     ...defaultSettings,
     ...settings,
@@ -63,7 +63,7 @@ const tokenExtension: ApiClientExtension = {
               req.cookies[cartCookieName];
               return;
             }
-            res.cookie(cartCookieName, JSON.stringify(id));
+            res.cookie(cartCookieName, JSON.stringify(id), { expires: new Date(Date.now() + (1000 * 60 * 60 * 24 * 365)) });
           },
           getCustomerToken: () => req.cookies[customerCookieName],
           setCustomerToken: (token) => {

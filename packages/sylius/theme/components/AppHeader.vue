@@ -68,7 +68,7 @@ import SfMobileMenu from "../ui/components/organisms/SfMobileMenu/SfMobileMenu.v
 
 import useUiState from '../composables/useUiState';
 import { useCart, useUser, cartGetters, useProduct, useCategory } from '@realtainment/sylius';
-import { computed, ref, onBeforeUnmount, watch, onMounted } from '@vue/composition-api';
+import { computed, ref, onBeforeUnmount, watch } from '@vue/composition-api';
 import useUiHelpers from '../composables/useUiHelpers';
 import LocaleSelector from './LocaleSelector';
 import SearchResults from '../components/SearchResults.vue';
@@ -109,14 +109,13 @@ export default {
     const { search: searchCategories, categories: searchCategoriesResults } = useCategory('AppHeader');
     const { toggleCartSidebar, toggleWishlistSidebar, toggleLoginModal, isMobileMenuOpen, toggleWindowWidthChanged } = useUiState();
     const { setTermForUrl, getFacetsFromURL } = useUiHelpers();
-    const { isAuthenticated, load: loadUser } = useUser();
+    const { isAuthenticated } = useUser();
     const { cart } = useCart();
     const term = ref(getFacetsFromURL().phrase);
     const isSearchOpen = ref(false);
     const searchBarRef = ref(null);
     const result = ref(null);
     const isMobile = ref(mapMobileObserver().isMobile.get());
-    loadUser();
 
     const cartTotalItems = computed(() => {
       const count = cartGetters.getTotalItems(cart.value);

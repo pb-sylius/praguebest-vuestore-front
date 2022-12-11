@@ -23,7 +23,7 @@ const factoryParams = {
       }, categories);
       category = categoriesFlat.find(cat => cat.slug === params.input.categorySlug);
 
-      const {products: loadedProducts, pagination: loadedPagination } = data[1];
+      const { products: loadedProducts, pagination: loadedPagination } = data[1];
       products = loadedProducts;
       pagination = loadedPagination;
     } catch (e) {

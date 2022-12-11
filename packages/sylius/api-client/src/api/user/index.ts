@@ -1,4 +1,5 @@
-import {loginMutation, refreshLoginTokenMutation, addAddressMutation, updateAddressMutation,
+import {
+  loginMutation, refreshLoginTokenMutation, addAddressMutation, updateAddressMutation,
   updatePasswordMutation, updateProfileMutation, deleteAddressMutation,
   resetPasswordMutation, triggerResetPasswordMutation, registerMutation
 } from './mutations';
@@ -7,8 +8,28 @@ import { CustomQuery } from '@vue-storefront/core';
 import { mutate, query, extendQuery } from '../helpers';
 
 export const getUser = async (context, id: string) => {
-  const { customer } = await query(context, getUserQuery, { id });
-  return customer;
+
+  const key = id.replace(/\//g, '') + 'user';
+
+  let cached;
+  let userData;
+
+  const getKey = async (key) => {
+    return context.config.lruCache.get(key);
+  }
+
+  if (key) {
+    cached = await getKey(key);
+  }
+
+  if (!cached) {
+    const { customer } = await query(context, getUserQuery, { id });
+    userData = customer;
+    context.config.lruCache.set(key, JSON.stringify(userData));
+  } else {
+    userData = JSON.parse(cached);
+  }
+  return userData;
 };
 
 export const registerUser = async (context, defaultVariables, customQuery?: CustomQuery) => {
@@ -34,12 +55,12 @@ export const refreshLoginUser = async (context, defaultVariables, customQuery?: 
   return shop_refreshShopUserToken.shopUserToken;
 };
 
-export const getUserAddresses = async(context, id: string) => {
+export const getUserAddresses = async (context, id: string) => {
   const { addresses } = await query(context, getUserAddressesQuery, { id });
   return addresses.collection;
 };
 
-export const getUserOrders = async(context, id: string) => {
+export const getUserOrders = async (context, id: string) => {
   const { customer } = await query(context, getUserOrdersQuery, { id });
   const orders = customer.orders.edges.map(edge => {
     const order = edge.node;

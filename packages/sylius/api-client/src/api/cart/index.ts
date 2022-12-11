@@ -8,7 +8,7 @@ import {
   getCartQuery, getPaymentMethodsQuery, getShippingMethodsQuery, getCountriesQuery
 } from './queries';
 import { CustomQuery } from '@vue-storefront/core';
-import {mutate, query, extendQuery, transformCart} from '../helpers';
+import { mutate, query, extendQuery, transformCart } from '../helpers';
 
 export const createCart = async (context, customQuery?: CustomQuery) => {
   const { locale } = context.config;
@@ -24,16 +24,36 @@ export const createCart = async (context, customQuery?: CustomQuery) => {
 };
 
 export const getCart = async (context, cartId: string, customQuery?: CustomQuery) => {
+
+  let cached;
+  let cartData;
+
   const { locale, acceptLanguage } = context.config;
   const variables = {
     cartId,
     locale,
     acceptLanguage
   };
-  const queryGql = extendQuery(context, getCartQuery, variables, customQuery);
-  const data = await query(context, queryGql.query, variables);
 
-  return data.order ? transformCart(context, data.order) : {};
+  const key = 'cart_' + cartId;
+
+  const getKey = async (key) => {
+    return context.config.lruCache.get(key);
+  }
+
+  if (key) {
+    cached = await getKey(key);
+  }
+
+  if (!cached) {
+    const queryGql = extendQuery(context, getCartQuery, variables, customQuery);
+    cartData = await query(context, queryGql.query, variables);
+    context.config.lruCache.set(key, JSON.stringify(cartData));
+  } else {
+    cartData = JSON.parse(cached);
+  }
+
+  return cartData.order ? transformCart(context, cartData.order) : {};
 };
 
 export const addToCart = async (context, defaultVariables, customQuery?: CustomQuery) => {

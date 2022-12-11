@@ -18,7 +18,8 @@ export default {
       // { 'http-equiv': 'Content-Security-Policy', content: 'upgrade-insecure-requests' },
     ],
     link: [
-      { rel: 'icon',
+      {
+        rel: 'icon',
         type: 'image/x-icon',
         href: '/favicon.ico'
       },
@@ -84,7 +85,7 @@ export default {
     'nuxt-i18n',
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
-    '@vue-storefront/middleware/nuxt'
+    '@vue-storefront/middleware/nuxt',
   ],
   i18n: {
     currency: 'USD',
@@ -148,7 +149,7 @@ export default {
         })
       })
     ],
-    extend (config, ctx) {
+    extend(config, ctx) {
       if (ctx && ctx.isClient) {
         config.optimization = {
           ...config.optimization,
@@ -177,7 +178,7 @@ export default {
   },
   router: {
     middleware: ['checkout', 'refresh-auth'],
-    scrollBehavior (_to, _from, savedPosition) {
+    scrollBehavior(_to, _from, savedPosition) {
       if (savedPosition) {
         return savedPosition;
       } else {

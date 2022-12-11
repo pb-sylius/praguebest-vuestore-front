@@ -1,19 +1,44 @@
+import { useRoute, useRouter } from '@nuxtjs/composition-api';
+
+const nonFilters = ['page', 'sort', 'phrase', 'itemsPerPage'];
+
+const reduceFilters = (query) => (prev, curr) => {
+  const makeArray = Array.isArray(query[curr]) || nonFilters.includes(curr);
+
+  return {
+    ...prev,
+    [curr]: makeArray ? query[curr] : [query[curr]]
+  };
+};
+
+const getFiltersDataFromUrl = (query, onlyFilters) => {
+  return Object.keys(query)
+    .filter(f => onlyFilters ? !nonFilters.includes(f) : nonFilters.includes(f))
+    .reduce(reduceFilters(query), {});
+};
+
+const getQueryParameter = (item): string => {
+  return Array.isArray(item)
+    ? item[0]
+    : item;
+};
 
 const useUiHelpers = () => {
+  const route = useRoute();
+  const router = useRouter();
+  const { query, params } = route.value;
+
   const getFacetsFromURL = () => {
-    console.warn('[VSF] please implement useUiHelpers.getFacets.');
 
     return {
-      categorySlug: null,
-      page: 1
+      categorySlug: Object.values(params).filter(Boolean).join('/'),
+      page: parseInt(getQueryParameter(query.page)) || 1,
     } as any;
   };
 
   // eslint-disable-next-line
   const getCatLink = (category): string => {
-    console.warn('[VSF] please implement useUiHelpers.getCatLink.');
-
-    return '/';
+    return `/c/${category.slug}`;
   };
 
   // eslint-disable-next-line
