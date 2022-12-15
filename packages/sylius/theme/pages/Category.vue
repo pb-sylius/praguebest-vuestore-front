@@ -47,7 +47,7 @@
       </div>
       <SfLoader :class="{ loading }" :loading="loading">
         <div class="products" v-if="!loading">
-          <transition-group v-if="isCategoryGridView" appear name="products__slide" tag="div" class="products__grid">
+          <div v-if="isCategoryGridView" class="products__grid">
             <SfProductCard v-e2e="'category-product-card'" v-for="(product, i) in products"
               :key="productGetters.getSlug(product)" :style="{ '--index': i }" :title="productGetters.getName(product)"
               :image="addBasePath(productGetters.getCoverImage(product))"
@@ -59,8 +59,8 @@
               class="products__product-card"
               @click:wishlist="!isInWishlist({ product }) ? addItemToWishlist({ product }) : removeProductFromWishlist(product)"
               @click:add-to-cart="addToCart({ product, quantity: 1 })" />
-          </transition-group>
-          <transition-group v-else appear name="products__slide" tag="div" class="products__list">
+          </div>
+          <div v-else class="products__list">
             <SfProductCardHorizontal v-e2e="'category-product-card'" v-for="(product, i) in products"
               class="products__product-card-horizontal" :key="productGetters.getSlug(product)" :style="{ '--index': i }"
               :title="productGetters.getName(product)" :description="productGetters.getDescription(product)"
@@ -82,7 +82,7 @@
                 </SfButton>
               </template>
             </SfProductCardHorizontal>
-          </transition-group>
+          </div>
 
           <LazyHydrate on-interaction>
             <SfPagination v-if="!loading" class="products__pagination" v-show="pagination.totalPages > 1"
