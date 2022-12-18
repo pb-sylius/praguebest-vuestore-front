@@ -5,11 +5,11 @@ module.exports = {
     sylius: {
       location: '@realtainment/sylius-api/server',
       configuration: {
-        api: 'http://serve-sylius.test/api/v2/graphql',
+        api: 'http://sylius.test/api/v2/graphql',
         locale: 'en_US',
         imagePaths: {
-          thumbnail: 'http://serve-sylius.test',
-          regular: 'http://serve-sylius.test'
+          thumbnail: 'http://sylius.test',
+          regular: 'http://sylius.test'
         },
         lruCache: new lruCache(),
         customHeaders: {}

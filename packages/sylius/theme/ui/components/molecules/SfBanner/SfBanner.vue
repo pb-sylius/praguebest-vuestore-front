@@ -124,6 +124,7 @@ export default {
       type: Number,
       default: 600
     },
+    /** image height on mobile layout */
     imgHeightAfterBreakpoint: {
       type: Number,
       default: 230

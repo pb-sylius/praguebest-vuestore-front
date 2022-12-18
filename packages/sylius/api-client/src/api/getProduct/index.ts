@@ -26,7 +26,7 @@ export default async function getProduct(context, params, customQuery?: CustomQu
   }
 
   if (key) {
-    cached = await getKey(key);
+    //cached = await getKey(key);
   }
 
   if (params.sort) {

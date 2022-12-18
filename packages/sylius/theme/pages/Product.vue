@@ -41,6 +41,14 @@
           </div>
         </div>
         <div>
+        <SfPropertyLink
+          name="Manufacturer"
+          href="/"
+          value="manufik"
+        >
+        </SfPropertyLink>
+        </div>
+        <div>
           <p class="product__description desktop-only">
             {{ product.shortDescription }}
           </p>
@@ -188,6 +196,8 @@ import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
 import SfColor from "../ui/components/atoms/SfColor/SfColor.vue";
 import SfColorPicker from "../ui/components/molecules/SfColorPicker/SfColorPicker.vue";
 import SfBadge from "../ui/components/atoms/SfBadge/SfBadge.vue";
+import SfLink from "../ui/components/atoms/SfLink/SfLink.vue";
+import SfPropertyLink from "../ui/components/molecules/SfPropertyLink/SfPropertyLink.vue";
 
 import InstagramFeed from '~/components/InstagramFeed.vue';
 import RelatedProducts from '~/components/RelatedProducts.vue';
@@ -292,6 +302,8 @@ export default {
       })) || [];
     });
 
+    console.log(product)
+
     return {
       updateFilter,
       configuration,
@@ -342,6 +354,8 @@ export default {
     AddReviewForm,
     SfColorPicker,
     SfBadge,
+    SfLink,
+    SfPropertyLink,
   },
   data() {
     return {

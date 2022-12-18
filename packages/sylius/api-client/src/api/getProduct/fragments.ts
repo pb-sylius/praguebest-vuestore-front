@@ -81,4 +81,19 @@ export const productFragment = `
     }
   }
   enabled
+  manufacturer {
+      name
+      code
+      description
+      images {
+        edges {
+          node {
+            _id
+            id
+            type
+            path
+          }
+        }
+      }
+  }
 `;
