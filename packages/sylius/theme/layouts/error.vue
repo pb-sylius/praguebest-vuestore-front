@@ -23,7 +23,7 @@
 </template>
 <script>
 import { useRouter } from '@nuxtjs/composition-api';
-import { addBasePath } from '@vue-storefront/core';
+import { addBasePath } from '@storefront-pb/core';
 import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
 import SfImage from "../ui/components/atoms/SfImage/SfImage.vue";
 import SfHeading from "../ui/components/atoms/SfHeading/SfHeading.vue";

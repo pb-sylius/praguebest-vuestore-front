@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-import { VSF_LOCALE_COOKIE } from '@vue-storefront/core';
+import { VSF_LOCALE_COOKIE } from '@storefront-pb/core';
 import theme from './themeConfig';
 
 export default {
@@ -48,23 +48,23 @@ export default {
     '@nuxtjs/composition-api/module',
     '@nuxt/typescript-build',
     '@nuxtjs/style-resources',
-    ['@vue-storefront/nuxt', {
+    ['@storefront-pb/nuxt', {
       // @core-development-only-start
       coreDevelopment: true,
       // @core-development-only-end
       useRawSource: {
         dev: [
           '@realtainment/sylius',
-          '@vue-storefront/core'
+          '@storefront-pb/core',
         ],
         prod: [
           '@realtainment/sylius',
-          '@vue-storefront/core'
+          '@storefront-pb/core',
         ]
       }
     }],
     // @core-development-only-start
-    ['@vue-storefront/nuxt-theme', {
+    ['@storefront-pb/nuxt-theme', {
       generate: {
         replace: {
           apiClient: '@realtainment/sylius-api',
@@ -77,7 +77,7 @@ export default {
     }],
     // @core-development-only-end
     /* project-only-start
-    ['@vue-storefront/nuxt-theme'],
+    ['@storefront-pb/nuxt-theme'],
     project-only-end */
     ['@realtainment/sylius/nuxt', {}]
   ],
@@ -85,7 +85,7 @@ export default {
     'nuxt-i18n',
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
-    '@vue-storefront/middleware/nuxt',
+    '@storefront-pb/middleware/nuxt',
   ],
   i18n: {
     currency: 'USD',
@@ -184,6 +184,17 @@ export default {
       } else {
         return { x: 0, y: 0 };
       }
+    },
+    extendRoutes(routes, resolve) {
+      routes.splice(
+        routes.findIndex(route => route.path === '/ManufacturerSingle'), 1
+      );
+
+      routes.push({
+        name: 'ManufacturerSingle',
+        path: '/manufacturer/:id/:slug/',
+        component: resolve(__dirname, 'pages/ManufacturerSingle.vue')
+      });
     }
   },
   publicRuntimeConfig: {

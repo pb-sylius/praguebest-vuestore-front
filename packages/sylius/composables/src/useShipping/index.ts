@@ -1,4 +1,4 @@
-import { useShippingFactory, UseShippingParams, Context } from '@vue-storefront/core';
+import { useShippingFactory, UseShippingParams, Context } from '@storefront-pb/core';
 import { Address } from '../types';
 import { useCart } from '../useCart';
 const params: UseShippingParams<Address, any> = {

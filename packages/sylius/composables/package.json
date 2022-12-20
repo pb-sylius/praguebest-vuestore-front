@@ -13,7 +13,7 @@
     "prepublish": "yarn build"
   },
   "dependencies": {
-    "@vue-storefront/core": "^2.3.3",
+    "@storefront-pb/core": "git+https://storefront:glpat-F5kxo-SvPYEbqNF_bKa5@gitlab.praguebest.cz/sylius/storefront-node-module",
     "@realtainment/sylius-api": "^1.1.2",
     "date-fns": "^2.23.0",
     "rollup-plugin-terser": "^7.0.2",

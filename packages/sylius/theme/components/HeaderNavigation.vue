@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { onSSR } from '@vue-storefront/core';
+import { onSSR } from '@storefront-pb/core';
 import SfMenuItem from "../ui/components/molecules/SfMenuItem/SfMenuItem.vue";
 import SfModal from "../ui/components/molecules/SfModal/SfModal.vue";
 import { mapMenuObserver } from "../ui/utilities/menu-observer";

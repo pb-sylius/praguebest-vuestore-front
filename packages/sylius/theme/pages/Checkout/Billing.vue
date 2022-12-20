@@ -198,7 +198,7 @@ import SfCheckbox from "../../ui/components/molecules/SfCheckbox/SfCheckbox.vue"
 import { useBilling, useUser, useUserBilling, userBillingGetters } from '@realtainment/sylius';
 import { required, min, digits, email } from 'vee-validate/dist/rules';
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
-import { onSSR, useVSFContext } from '@vue-storefront/core';
+import { onSSR, useVSFContext } from '@storefront-pb/core';
 import useUiState from '../../composables/useUiState';
 import useUiNotification from '../../composables/useUiNotification';
 

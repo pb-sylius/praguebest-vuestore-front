@@ -118,7 +118,7 @@ import SfProperty from "../../ui/components/atoms/SfProperty/SfProperty.vue";
 import SfAccordion from "../../ui/components/organisms/SfAccordion/SfAccordion.vue";
 import SfLink from "../../ui/components/atoms/SfLink/SfLink.vue";
 
-import { onSSR } from '@vue-storefront/core';
+import { onSSR } from '@storefront-pb/core';
 import { ref, computed } from '@vue/composition-api';
 import { useMakeOrder, useCart, cartGetters, orderGetters } from '@realtainment/sylius';
 

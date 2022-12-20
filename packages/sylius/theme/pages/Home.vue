@@ -143,7 +143,7 @@ import InstagramFeed from '~/components/InstagramFeed.vue';
 import NewsletterModal from '~/components/NewsletterModal.vue';
 import LazyHydrate from 'vue-lazy-hydration';
 import useUiState from '../composables/useUiState';
-import { addBasePath } from '@vue-storefront/core';
+import { addBasePath } from '@storefront-pb/core';
 
 export default {
   name: 'Home',

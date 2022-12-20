@@ -1,7 +1,7 @@
 import { getReviewsQuery } from './queries';
 import { addReviewMutation } from './mutations';
 import {mutate, query, extendQuery } from '../helpers';
-import { CustomQuery } from '@vue-storefront/core';
+import { CustomQuery } from '@storefront-pb/core';
 
 export const getReviews = async (context, params) => {
 

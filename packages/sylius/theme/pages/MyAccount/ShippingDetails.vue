@@ -79,7 +79,7 @@ import UserAddress from '~/components/UserAddress';
 import ShippingAddressForm from '~/components/MyAccount/ShippingAddressForm';
 import { useUserShipping, userShippingGetters } from '@realtainment/sylius';
 import { ref, computed } from '@vue/composition-api';
-import { onSSR } from '@vue-storefront/core';
+import { onSSR } from '@storefront-pb/core';
 
 export default {
   name: 'ShippingDetails',

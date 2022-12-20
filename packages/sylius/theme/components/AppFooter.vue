@@ -86,7 +86,7 @@ import SfList from "../ui/components/organisms/SfList/SfList.vue";
 import SfImage from "../ui/components/atoms/SfImage/SfImage.vue";
 import SfMenuItem from "../ui/components/molecules/SfMenuItem/SfMenuItem.vue";
 
-import { addBasePath } from '@vue-storefront/core';
+import { addBasePath } from '@storefront-pb/core';
 
 export default {
   components: {

@@ -36,9 +36,22 @@ const useUiHelpers = () => {
     } as any;
   };
 
+  const getManufacturerFacetsFromURL = () => {
+    return {
+      manufacturerSlug: params.slug,
+      manufacturerId: params.id,
+      page: parseInt(getQueryParameter(query.page)) || 1,
+    } as any;
+  }
+
   // eslint-disable-next-line
   const getCatLink = (category): string => {
     return `/c/${category.slug}`;
+  };
+
+  // eslint-disable-next-line
+  const getManufacturerLink = (manufacturer): string => {
+    return `/manufacturer/${manufacturer.id}/${manufacturer.slug}`;
   };
 
   // eslint-disable-next-line
@@ -83,7 +96,9 @@ const useUiHelpers = () => {
 
   return {
     getFacetsFromURL,
+    getManufacturerFacetsFromURL,
     getCatLink,
+    getManufacturerLink,
     changeSorting,
     changeFilters,
     changeItemsPerPage,

@@ -31,7 +31,7 @@ import WishlistSidebar from '~/components/WishlistSidebar.vue';
 import LoginModal from '~/components/LoginModal.vue';
 import LazyHydrate from 'vue-lazy-hydration';
 import Notification from '~/components/Notification.vue';
-import { onSSR } from '@vue-storefront/core';
+import { onSSR } from '@storefront-pb/core';
 import { useRoute } from '@nuxtjs/composition-api';
 import { useCart, useStore, useUser, useWishlist } from '@realtainment/sylius';
 import { useBottomNavigation } from "../ui/config";

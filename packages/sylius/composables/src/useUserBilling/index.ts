@@ -2,7 +2,7 @@ import {
   Context,
   useUserBillingFactory,
   UseUserBillingFactoryParams
-} from '@vue-storefront/core';
+} from '@storefront-pb/core';
 
 const params: UseUserBillingFactoryParams<any, any> = {
   addAddress: async () => {},

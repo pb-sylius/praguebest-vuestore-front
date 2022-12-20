@@ -37,7 +37,7 @@ import SfBanner from "../ui/components/molecules/SfBanner/SfBanner.vue";
 import SfImage from "../ui/components/atoms/SfImage/SfImage.vue";
 import SfButton from "../ui/components/atoms/SfButton/SfButton.vue";
 
-import { addBasePath } from '@vue-storefront/core';
+import { addBasePath } from '@storefront-pb/core';
 
 export default {
   name: 'MobileStoreBanner',

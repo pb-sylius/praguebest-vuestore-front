@@ -1,4 +1,4 @@
-import { CustomQuery, Context } from '@vue-storefront/core';
+import { CustomQuery, Context } from '@storefront-pb/core';
 import { BaseQuery } from './queries';
 import gql from 'graphql-tag';
 
@@ -21,7 +21,7 @@ export default async function getCategory(context: Context, params, customQuery?
   }
 
   if (key) {
-    cached = await getKey(key);
+    //cached = await getKey(key);
   }
 
   const { categoryList } = context.extendQuery(

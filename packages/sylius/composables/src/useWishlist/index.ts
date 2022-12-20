@@ -3,7 +3,7 @@ import {
   Context,
   useWishlistFactory,
   UseWishlistFactoryParams
-} from '@vue-storefront/core';
+} from '@storefront-pb/core';
 import { ref, Ref } from '@vue/composition-api';
 import { Wishlist, WishlistProduct, Product } from '../types';
 

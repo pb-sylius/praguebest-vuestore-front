@@ -38,7 +38,7 @@ import SfBottomModal from "../ui/components/molecules/SfBottomModal/SfBottomModa
 import SfCharacteristic from "../ui/components/molecules/SfCharacteristic/SfCharacteristic.vue";
 
 import { ref, computed } from '@nuxtjs/composition-api';
-import { addBasePath } from '@vue-storefront/core';
+import { addBasePath } from '@storefront-pb/core';
 
 export default {
   components: {

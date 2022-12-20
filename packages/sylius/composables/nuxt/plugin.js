@@ -1,4 +1,4 @@
-import { integrationPlugin } from '@vue-storefront/core';
+import { integrationPlugin } from '@storefront-pb/core';
 import { mapConfigToSetupObject } from '@realtainment/sylius/nuxt/helpers';
 const moduleOptions = JSON.parse('<%= JSON.stringify(options) %>');
 

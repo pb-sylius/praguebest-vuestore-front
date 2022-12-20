@@ -6,7 +6,7 @@ import {
   AgnosticSort,
   AgnosticBreadcrumb,
   AgnosticFacet
-} from '@vue-storefront/core';
+} from '@storefront-pb/core';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const getAll = (searchData, criteria?: string[]): AgnosticFacet[] => {

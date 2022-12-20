@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 import { parse as parseDate, format as formatDate } from 'date-fns';
-import { UserOrderGetters } from '@vue-storefront/core';
+import { UserOrderGetters } from '@storefront-pb/core';
 import { Order, OrderItem } from '../types';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

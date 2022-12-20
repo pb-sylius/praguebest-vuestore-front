@@ -15,9 +15,9 @@
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
     "@storefront-ui/vue": "^0.11.3",
-    "@vue-storefront/middleware": "^2.3.0",
-    "@vue-storefront/nuxt": "^2.3.0",
-    "@vue-storefront/nuxt-theme": "^2.3.0",
+    "@storefront-pb/middleware": "git+https://storefront:glpat-F5kxo-SvPYEbqNF_bKa5@gitlab.praguebest.cz/sylius/storefront-node-module",
+    "@storefront-pb/nuxt": "git+https://storefront:glpat-F5kxo-SvPYEbqNF_bKa5@gitlab.praguebest.cz/sylius/storefront-node-module",
+    "@storefront-pb/nuxt-theme": "git+https://storefront:glpat-F5kxo-SvPYEbqNF_bKa5@gitlab.praguebest.cz/sylius/storefront-node-module",
     "@realtainment/sylius": "^1.1.2",
     "atob": "^2.1.2",
     "cookie-universal-nuxt": "^2.1.3",

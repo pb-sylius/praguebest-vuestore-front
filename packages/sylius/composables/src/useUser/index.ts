@@ -5,7 +5,7 @@ import {
   Logger,
   useUserFactory,
   UseUserFactoryParams
-} from '@vue-storefront/core';
+} from '@storefront-pb/core';
 import { User } from '../types';
 import { useCart } from '../useCart';
 const params: UseUserFactoryParams<User, any, any> = {

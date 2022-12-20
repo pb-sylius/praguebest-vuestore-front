@@ -1,4 +1,4 @@
-import { ForgotPasswordGetters } from '@vue-storefront/core';
+import { ForgotPasswordGetters } from '@storefront-pb/core';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getResetPasswordToken(result: any) {

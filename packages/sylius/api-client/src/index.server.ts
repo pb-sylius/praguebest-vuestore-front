@@ -1,4 +1,4 @@
-import { ApiClientExtension, apiClientFactory } from '@vue-storefront/core';
+import { ApiClientExtension, apiClientFactory } from '@storefront-pb/core';
 import { apolloClientFactory, createSyliusConnection } from './apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { defaultSettings } from './settings';

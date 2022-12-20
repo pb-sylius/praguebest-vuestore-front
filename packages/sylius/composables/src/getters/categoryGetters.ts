@@ -1,4 +1,4 @@
-import { CategoryGetters, AgnosticCategoryTree } from '@vue-storefront/core';
+import { CategoryGetters, AgnosticCategoryTree } from '@storefront-pb/core';
 import { Category } from '@realtainment/sylius-api/src/types';
 
 const itemToTree = (category: Category): AgnosticCategoryTree => {

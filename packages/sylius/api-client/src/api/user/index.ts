@@ -4,7 +4,7 @@ import {
   resetPasswordMutation, triggerResetPasswordMutation, registerMutation
 } from './mutations';
 import { getUserQuery, getUserAddressesQuery, getUserOrdersQuery } from './queries';
-import { CustomQuery } from '@vue-storefront/core';
+import { CustomQuery } from '@storefront-pb/core';
 import { mutate, query, extendQuery } from '../helpers';
 
 export const getUser = async (context, id: string) => {

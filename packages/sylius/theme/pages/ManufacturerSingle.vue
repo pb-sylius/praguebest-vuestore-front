@@ -129,7 +129,7 @@ import { computed, ref } from '@nuxtjs/composition-api';
 import { useCart, useWishlist, productGetters, useFacet, facetGetters, wishlistGetters } from '@realtainment/sylius';
 import useUiState from '../composables/useUiState';
 import useUiHelpers from '../composables/useUiHelpers';
-import { onSSR, useVSFContext } from '@storefront-pb/core';
+import { onSSR } from '@storefront-pb/core';
 import LazyHydrate from 'vue-lazy-hydration';
 import CategoryPageHeader from '~/components/CategoryPageHeader';
 import { addBasePath } from '@storefront-pb/core';
@@ -137,7 +137,7 @@ import { addBasePath } from '@storefront-pb/core';
 // TODO(addToCart qty, horizontal): https://github.com/vuestorefront/storefront-ui/issues/1606
 export default {
   transition: 'fade',
-  name: 'Category',
+  name: 'Manufacturer',
   setup(props, context) {
     const th = useUiHelpers();
     const uiState = useUiState();
@@ -147,6 +147,8 @@ export default {
 
     const { toggleHamburgerMenu } = useUiState();
     toggleHamburgerMenu(false);
+
+    //console.log(result)
 
     const productsQuantity = ref({});
 
@@ -184,10 +186,9 @@ export default {
       });
     };
 
-    const vsContext = useVSFContext();
-
     onSSR(async () => {
       await search(th.getFacetsFromURL());
+      await search(th.getManufacturerFacetsFromURL());
       if (error?.value?.search) context.root.$nuxt.error({ statusCode: 404 });
     });
 

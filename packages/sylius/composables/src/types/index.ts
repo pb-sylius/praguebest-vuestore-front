@@ -1,6 +1,6 @@
-import {ProductsSearchParams} from '@vue-storefront/core';
+import {ProductsSearchParams} from '@storefront-pb/core';
 
-export { UseCategory, UseProduct } from '@vue-storefront/core';
+export { UseCategory, UseProduct } from '@storefront-pb/core';
 
 export type Address = Record<string, unknown>;
 

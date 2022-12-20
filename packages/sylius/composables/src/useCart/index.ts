@@ -3,7 +3,7 @@ import {
   Logger,
   useCartFactory,
   UseCartFactoryParams
-} from '@vue-storefront/core';
+} from '@storefront-pb/core';
 
 import type {
   Cart,

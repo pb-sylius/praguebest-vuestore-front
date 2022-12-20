@@ -42,9 +42,10 @@
         </div>
         <div>
         <SfPropertyLink
+          v-if="product.manufacturer"
           name="Manufacturer"
-          href="/"
-          value="manufik"
+          link="https://gitlab.praguebest.cz/sylius/v_storefront/-/wikis/docs/component/SfOverlay"
+          :value="product.manufacturer.name"
         >
         </SfPropertyLink>
         </div>
@@ -204,7 +205,7 @@ import RelatedProducts from '~/components/RelatedProducts.vue';
 import AddReviewForm from '~/components/Product/AddReviewForm.vue';
 import { ref, computed } from '@vue/composition-api';
 import { useProduct, useCart, productGetters, useReview, reviewGetters, useUser } from '@realtainment/sylius';
-import { onSSR } from '@vue-storefront/core';
+import { onSSR } from '@storefront-pb/core';
 import MobileStoreBanner from '~/components/MobileStoreBanner.vue';
 import LazyHydrate from 'vue-lazy-hydration';
 

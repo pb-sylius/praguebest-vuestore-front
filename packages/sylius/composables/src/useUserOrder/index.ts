@@ -4,7 +4,7 @@ import {
   Context,
   useUserOrderFactory,
   UseUserOrderFactoryParams
-} from '@vue-storefront/core';
+} from '@storefront-pb/core';
 import { OrdersResponse, OrderSearchParams } from '../types';
 
 const params: UseUserOrderFactoryParams<OrdersResponse, OrderSearchParams> = {

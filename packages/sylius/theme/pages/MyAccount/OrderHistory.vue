@@ -110,8 +110,8 @@ import SfProperty from "../../ui/components/atoms/SfProperty/SfProperty.vue";
 
 import { computed, ref } from '@vue/composition-api';
 import { useUserOrder, orderGetters, productGetters } from '@realtainment/sylius';
-import { AgnosticOrderStatus } from '@vue-storefront/core';
-import { onSSR } from '@vue-storefront/core';
+import { AgnosticOrderStatus } from '@storefront-pb/core';
+import { onSSR } from '@storefront-pb/core';
 
 export default {
   name: 'OrderHistory',
