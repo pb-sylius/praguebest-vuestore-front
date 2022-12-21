@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { addBasePath } from '@storefront-pb/core';
+import { addBasePath } from '@vue-storefront/core';
 import SfSection from "../ui/components/molecules/SfSection/SfSection.vue";
 import SfImage from "../ui/components/atoms/SfImage/SfImage.vue";
 

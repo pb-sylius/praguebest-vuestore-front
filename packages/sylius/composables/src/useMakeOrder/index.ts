@@ -2,7 +2,7 @@ import {
   Context,
   useMakeOrderFactory,
   UseMakeOrderFactoryParams
-} from '@storefront-pb/core';
+} from '@vue-storefront/core';
 import type { Order } from '@realtainment/sylius-api';
 import { useCart } from '../useCart';
 const factoryParams: UseMakeOrderFactoryParams<Order> = {

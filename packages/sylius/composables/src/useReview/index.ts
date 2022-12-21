@@ -2,7 +2,7 @@ import {
   Context,
   useReviewFactory,
   UseReviewFactoryParams
-} from '@storefront-pb/core';
+} from '@vue-storefront/core';
 import { Review } from '../types';
 
 const params: UseReviewFactoryParams<any, any, any> = {

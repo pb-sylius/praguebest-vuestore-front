@@ -3,7 +3,7 @@ import {
   AgnosticAttribute,
   AgnosticPrice,
   AgnosticTotals
-} from '@storefront-pb/core';
+} from '@vue-storefront/core';
 import type { Wishlist, WishlistItem } from '@realtainment/sylius-api';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-import { CustomQuery } from '@storefront-pb/core';
+import { CustomQuery } from '@vue-storefront/core';
 export const extendQuery = (context, query, variables, customQuery?: CustomQuery) => {
   const { queryGql } = context.extendQuery(
     customQuery, {

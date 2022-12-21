@@ -30,7 +30,7 @@ import SfRadio from "../../ui/components/molecules/SfRadio/SfRadio.vue";
 import SfHeading from "../../ui/components/atoms/SfHeading/SfHeading.vue";
 
 import { ref, onMounted } from '@vue/composition-api';
-import { useVSFContext } from '@storefront-pb/core';
+import { useVSFContext } from '@vue-storefront/core';
 import { useCart } from '@realtainment/sylius';
 
 export default {

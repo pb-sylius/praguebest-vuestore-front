@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-import { VSF_LOCALE_COOKIE } from '@storefront-pb/core';
+import { VSF_LOCALE_COOKIE } from '@vue-storefront/core';
 import theme from './themeConfig';
 
 export default {
@@ -48,23 +48,23 @@ export default {
     '@nuxtjs/composition-api/module',
     '@nuxt/typescript-build',
     '@nuxtjs/style-resources',
-    ['@storefront-pb/nuxt', {
+    ['@vue-storefront/nuxt', {
       // @core-development-only-start
       coreDevelopment: true,
       // @core-development-only-end
       useRawSource: {
         dev: [
           '@realtainment/sylius',
-          '@storefront-pb/core',
+          '@vue-storefront/core',
         ],
         prod: [
           '@realtainment/sylius',
-          '@storefront-pb/core',
+          '@vue-storefront/core',
         ]
       }
     }],
     // @core-development-only-start
-    ['@storefront-pb/nuxt-theme', {
+    ['@vue-storefront/nuxt-theme', {
       generate: {
         replace: {
           apiClient: '@realtainment/sylius-api',
@@ -77,7 +77,7 @@ export default {
     }],
     // @core-development-only-end
     /* project-only-start
-    ['@storefront-pb/nuxt-theme'],
+    ['@vue-storefront/nuxt-theme'],
     project-only-end */
     ['@realtainment/sylius/nuxt', {}]
   ],
@@ -85,7 +85,7 @@ export default {
     'nuxt-i18n',
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
-    '@storefront-pb/middleware/nuxt',
+    '@vue-storefront/middleware/nuxt',
   ],
   i18n: {
     currency: 'USD',

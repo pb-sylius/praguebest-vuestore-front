@@ -1,4 +1,4 @@
-import { UserShippingGetters } from '@storefront-pb/core';
+import { UserShippingGetters } from '@vue-storefront/core';
 import type {
   UserShippingAddress as Address,
   UserAddressItem as AddressItem,

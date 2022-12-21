@@ -3,7 +3,7 @@ import {
   Logger,
   useCategoryFactory,
   UseCategoryFactoryParams
-} from '@storefront-pb/core';
+} from '@vue-storefront/core';
 import { Category } from '../types';
 
 const params: UseCategoryFactoryParams<Category, any> = {

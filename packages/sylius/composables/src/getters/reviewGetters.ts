@@ -1,4 +1,4 @@
-import { ReviewGetters, AgnosticRateCount } from '@storefront-pb/core';
+import { ReviewGetters, AgnosticRateCount } from '@vue-storefront/core';
 import { parse as parseDate, format as formatDate } from 'date-fns';
 type Review = any;
 type ReviewItem = any;

@@ -1,4 +1,4 @@
-import { CustomQuery } from '@storefront-pb/core';
+import { CustomQuery } from '@vue-storefront/core';
 import gql from 'graphql-tag';
 import { getFiltersQuery } from './queries';
 import { query, extendQuery } from '../helpers';

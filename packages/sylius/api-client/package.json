@@ -10,11 +10,11 @@
     "build": "rimraf lib server && rollup -c",
     "dev": "rollup -c -w",
     "test": "jest",
-    "prepublish": "yarn build"
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "@apollo/client": "^3.3.16",
-    "@storefront-pb/core": "git+https://storefront:glpat-F5kxo-SvPYEbqNF_bKa5@gitlab.praguebest.cz/sylius/storefront-node-module",
+    "@vue-storefront/core": "^2.7.0",
     "apollo-cache-inmemory": "^1.6.6",
     "apollo-client": "^2.6.10",
     "apollo-link": "^1.2.14",

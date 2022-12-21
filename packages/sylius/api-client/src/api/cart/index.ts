@@ -7,7 +7,7 @@ import {
 import {
   getCartQuery, getPaymentMethodsQuery, getShippingMethodsQuery, getCountriesQuery
 } from './queries';
-import { CustomQuery } from '@storefront-pb/core';
+import { CustomQuery } from '@vue-storefront/core';
 import { mutate, query, extendQuery, transformCart } from '../helpers';
 
 export const createCart = async (context, customQuery?: CustomQuery) => {

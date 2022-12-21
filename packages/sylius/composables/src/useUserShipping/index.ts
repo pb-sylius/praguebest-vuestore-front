@@ -2,7 +2,7 @@ import {
   Context,
   useUserShippingFactory,
   UseUserShippingFactoryParams
-} from '@storefront-pb/core';
+} from '@vue-storefront/core';
 
 const params: UseUserShippingFactoryParams<any, any> = {
   addAddress: async (context: Context, { address, customQuery }) => {

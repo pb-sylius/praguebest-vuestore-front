@@ -85,7 +85,7 @@ import SfCharacteristic from "../../ui/components/molecules/SfCharacteristic/SfC
 import SfInput from "../../ui/components/atoms/SfInput/SfInput.vue";
 import SfCircleIcon from "../../ui/components/atoms/SfCircleIcon/SfCircleIcon.vue";
 
-import { onSSR } from '@storefront-pb/core';
+import { onSSR } from '@vue-storefront/core';
 import { computed, ref } from '@vue/composition-api';
 import { useCart, cartGetters } from '@realtainment/sylius';
 import useUiNotification from "../../composables/useUiNotification";

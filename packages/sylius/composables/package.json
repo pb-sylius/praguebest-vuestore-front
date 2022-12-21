@@ -10,10 +10,9 @@
     "build": "rimraf lib && rollup -c",
     "dev": "rollup -c -w",
     "test": "jest",
-    "prepublish": "yarn build"
+    "prepublish": "npm run build"
   },
   "dependencies": {
-    "@storefront-pb/core": "git+https://storefront:glpat-F5kxo-SvPYEbqNF_bKa5@gitlab.praguebest.cz/sylius/storefront-node-module",
     "@realtainment/sylius-api": "^1.1.2",
     "date-fns": "^2.23.0",
     "rollup-plugin-terser": "^7.0.2",

@@ -1,4 +1,4 @@
-import { CartGetters, AgnosticPrice, AgnosticTotals, AgnosticCoupon, AgnosticDiscount } from '@storefront-pb/core';
+import { CartGetters, AgnosticPrice, AgnosticTotals, AgnosticCoupon, AgnosticDiscount } from '@vue-storefront/core';
 import { Cart, CartLineItem } from '@realtainment/sylius-api/src/types';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -79,7 +79,7 @@ import UserBillingAddress from '~/components/UserBillingAddress';
 import BillingAddressForm from '~/components/MyAccount/BillingAddressForm';
 import { useUserBilling, userBillingGetters } from '@realtainment/sylius';
 import { ref, computed } from '@nuxtjs/composition-api';
-import { onSSR } from '@storefront-pb/core';
+import { onSSR } from '@vue-storefront/core';
 
 export default {
   name: 'BillingDetails',

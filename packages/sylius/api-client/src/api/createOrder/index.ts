@@ -1,5 +1,5 @@
 import defaultMutation from './mutations';
-import { CustomQuery } from '@storefront-pb/core';
+import { CustomQuery } from '@vue-storefront/core';
 import gql from 'graphql-tag';
 
 const createOrder = async (context, defaultVariables, customQuery?: CustomQuery) => {

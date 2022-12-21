@@ -3,7 +3,7 @@ import {
   AgnosticAttribute,
   AgnosticPrice,
   ProductGetters
-} from '@storefront-pb/core';
+} from '@vue-storefront/core';
 import { Product } from '@realtainment/sylius-api/src/types';
 
 type ProductVariantFilters = any

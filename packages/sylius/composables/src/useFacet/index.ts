@@ -1,4 +1,4 @@
-import { Context, useFacetFactory, FacetSearchResult, Logger } from '@storefront-pb/core';
+import { Context, useFacetFactory, FacetSearchResult, Logger } from '@vue-storefront/core';
 const factoryParams = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   search: async (context: Context, params: FacetSearchResult<any>) => {

@@ -2,7 +2,7 @@ import {
   Context,
   useForgotPasswordFactory,
   UseForgotPasswordFactoryParams
-} from '@storefront-pb/core';
+} from '@vue-storefront/core';
 
 const factoryParams: UseForgotPasswordFactoryParams<any> = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -129,10 +129,10 @@ import { computed, ref } from '@nuxtjs/composition-api';
 import { useCart, useWishlist, productGetters, useFacet, facetGetters, wishlistGetters } from '@realtainment/sylius';
 import useUiState from '../composables/useUiState';
 import useUiHelpers from '../composables/useUiHelpers';
-import { onSSR } from '@storefront-pb/core';
+import { onSSR } from '@vue-storefront/core';
 import LazyHydrate from 'vue-lazy-hydration';
 import CategoryPageHeader from '~/components/CategoryPageHeader';
-import { addBasePath } from '@storefront-pb/core';
+import { addBasePath } from '@vue-storefront/core';
 
 // TODO(addToCart qty, horizontal): https://github.com/vuestorefront/storefront-ui/issues/1606
 export default {

@@ -207,7 +207,7 @@ import useUiNotification from "../../composables/useUiNotification";
 import { useBilling, useShipping, useUserShipping, userShippingGetters, useUser } from '@realtainment/sylius';
 import { required, min, digits } from 'vee-validate/dist/rules';
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
-import { onSSR, useVSFContext } from '@storefront-pb/core';
+import { onSSR, useVSFContext } from '@vue-storefront/core';
 
 extend('required', {
   ...required,

@@ -1,4 +1,4 @@
-import { UserBillingGetters } from '@storefront-pb/core';
+import { UserBillingGetters } from '@vue-storefront/core';
 import type {
   UserBillingAddress as Address,
   UserAddressItem as AddressItem,

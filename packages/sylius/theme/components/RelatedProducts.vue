@@ -10,7 +10,7 @@ import SfLoader from "../ui/components/atoms/SfLoader/SfLoader.vue";
 
 import { productGetters, useWishlist, wishlistGetters, useCart } from '@realtainment/sylius';
 import { computed } from '@vue/composition-api';
-import { addBasePath } from '@storefront-pb/core';
+import { addBasePath } from '@vue-storefront/core';
 
 export default {
   name: 'RelatedProducts',

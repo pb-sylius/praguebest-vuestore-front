@@ -2,7 +2,7 @@ import {
   Context,
   useBillingFactory,
   UseBillingParams
-} from '@storefront-pb/core';
+} from '@vue-storefront/core';
 import type { BillingAddress } from '@realtainment/sylius-api';
 import type {
   UseBillingAddParams as AddParams

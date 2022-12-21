@@ -1,4 +1,4 @@
-import { Context, useStoreFactory } from '@storefront-pb/core';
+import { Context, useStoreFactory } from '@vue-storefront/core';
 
 type TODO = unknown;
 type Store = TODO;
