@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-import {productFragment} from './fragments';
+import { productFragment } from './fragments';
 
 export const BaseQuery = gql`
   query getProducts(

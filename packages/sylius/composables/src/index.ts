@@ -7,6 +7,7 @@ export { useFacet } from './useFacet';
 export { useForgotPassword } from './useForgotPassword';
 export { useMakeOrder } from './useMakeOrder';
 export { useProduct } from './useProduct';
+export { useManufacturer } from './useManufacturer';
 export { useReview } from './useReview';
 export { useShipping } from './useShipping';
 export { useShippingProvider } from './useShippingProvider';

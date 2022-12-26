@@ -1,5 +1,6 @@
 export { default as createOrder } from './createOrder';
 export { default as getProduct } from './getProduct';
+export { getManufacturerAll } from './getManufacturer';
 export { default as getCategory } from './getCategory';
 export {
   createCart,

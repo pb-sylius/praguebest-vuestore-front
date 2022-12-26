@@ -1,5 +1,5 @@
 import { CustomQuery } from '@vue-storefront/core';
-import { BaseQuery } from './queries';
+import { queryAll } from './queries';
 import gql from 'graphql-tag';
 
 type ProductSort = {
@@ -7,7 +7,7 @@ type ProductSort = {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default async function getProduct(context, params, customQuery?: CustomQuery) {
+export async function getManufacturerAll(context, params, customQuery?: CustomQuery) {
 
   let key;
 
@@ -19,14 +19,14 @@ export default async function getProduct(context, params, customQuery?: CustomQu
   }
 
   let cached;
-  let productData;
+  let manufacturersData;
 
   const getKey = async (key) => {
     return context.config.lruCache.get(key);
   }
 
   if (key) {
-    cached = await getKey(key);
+    //cached = await getKey(key);
   }
 
   if (params.sort) {
@@ -43,58 +43,33 @@ export default async function getProduct(context, params, customQuery?: CustomQu
   }
 
   let pagination = {};
-  let products = [];
+  let manufacturers = [];
 
   if (!cached) {
-    const { productsQuery } = context.extendQuery(
+    const { manufacturersQuery } = context.extendQuery(
       customQuery,
       {
         productsQuery: {
-          query: BaseQuery,
+          query: queryAll,
           variables: params
         }
       }
     );
 
     const { data } = await context.client.query({
-      query: gql`${productsQuery.query}`,
-      variables: productsQuery.variables,
+      query: gql`${manufacturersQuery.query}`,
+      variables: manufacturersQuery.variables,
       fetchPolicy: 'no-cache'
     });
 
     const { locale, imagePaths } = context.config;
-    pagination = data.products.paginationInfo;
-    products = data.products.collection.map(item => {
+    pagination = data.manufacturers.paginationInfo;
+    manufacturers = data.manufacturers.collection.map(item => {
       if (item.attributes) {
         item.attributes = item.attributes.edges
           .map(edges => edges.node)
           .filter(node => node.type === 'integer' || node.localeCode === locale);
       }
-
-      if (item.productTaxons) {
-        const mapCategories = item.productTaxons.edges.map(edge => edge.node);
-        item._categoriesRef = mapCategories.map(cat => cat.taxon.id);
-        delete item.productTaxons;
-      }
-
-      if (item.options) {
-        item.options = item.options.edges.map(edge => {
-          edge.node.values = edge.node.values.edges.map(e => e.node);
-          return edge.node;
-        });
-      }
-
-      if (item.variants) {
-        item.variants = item.variants.collection.map(variant => {
-          variant.optionValues = variant.optionValues.edges.map(e => e.node);
-          if (variant.channelPricings) {
-            variant.channelPricings = variant.channelPricings.collection;
-          }
-          return variant;
-        });
-      }
-      item.selectedVariant = item?.variants?.length ? item.variants?.[0] : null;
-
       if (item.imagesRef) {
         const mapImages = item.imagesRef.collection;
         item.images = mapImages.map(img => [imagePaths.thumbnail, img.path].join('/'));
@@ -103,15 +78,15 @@ export default async function getProduct(context, params, customQuery?: CustomQu
       }
       return item;
     })
-    context.config.lruCache.set(key, JSON.stringify({ products, pagination }));
+    context.config.lruCache.set(key, JSON.stringify({ manufacturers, pagination }));
   } else {
-    productData = JSON.parse(cached);
-    products = productData.products;
-    pagination = productData.pagination;
+    manufacturersData = JSON.parse(cached);
+    manufacturers = manufacturersData.manufacturers;
+    pagination = manufacturersData.pagination;
   }
 
   return {
-    products,
+    manufacturers,
     pagination,
   };
 }

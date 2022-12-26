@@ -1,5 +1,5 @@
 import ApolloClient, { ApolloClientOptions } from 'apollo-client';
-import {FilterEqualTypeInput, FilterMatchTypeInput} from './api/getCategory/types';
+import { FilterEqualTypeInput, FilterMatchTypeInput } from './api/getCategory/types';
 
 export type ProductAttributeFilterInput = {
   name: FilterMatchTypeInput
@@ -41,7 +41,9 @@ export type ProductVariant = {
   channelPricings: any[];
   optionValues: ProductOptionValue[]
 }
+
 export type Wishlist = Record<string, unknown>;
+
 export type Product = {
   _id?: number;
   description: string;
@@ -65,13 +67,16 @@ export type Product = {
   selectedVariant: ProductVariant | null;
   variants: ProductVariant[];
 };
+
 export type Category = {
   id: number;
   name: string;
   slug: string;
   items: Category[];
 };
+
 export type CategoryFilter = Record<string, unknown>;
+
 export type ShippingMethod = Record<string, unknown>;
 
 export type CartLineItem = {
@@ -111,8 +116,8 @@ export type Cart = {
 
 export interface Storage {
   set: (
-      name: string,
-      value: any
+    name: string,
+    value: any
   ) => void;
   get: (name: string) => any;
   remove: (name: string) => any;
