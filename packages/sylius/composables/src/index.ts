@@ -25,6 +25,7 @@ export { facetGetters } from './getters/facetGetters';
 export { forgotPasswordGetters } from './getters/forgotPasswordGetters';
 export { orderGetters } from './getters/orderGetters';
 export { productGetters } from './getters/productGetters';
+export { manufacturerGetters } from './getters/manufacturerGetters';
 export { reviewGetters } from './getters/reviewGetters';
 export { userBillingGetters } from './getters/userBillingGetters';
 export { userGetters } from './getters/userGetters';

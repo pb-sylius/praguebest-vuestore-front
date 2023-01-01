@@ -56,10 +56,12 @@ export default {
         dev: [
           '@realtainment/sylius',
           '@vue-storefront/core',
+          '@praguebest/manufacturer'
         ],
         prod: [
           '@realtainment/sylius',
           '@vue-storefront/core',
+          '@praguebest/manufacturer'
         ]
       }
     }],
@@ -187,13 +189,13 @@ export default {
     },
     extendRoutes(routes, resolve) {
       routes.splice(
-        routes.findIndex(route => route.path === '/ManufacturerSingle'), 1
+        routes.findIndex(route => route.path === '/ManufacturerOne'), 1
       );
 
       routes.push({
-        name: 'ManufacturerSingle',
+        name: 'ManufacturerOne',
         path: '/manufacturer/:id/:slug/',
-        component: resolve(__dirname, 'pages/ManufacturerSingle.vue')
+        component: resolve(__dirname, 'pages/ManufacturerOne.vue')
       });
     }
   },

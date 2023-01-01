@@ -68,6 +68,16 @@ export type Product = {
   variants: ProductVariant[];
 };
 
+export type Manufacturer = {
+  _id?: number;
+  description: string;
+  name: string;
+  slug: string;
+  images: string[];
+  collection: Product[];
+  products: any;
+}
+
 export type Category = {
   id: number;
   name: string;

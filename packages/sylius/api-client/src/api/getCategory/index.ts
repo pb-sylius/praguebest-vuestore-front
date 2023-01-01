@@ -21,7 +21,7 @@ export default async function getCategory(context: Context, params, customQuery?
   }
 
   if (key) {
-    //cached = await getKey(key);
+    cached = await getKey(key);
   }
 
   const { categoryList } = context.extendQuery(

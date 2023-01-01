@@ -204,7 +204,7 @@ import InstagramFeed from '~/components/InstagramFeed.vue';
 import RelatedProducts from '~/components/RelatedProducts.vue';
 import AddReviewForm from '~/components/Product/AddReviewForm.vue';
 import { ref, computed } from '@vue/composition-api';
-import { useProduct, useCart, productGetters, useReview, reviewGetters, useUser, useManufacturer } from '@realtainment/sylius';
+import { useProduct, useCart, productGetters, useReview, reviewGetters, useUser } from '@realtainment/sylius';
 import { onSSR } from '@vue-storefront/core';
 import MobileStoreBanner from '~/components/MobileStoreBanner.vue';
 import LazyHydrate from 'vue-lazy-hydration';
@@ -245,7 +245,6 @@ export default {
     const { id, slug } = context.root.$route.params;
     const { isAuthenticated } = useUser();
     const { products, search } = useProduct('products');
-    const { manufacturers, search: manufSearch } = useManufacturer('manufacturers');
 
     // const { products: relatedProducts, search: searchRelatedProducts, loading: relatedLoading } = useProduct('relatedProducts');
     const relatedProducts = computed(() => []);
@@ -271,11 +270,6 @@ export default {
       big: { url: img.small },
       alt: product?.value?.name
     })));
-
-    //const util = require('util');
-
-    //console.log(util.inspect(manufacturers.value, false, null, true))
-
 
     onSSR(async () => {
       await search({ slug, query: context.root.$route.query});
