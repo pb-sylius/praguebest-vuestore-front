@@ -19,5 +19,6 @@ Výše uvedené npm příkazy by měly být uvedeny také v **CI/CD pipeline**.
 
 
 # Příbuzná témata:
+
 Vytvoření datového balíčku pro komunikaci mezi FE a BE:
 https://docs.google.com/document/d/1euoPUn31OMdaLf5scQzJ9I-iWhg2X2Btn67F0c6_Zwk
