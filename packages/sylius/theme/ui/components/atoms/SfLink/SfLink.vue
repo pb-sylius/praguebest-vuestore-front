@@ -1,11 +1,10 @@
 <template>
   <component
     :is="linkComponentTag"
-    v-focus
-    v-bind="urlTag"
+    v-focus v-bind="urlTag"
     class="sf-link"
-    v-on="$listeners"
-  >
+    :class="className"
+    v-on="$listeners">
     <slot />
   </component>
 </template>
@@ -21,8 +20,14 @@ export default {
       type: [String, Object],
       default: "",
     },
+    className: {
+      type: String,
+      default: ""
+    },
   },
   computed: {
+    console: () => console,
+    window: () => window,
     isExternal() {
       return (
         typeof this.link === "string" && this.link.search(/(^\/|^#)/g) === -1

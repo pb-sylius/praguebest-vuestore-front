@@ -85,6 +85,7 @@ export const productFragment = `
       name
       code
       description
+      slug
       images {
         edges {
           node {

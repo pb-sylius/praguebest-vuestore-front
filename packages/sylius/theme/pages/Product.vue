@@ -44,7 +44,7 @@
         <SfPropertyLink
           v-if="product.manufacturer"
           name="Manufacturer"
-          link="https://gitlab.praguebest.cz/sylius/v_storefront/-/wikis/docs/component/SfOverlay"
+          :link="localePath(`/manufacturer/${product.manufacturer.slug}`)"
           :value="product.manufacturer.name"
         >
         </SfPropertyLink>
@@ -245,6 +245,7 @@ export default {
     const { id, slug } = context.root.$route.params;
     const { isAuthenticated } = useUser();
     const { products, search } = useProduct('products');
+
     // const { products: relatedProducts, search: searchRelatedProducts, loading: relatedLoading } = useProduct('relatedProducts');
     const relatedProducts = computed(() => []);
     const relatedLoading = false;
@@ -303,7 +304,6 @@ export default {
       })) || [];
     });
 
-    console.log(product)
 
     return {
       updateFilter,

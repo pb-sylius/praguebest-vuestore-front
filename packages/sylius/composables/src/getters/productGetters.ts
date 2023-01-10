@@ -2,7 +2,7 @@ import {
   AgnosticMediaGalleryItem,
   AgnosticAttribute,
   AgnosticPrice,
-  ProductGetters
+  ProductGetters,
 } from '@vue-storefront/core';
 import { Product } from '@realtainment/sylius-api/src/types';
 

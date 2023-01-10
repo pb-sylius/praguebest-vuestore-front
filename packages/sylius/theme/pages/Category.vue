@@ -89,18 +89,6 @@
               :current="pagination.currentPage" :total="pagination.totalPages" :visible="5" />
           </LazyHydrate>
 
-          <div v-show="pagination.totalPages > 1" class="products__show-on-page">
-            <span class="products__show-on-page__label">{{ $t('Show on page') }}</span>
-            <LazyHydrate on-interaction>
-              <SfSelect :value="pagination && pagination.itemsPerPage ? pagination.itemsPerPage.toString() : ''"
-                class="products__items-per-page" @input="th.changeItemsPerPage">
-                <SfSelectOption v-for="option in pagination.pageOptions" :key="option" :value="option"
-                  class="products__items-per-page__option">
-                  {{ option }}
-                </SfSelectOption>
-              </SfSelect>
-            </LazyHydrate>
-          </div>
         </div>
       </SfLoader>
     </div>
@@ -227,6 +215,10 @@ export default {
     SfHeading,
     SfProperty,
     LazyHydrate
+  },
+  computed: {
+    console: () => console,
+    window: () => window,
   }
 };
 </script>

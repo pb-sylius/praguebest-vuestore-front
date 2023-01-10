@@ -1,20 +1,38 @@
+import { Context, Logger } from '@vue-storefront/core';
+
 import {
-  Context,
-  useProductFactory,
-  ProductsSearchParams,
-  UseProductFactoryParams,
-  Logger
-} from '@vue-storefront/core';
-import { ProductsResponse } from '../types';
-const params: UseProductFactoryParams<ProductsResponse, any> = {
-  productsSearch: async (context: Context, params: ProductsSearchParams): Promise<ProductsResponse> => {
+  useManufacturerFactory,
+  ManufacturerSearchParams,
+  UseManufacturerFactoryParams,
+} from '@praguebest/manufacturer'
+
+import { ManufacturerResponse } from '../types';
+
+const params: UseManufacturerFactoryParams<ManufacturerResponse, any> = {
+  manufacturersAll: async (context: Context, params: ManufacturerSearchParams): Promise<ManufacturerResponse> => {
     const { customQuery, ...searchParams } = params;
     try {
-      return await context.$sylius.api.getProduct(searchParams, customQuery);
+      return await context.$sylius.api.getManufacturerAll(searchParams, customQuery);
+    } catch (e) {
+      Logger.error(e);
+    }
+  },
+  manufacturersOne: async (context: Context, params: ManufacturerSearchParams): Promise<ManufacturerResponse> => {
+    const { customQuery, ...searchParams } = params;
+    try {
+      return await context.$sylius.api.getManufacturerOne(searchParams, customQuery);
+    } catch (e) {
+      Logger.error(e);
+    }
+  },
+  manufacturersSearch: async (context: Context, params: ManufacturerSearchParams): Promise<ManufacturerResponse> => {
+    const { customQuery, ...searchParams } = params;
+    try {
+      return await context.$sylius.api.getManufacturerSearch(searchParams, customQuery);
     } catch (e) {
       Logger.error(e);
     }
   }
 };
 
-export const useProduct = useProductFactory<ProductsResponse, any>(params);
+export const useManufacturer = useManufacturerFactory<ManufacturerResponse, any>(params);

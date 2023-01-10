@@ -3,6 +3,7 @@ import cartGetters from './cartGetters';
 import categoryGetters from './categoryGetters';
 import facetGetters from './facetGetters';
 import productGetters from './productGetters';
+import manufacturerGetter from './manufacturerGetters';
 import reviewGetters from './reviewGetters';
 import userGetters from './userGetters';
 import userShippingGetters from './userShippingGetters';

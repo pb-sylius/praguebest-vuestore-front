@@ -1,6 +1,8 @@
-import {ProductsSearchParams} from '@vue-storefront/core';
+import { ProductsSearchParams } from '@vue-storefront/core';
 
 export { UseCategory, UseProduct } from '@vue-storefront/core';
+
+export { UseManufacturer } from '@praguebest/manufacturer';
 
 export type Address = Record<string, unknown>;
 
@@ -41,6 +43,13 @@ export type Wishlist = Record<string, unknown>;
 export type ProductsResponse = {
   data: Product[];
   total: number;
+};
+
+export type Manufacturer = Record<string, unknown>;
+
+export type ManufacturerResponse = {
+    data: Manufacturer[];
+    total: number;
 };
 
 export type OrderSearchParams = Record<string, any>;

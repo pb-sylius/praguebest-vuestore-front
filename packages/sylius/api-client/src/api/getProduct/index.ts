@@ -12,7 +12,7 @@ export default async function getProduct(context, params, customQuery?: CustomQu
   let key;
 
   if ('categorySlug' in params) {
-    key = params.categorySlug + params.page + 'product';
+    key = `${params.categorySlug}${params.page}product${params.itemsPerPage}perPage`;
   }
   if ('slug' in params) {
     key = params.slug + 'product';
@@ -26,7 +26,7 @@ export default async function getProduct(context, params, customQuery?: CustomQu
   }
 
   if (key) {
-    //cached = await getKey(key);
+    cached = await getKey(key);
   }
 
   if (params.sort) {
