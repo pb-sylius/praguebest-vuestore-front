@@ -256,7 +256,6 @@ export default {
 
     const handleFormSubmit = async () => {
       await save({ billingDetails: form.value });
-      console.log('saved')
       const errors = Object.keys(error.value);
       let hasErrors = false;
       if (errors.length) {

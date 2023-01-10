@@ -36,14 +36,13 @@ export const getCart = async (context, cartId: string, customQuery?: CustomQuery
   };
 
   const key = 'cart_' + cartId.slice(cartId.lastIndexOf('/') + 1);
-  console.log('key', key)
 
   const getKey = async (key) => {
     return context.config.lruCache.get(key);
   }
 
   if (key) {
-    // cached = await getKey(key);
+    cached = await getKey(key);
   }
 
   if (!cached) {
@@ -58,71 +57,121 @@ export const getCart = async (context, cartId: string, customQuery?: CustomQuery
 };
 
 export const addToCart = async (context, defaultVariables, customQuery?: CustomQuery) => {
-  console.log('addToCart', defaultVariables)
+
+  const key = 'cart_' + defaultVariables.token.slice(defaultVariables.token.lastIndexOf('/') + 1);
+
   const queryGql = extendQuery(context, addToCartMutation, defaultVariables, customQuery);
   const { shop_add_itemOrder } = await mutate(context, queryGql);
-  return transformCart(context, shop_add_itemOrder.order);
+  const cartData = shop_add_itemOrder;
+
+  context.config.lruCache.set(key, JSON.stringify(cartData));
+
+  return transformCart(context, cartData.order);
 };
 
 export const updateCartQuantity = async (context, defaultVariables, customQuery?: CustomQuery) => {
-  console.log('updateCartQuantity', defaultVariables)
+
+  const key = 'cart_' + defaultVariables.cartId.slice(defaultVariables.cartId.lastIndexOf('/') + 1);
+
   const queryGql = extendQuery(context, updateCartQuantityMutation, defaultVariables, customQuery);
   const { shop_change_quantityOrder } = await mutate(context, queryGql);
-  return transformCart(context, shop_change_quantityOrder.order);
+  const cartData = shop_change_quantityOrder;
+
+  context.config.lruCache.set(key, JSON.stringify(cartData));
+
+  return transformCart(context, cartData.order);
 };
 
 export const removeFromCart = async (context, defaultVariables, customQuery?: CustomQuery) => {
-  console.log('removeFromCart', defaultVariables)
+
+  const key = 'cart_' + defaultVariables.cartId.slice(defaultVariables.cartId.lastIndexOf('/') + 1);
+
   const queryGql = extendQuery(context, removeFromCartMutation, defaultVariables, customQuery);
   const { shop_remove_itemOrder } = await mutate(context, queryGql);
-  return transformCart(context, shop_remove_itemOrder.order);
+  const cartData = shop_remove_itemOrder;
+
+  context.config.lruCache.set(key, JSON.stringify(cartData));
+
+  return transformCart(context, cartData.order);
 };
 
 export const addCouponToCart = async (context, defaultVariables, customQuery?: CustomQuery) => {
-  console.log('addCouponToCart', defaultVariables)
+
+  const key = 'cart_' + defaultVariables.coupon.orderTokenValue.slice(defaultVariables.coupon.orderTokenValue.lastIndexOf('/') + 1);
+
   const queryGql = extendQuery(context, applyCouponMutation, defaultVariables, customQuery);
   const { shop_apply_couponOrder } = await mutate(context, queryGql);
-  return transformCart(context, shop_apply_couponOrder.order);
+  const cartData = shop_apply_couponOrder;
+
+  context.config.lruCache.set(key, JSON.stringify(cartData));
+
+  return transformCart(context, cartData.order);
 };
 
 export const removeCouponFromCart = async (context, defaultVariables, customQuery?: CustomQuery) => {
-  console.log('removeCouponFromCart', defaultVariables)
+
+  const key = 'cart_' + defaultVariables.removeCouponInput.orderTokenValue.slice(defaultVariables.removeCouponInput.orderTokenValue.lastIndexOf('/') + 1);
+
   const queryGql = extendQuery(context, removeCouponFromCartMutation, defaultVariables, customQuery);
   const { shop_remove_couponOrder } = await mutate(context, queryGql);
-  return transformCart(context, shop_remove_couponOrder.order);
+  const cartData = shop_remove_couponOrder;
+
+  context.config.lruCache.set(key, JSON.stringify(cartData));
+
+  return transformCart(context, cartData.order);
 };
 
+/* zatim neni na FE pouzito, az se bude pouzivat, je treba upravit cache i zde */
 export const clearCart = async (context, defaultVariables, customQuery?: CustomQuery) => {
-  console.log('clearCart', defaultVariables)
   const queryGql = extendQuery(context, clearCartMutation, defaultVariables, customQuery);
   const { deleteOrder } = await mutate(context, queryGql);
   return deleteOrder.order;
 };
 
 export const addAddress = async (context, defaultVariables, customQuery?: CustomQuery) => {
-  console.log('addAddress', defaultVariables)
+
+  const key = defaultVariables.addAddressInput?.shippingAddress
+    ? 'cart_' + defaultVariables.addAddressInput.orderTokenValue.slice(defaultVariables.addAddressInput.orderTokenValue.lastIndexOf('/') + 1)
+    : 'cart_' + defaultVariables.addAddressInput.orderTokenValue.slice(defaultVariables.addAddressInput.orderTokenValue.lastIndexOf('/') + 1)
+
   const query = defaultVariables.addAddressInput?.shippingAddress
     ? addShippingAddressMutation
     : addBillingAddressMutation;
   const queryGql = extendQuery(context, query, defaultVariables, customQuery);
   const data = await mutate(context, queryGql);
-  return defaultVariables.addAddressInput?.shippingAddress
-    ? data.shop_add_shipping_addressOrder.order
-    : data.shop_add_billing_addressOrder.order;
+  const cartData = defaultVariables.addAddressInput?.shippingAddress
+    ? data.shop_add_shipping_addressOrder
+    : data.shop_add_billing_addressOrder;
+
+  context.config.lruCache.set(key, JSON.stringify(cartData));
+
+  return cartData.order;
 };
 
 export const updateCartPayment = async (context, defaultVariables, customQuery?: CustomQuery) => {
-  console.log('updateCartPayment', defaultVariables)
+
+  const key = 'cart_' + defaultVariables.paymentMethod.orderTokenValue.slice(defaultVariables.paymentMethod.orderTokenValue.lastIndexOf('/') + 1);
+
   const queryGql = extendQuery(context, updateCartPaymentMutation, defaultVariables, customQuery);
   const { shop_select_payment_methodOrder } = await mutate(context, queryGql);
-  return transformCart(context, shop_select_payment_methodOrder.order);
+  const cartData = shop_select_payment_methodOrder;
+
+  context.config.lruCache.set(key, JSON.stringify(cartData));
+
+  return transformCart(context, cartData.order);
 };
 
 export const updateCartShipping = async (context, defaultVariables, customQuery?: CustomQuery) => {
-  console.log('updateCartShipping', defaultVariables)
+
+  const key = 'cart_' + defaultVariables.shippingMethod.orderTokenValue.slice(defaultVariables.shippingMethod.orderTokenValue.lastIndexOf('/') + 1);
+
   const queryGql = extendQuery(context, updateCartShippingMutation, defaultVariables, customQuery);
   const { shop_select_shipping_methodOrder } = await mutate(context, queryGql);
-  return transformCart(context, shop_select_shipping_methodOrder.order);
+  const cartData = shop_select_shipping_methodOrder;
+
+  context.config.lruCache.set(key, JSON.stringify(cartData));
+
+  return transformCart(context, cartData.order);
 };
 
 export const getPaymentMethods = async (context) => {
