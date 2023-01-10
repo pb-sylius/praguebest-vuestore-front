@@ -1,0 +1,39 @@
+@import "../../../styles/helpers";
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.sf-one_manufacturer_head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  border-bottom: 2px solid var(--c-light);
+  padding-bottom: 20px;
+
+  & .sf-heading_image {
+    display: block;
+  }
+
+  & img.sf-image-loaded {
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: contain;
+  }
+
+  & .sf-manufacturer_texts {
+    margin-top: 30px;
+  }
+
+  & .sf-manufacturer_description {
+    text-align: center;
+    max-width: 500px;
+    line-height: 1.4;
+  }
+
+}

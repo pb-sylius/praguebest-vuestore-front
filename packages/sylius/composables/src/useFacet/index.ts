@@ -1,4 +1,5 @@
 import { Context, useFacetFactory, FacetSearchResult, Logger } from '@vue-storefront/core';
+
 const factoryParams = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   search: async (context: Context, params: FacetSearchResult<any>) => {
@@ -6,14 +7,11 @@ const factoryParams = {
     let category = [];
     let categories = [];
     let categoriesFlat = [];
-    let manufacturer = {};
     let pagination = {
       totalCount: 0,
       lastPage: 0,
       itemsPerPage: 0
     };
-
-    //console.log(params)
 
     try {
       const data = await Promise.all([
@@ -38,7 +36,6 @@ const factoryParams = {
       category,
       categories,
       categoriesFlat,
-      manufacturer,
       facets: [],
       page: params.input.page,
       total: pagination.totalCount,

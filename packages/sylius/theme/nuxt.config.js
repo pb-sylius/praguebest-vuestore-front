@@ -194,8 +194,18 @@ export default {
 
       routes.push({
         name: 'ManufacturerOne',
-        path: '/manufacturer/:id/:slug/',
+        path: `/manufacturer/:slug/`,
         component: resolve(__dirname, 'pages/ManufacturerOne.vue')
+      });
+
+      routes.splice(
+        routes.findIndex(route => route.path === '/ManufacturerAll'), 1
+      );
+
+      routes.push({
+        name: 'ManufacturerAll',
+        path: `/manufacturers/`,
+        component: resolve(__dirname, 'pages/ManufacturerAll.vue')
       });
     }
   },

@@ -1,11 +1,10 @@
 export const manufacturersFragment = `
 id
-_id
-importId
 code
 isTop
 isShowHomepage
-enabled
+name
+slug
 images {
   edges {
     node {
@@ -30,25 +29,6 @@ images {
     node {
       id
       path
-    }
-  }
-}
-`;
-
-export const productsFragment = `
-products {
-  collection {
-    name
-    slug
-    reviews {
-      collection {
-        rating
-      }
-    }
-    images {
-      collection {
-        path
-      }
     }
   }
 }

@@ -35,14 +35,15 @@ export const getCart = async (context, cartId: string, customQuery?: CustomQuery
     acceptLanguage
   };
 
-  const key = 'cart_' + cartId;
+  const key = 'cart_' + cartId.slice(cartId.lastIndexOf('/') + 1);
+  console.log('key', key)
 
   const getKey = async (key) => {
     return context.config.lruCache.get(key);
   }
 
   if (key) {
-    cached = await getKey(key);
+    // cached = await getKey(key);
   }
 
   if (!cached) {
@@ -57,42 +58,49 @@ export const getCart = async (context, cartId: string, customQuery?: CustomQuery
 };
 
 export const addToCart = async (context, defaultVariables, customQuery?: CustomQuery) => {
+  console.log('addToCart', defaultVariables)
   const queryGql = extendQuery(context, addToCartMutation, defaultVariables, customQuery);
   const { shop_add_itemOrder } = await mutate(context, queryGql);
   return transformCart(context, shop_add_itemOrder.order);
 };
 
 export const updateCartQuantity = async (context, defaultVariables, customQuery?: CustomQuery) => {
+  console.log('updateCartQuantity', defaultVariables)
   const queryGql = extendQuery(context, updateCartQuantityMutation, defaultVariables, customQuery);
   const { shop_change_quantityOrder } = await mutate(context, queryGql);
   return transformCart(context, shop_change_quantityOrder.order);
 };
 
 export const removeFromCart = async (context, defaultVariables, customQuery?: CustomQuery) => {
+  console.log('removeFromCart', defaultVariables)
   const queryGql = extendQuery(context, removeFromCartMutation, defaultVariables, customQuery);
   const { shop_remove_itemOrder } = await mutate(context, queryGql);
   return transformCart(context, shop_remove_itemOrder.order);
 };
 
 export const addCouponToCart = async (context, defaultVariables, customQuery?: CustomQuery) => {
+  console.log('addCouponToCart', defaultVariables)
   const queryGql = extendQuery(context, applyCouponMutation, defaultVariables, customQuery);
   const { shop_apply_couponOrder } = await mutate(context, queryGql);
   return transformCart(context, shop_apply_couponOrder.order);
 };
 
 export const removeCouponFromCart = async (context, defaultVariables, customQuery?: CustomQuery) => {
+  console.log('removeCouponFromCart', defaultVariables)
   const queryGql = extendQuery(context, removeCouponFromCartMutation, defaultVariables, customQuery);
   const { shop_remove_couponOrder } = await mutate(context, queryGql);
   return transformCart(context, shop_remove_couponOrder.order);
 };
 
 export const clearCart = async (context, defaultVariables, customQuery?: CustomQuery) => {
+  console.log('clearCart', defaultVariables)
   const queryGql = extendQuery(context, clearCartMutation, defaultVariables, customQuery);
   const { deleteOrder } = await mutate(context, queryGql);
   return deleteOrder.order;
 };
 
 export const addAddress = async (context, defaultVariables, customQuery?: CustomQuery) => {
+  console.log('addAddress', defaultVariables)
   const query = defaultVariables.addAddressInput?.shippingAddress
     ? addShippingAddressMutation
     : addBillingAddressMutation;
@@ -104,12 +112,14 @@ export const addAddress = async (context, defaultVariables, customQuery?: Custom
 };
 
 export const updateCartPayment = async (context, defaultVariables, customQuery?: CustomQuery) => {
+  console.log('updateCartPayment', defaultVariables)
   const queryGql = extendQuery(context, updateCartPaymentMutation, defaultVariables, customQuery);
   const { shop_select_payment_methodOrder } = await mutate(context, queryGql);
   return transformCart(context, shop_select_payment_methodOrder.order);
 };
 
 export const updateCartShipping = async (context, defaultVariables, customQuery?: CustomQuery) => {
+  console.log('updateCartShipping', defaultVariables)
   const queryGql = extendQuery(context, updateCartShippingMutation, defaultVariables, customQuery);
   const { shop_select_shipping_methodOrder } = await mutate(context, queryGql);
   return transformCart(context, shop_select_shipping_methodOrder.order);

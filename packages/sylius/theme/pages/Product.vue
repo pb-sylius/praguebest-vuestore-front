@@ -44,7 +44,7 @@
         <SfPropertyLink
           v-if="product.manufacturer"
           name="Manufacturer"
-          link="https://gitlab.praguebest.cz/sylius/v_storefront/-/wikis/docs/component/SfOverlay"
+          :link="localePath(`/manufacturer/${product.manufacturer.slug}`)"
           :value="product.manufacturer.name"
         >
         </SfPropertyLink>

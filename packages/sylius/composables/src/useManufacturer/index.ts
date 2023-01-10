@@ -9,9 +9,10 @@ import {
 import { ManufacturerResponse } from '../types';
 
 const params: UseManufacturerFactoryParams<ManufacturerResponse, any> = {
-  manufacturersAll: async (context: Context): Promise<ManufacturerResponse> => {
+  manufacturersAll: async (context: Context, params: ManufacturerSearchParams): Promise<ManufacturerResponse> => {
+    const { customQuery, ...searchParams } = params;
     try {
-      return await context.$sylius.api.getManufacturerAll();
+      return await context.$sylius.api.getManufacturerAll(searchParams, customQuery);
     } catch (e) {
       Logger.error(e);
     }

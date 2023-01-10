@@ -2,12 +2,37 @@ import { CustomQuery } from '@vue-storefront/core';
 import { queryAll, queryOne, querySearch } from './queries';
 import gql from 'graphql-tag';
 
+const setAbsoluteImagePaths = (context, collection: any, mapProductImages = false) => {
+
+  const { imagePaths } = context.config;
+
+  collection.map(item => {
+    if (item.images) {
+      const mapImages = item.images.edges;
+      item.images = mapImages.map(img => [imagePaths.regular, img.node.path].join('/'));
+
+    }
+
+    if (mapProductImages && item.products && item.products.collection) {
+      for (const [key, value] of (<any>Object).entries(item.products.collection)) {
+        value.images.collection.forEach((img, index) => {
+          value.images.collection[index] = [imagePaths.regular, img.path].join('/')
+        });
+        item.products.collection[key].images.collection = value.images.collection;
+      }
+    }
+
+  });
+
+  return collection;
+}
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function getManufacturerAll(context, params?, customQuery?: CustomQuery) {
+export async function getManufacturerAll(context, params, customQuery?: CustomQuery) {
+
+  const { locale } = context.config;
 
   const key = 'getManufacturerAll';
-
-  console.log('entering getManufacturerAll')
 
   let cached;
   let manufacturersData;
@@ -17,7 +42,7 @@ export async function getManufacturerAll(context, params?, customQuery?: CustomQ
   }
 
   if (key) {
-    //cached = await getKey(key);
+    cached = await getKey(key);
   }
 
   let pagination = {};
@@ -30,12 +55,14 @@ export async function getManufacturerAll(context, params?, customQuery?: CustomQ
       {
         manufacturersQuery: {
           query: queryAll,
+          variables: { itemsPerPage: 10000, page: 1, localeCode: locale }
         }
       }
     );
 
     const { data } = await context.client.query({
       query: gql`${manufacturersQuery.query}`,
+      variables: manufacturersQuery.variables,
       fetchPolicy: 'no-cache'
     });
 
@@ -49,18 +76,19 @@ export async function getManufacturerAll(context, params?, customQuery?: CustomQ
     pagination = manufacturersData.pagination;
   }
 
+  manufacturers = setAbsoluteImagePaths(context, manufacturers);
+
   return {
     manufacturers,
     pagination,
   };
 }
 
+/* zatim neni pouzito */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function getManufacturerSearch(context, params?, customQuery?: CustomQuery) {
+export async function getManufacturerSearch(context, params, customQuery?: CustomQuery) {
 
   const key = 'getManufacturerSearch';
-
-  console.log('entering getManufacturerSearch')
 
   let cached;
   let manufacturersData;
@@ -113,7 +141,7 @@ export async function getManufacturerSearch(context, params?, customQuery?: Cust
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function getManufacturerOne(context, params, customQuery?: CustomQuery) {
 
-  const key = 'getManufacturerOne';
+  const key = `getManufacturerOne${params.slug}${params.page}${params.productsItemsPerPage}`;
 
   let cached;
   let manufacturersData;
@@ -123,7 +151,7 @@ export async function getManufacturerOne(context, params, customQuery?: CustomQu
   }
 
   if (key) {
-    //cached = await getKey(key);
+    cached = await getKey(key);
   }
 
   let manufacturer = [];
@@ -146,15 +174,16 @@ export async function getManufacturerOne(context, params, customQuery?: CustomQu
       fetchPolicy: 'no-cache'
     });
 
-    manufacturer = data.manufacturer;
-
+    manufacturer = data.manufacturers.collection;
     context.config.lruCache.set(key, JSON.stringify(manufacturer));
   } else {
     manufacturersData = JSON.parse(cached);
     manufacturer = manufacturersData;
   }
 
+  manufacturer = setAbsoluteImagePaths(context, manufacturer, true);
+
   return {
-    manufacturer
+    manufacturer,
   };
 }

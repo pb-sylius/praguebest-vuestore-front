@@ -1,39 +1,89 @@
 import gql from 'graphql-tag';
-import { manufacturersFragment, imagesFragment, productsFragment } from './fragments';
+import { manufacturersFragment, imagesFragment } from './fragments';
 
 export const queryAll = gql`
   query getManufacturersAll(
     $itemsPerPage: Int,
     $page: Int,
+    $localeCode: String
   ) {
     manufacturers(
       page: $page,
-      itemsPerPage: $itemsPerPage
+      itemsPerPage: $itemsPerPage,
+      localeCode: $localeCode
     ) {
       collection {
-        ${manufacturersFragment}
-      }
-      paginationInfo {
-        itemsPerPage
-        lastPage
-        totalCount
+        id
+        code
+        isTop
+        isShowHomepage
+        name
+        slug
+        ${imagesFragment}
       }
     }
   }
 `;
 
-/* will be replaced with translation_slug */
+/* graph ql neumoznuje poslat promenne do fragmentu,
+takze pro product nemuzeme pouzit fragment */
 export const queryOne = gql`
   query getManufacturersOne(
-    $id: ID!
+    $slug: String
+    $productsItemsPerPage: Int
+    $page: Int
   ) {
-    manufacturer(
-      id: $id
+    manufacturers(
+      slug: $slug
     ) {
-      name
-      description
-      ${imagesFragment}
-      ${productsFragment}
+      collection {
+        id
+        slug
+        name
+        description
+        ${imagesFragment}
+        products(itemsPerPage: $productsItemsPerPage, page: $page) {
+          paginationInfo {
+            itemsPerPage
+            lastPage
+            totalCount
+          }
+          collection {
+            name
+            averageRating
+            slug
+            code
+            _id
+            images {
+              collection {
+                path
+              }
+            }
+            variants {
+              collection {
+                channelPricings {
+                  collection {
+                    channelCode
+                    price
+                  }
+                }
+                optionValues {
+                  edges {
+                    node {
+                      id
+                      code
+                      value
+                      option {
+                        id
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;

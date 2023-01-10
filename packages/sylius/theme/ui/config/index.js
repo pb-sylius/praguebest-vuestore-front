@@ -99,3 +99,12 @@ export const useMobileSearch = true;
  * If true, bottom navigation will be used on mobile and vice versa
  */
 export const useBottomNavigation = false;
+
+// --------------------------PRODUCTS PAGINATION--------------------------
+
+/**
+ Sets items per page for product lists.
+ Works with manufacturers and branches.
+ */
+export const productsPerPage = 3;
+

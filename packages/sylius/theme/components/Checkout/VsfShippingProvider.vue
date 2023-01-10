@@ -84,7 +84,8 @@ export default {
       const shippingMethod = {
         orderTokenValue: cart.value.tokenValue,
         shippingMethodCode: code,
-        shipmentId: String(cart.value.shipments._id)
+        shipmentId: String(cart.value.shipments._id),
+        branchId: ''
       };
       saveShippingMethod({ shippingMethod });
     };

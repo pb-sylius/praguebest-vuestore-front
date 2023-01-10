@@ -40,6 +40,7 @@ export type ProductVariant = {
   quantity?: number;
   channelPricings: any[];
   optionValues: ProductOptionValue[]
+  collection: any[]
 }
 
 export type Wishlist = Record<string, unknown>;
@@ -70,10 +71,12 @@ export type Product = {
 
 export type Manufacturer = {
   _id?: number;
+  code: string;
   description: string;
   name: string;
   slug: string;
-  images: string[];
+  images: Record<string, unknown>;
+  edges: string[];
   collection: Product[];
   products: any;
 }

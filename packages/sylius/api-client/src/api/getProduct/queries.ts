@@ -8,7 +8,8 @@ export const BaseQuery = gql`
     $orderBy: [ProductFilter_order],
     $itemsPerPage: Int,
     $page: Int,
-    $search: String
+    $search: String,
+    $manufacturerCode: String
   ) {
     products(
       translations_name: $search,
@@ -16,7 +17,8 @@ export const BaseQuery = gql`
       productTaxons_taxon_translations_slug: $categorySlug,
       order: $orderBy,
       page: $page,
-      itemsPerPage: $itemsPerPage
+      itemsPerPage: $itemsPerPage,
+      manufacturerCode: $manufacturerCode
     ) {
       collection {
         ${productFragment}
