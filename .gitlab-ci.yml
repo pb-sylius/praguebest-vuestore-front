@@ -17,6 +17,7 @@ runCopy:
         GIT_STRATEGY: none
     before_script:
         - set -eux
+        - rm -rf $BUILD_CACHE_DIR_PROD
         - eval $(ssh-agent -s)
         - ssh-add - <<< "${GITLAB_DEPLOY_GROUP_SYLIUS_SSH_KEY}"
         - ssh-keyscan "${DEPLOY_SERVER}" > /etc/ssh/ssh_known_hosts # to avoid "Host key verification failed." rsync/ssh error
