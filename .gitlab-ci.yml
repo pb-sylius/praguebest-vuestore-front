@@ -1,0 +1,51 @@
+image: node:14.19.0
+
+variables:
+    GIT_BRANCH: master
+    BUILD_CACHE_DIR_BASE: /pbs-deploy/docker-build/$CI_PROJECT_NAMESPACE/$CI_PROJECT_PATH
+    BUILD_CACHE_DIR_PROD: $BUILD_CACHE_DIR_BASE/prod
+    DEPLOY_TARGET: $DEPLOY_SERVER:$DEPLOY_DIRECTORY
+
+stages:
+    - build
+    - deploy
+
+runBuild:
+    stage: build
+    interruptible: true 
+    variables:
+        GIT_STRATEGY: none
+    before_script:
+        - set -eux
+        - git clone --branch "$GIT_BRANCH" --depth 1 https://foo:glpat-km9-__dg5K2HBs2r3PnA@gitlab.praguebest.cz/sylius/v_storefront.git "$BUILD_CACHE_DIR_PROD"
+    script:
+        - cd "$BUILD_CACHE_DIR_PROD"
+        - yarn install --network-concurrency 1
+        - yarn build:sylius
+    # only:
+    #     variables:
+    #         - $CI_COMMIT_REF_NAME == $GIT_BRANCH
+            
+    tags:
+        # runner has to be enabled https://gitlab.praguebest.cz/sylius/sylius-master/-/settings/ci_cd#js-runners-settings
+        - runner2-docker
+
+runDeploy:
+    stage: deploy
+    variables:
+        GIT_STRATEGY: none
+    before_script:
+        - eval $(ssh-agent -s)
+        - ssh-add - <<< "${GITLAB_DEPLOY_GROUP_SYLIUS_SSH_KEY}"
+        - ssh-keyscan "${DEPLOY_SERVER}" > /etc/ssh/ssh_known_hosts # to avoid "Host key verification failed." rsync/ssh error
+    script:
+        - cd $BUILD_CACHE_DIR_PROD
+        - rsync -rpKzl --ignore-errors --force "." "deployserver@"$DEPLOY_TARGET"" 2>&1
+        - ssh deployserver@$DEPLOY_SERVER "cd "${DEPLOY_DIRECTORY}" && yarn cache clean --all && yarn start:sylius"
+        - rm --force --recursive $BUILD_CACHE_DIR_PROD
+    # only:
+    #     variables:
+    #         - $CI_COMMIT_REF_NAME == $GIT_BRANCH
+    tags:
+        # runner has to be enabled https://gitlab.praguebest.cz/sylius/sylius-master/-/settings/ci_cd#js-runners-settings
+        - runner2-docker
