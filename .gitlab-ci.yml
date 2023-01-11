@@ -22,9 +22,9 @@ runBuild:
         - cd "$BUILD_CACHE_DIR_PROD"
         - yarn install --network-concurrency 1
         - yarn build:sylius
-    # only:
-    #     variables:
-    #         - $CI_COMMIT_REF_NAME == $GIT_BRANCH
+    only:
+        variables:
+            - $CI_COMMIT_REF_NAME == $GIT_BRANCH
             
     tags:
         # runner has to be enabled https://gitlab.praguebest.cz/sylius/sylius-master/-/settings/ci_cd#js-runners-settings
@@ -43,9 +43,9 @@ runDeploy:
         - rsync -rpKzl --ignore-errors --force "." "deployserver@"$DEPLOY_TARGET"" 2>&1
         - ssh deployserver@$DEPLOY_SERVER "cd "${DEPLOY_DIRECTORY}" && yarn cache clean --all && yarn start:sylius"
         - rm --force --recursive $BUILD_CACHE_DIR_PROD
-    # only:
-    #     variables:
-    #         - $CI_COMMIT_REF_NAME == $GIT_BRANCH
+    only:
+        variables:
+            - $CI_COMMIT_REF_NAME == $GIT_BRANCH
     tags:
         # runner has to be enabled https://gitlab.praguebest.cz/sylius/sylius-master/-/settings/ci_cd#js-runners-settings
         - runner2-docker
