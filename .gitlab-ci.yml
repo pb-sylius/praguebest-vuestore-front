@@ -50,7 +50,7 @@ runBuild:
         - ssh-keyscan "${DEPLOY_SERVER}" > /etc/ssh/ssh_known_hosts # to avoid "Host key verification failed." rsync/ssh error
     script:
         - ssh deployserver@$DEPLOY_SERVER "cd "${DEPLOY_LINKABLE_DIRECTORY}" && yarn install && yarn build:sylius && yarn cache clean --all"
-        - ssh deployserver@$DEPLOY_SERVER "cd "${DEPLOY_LINKABLE_DIRECTORY}"/../ && ln -s "${DEPLOY_LINKABLE_PATH}" "${APP_SUBPATH}"________test"
+        - ssh deployserver@$DEPLOY_SERVER "cd "${DEPLOY_LINKABLE_DIRECTORY}"/../ && ln -s "${DEPLOY_LINKABLE_PATH}" "${APP_SUBPATH}" && ls | grep -P "${DEPLOY_LINKABLE_PATH_PREFIX}__(?!"${CI_PIPELINE_ID}")" | xargs -d"\n" rm -rf"
         - ssh deployserver@$DEPLOY_SERVER "sudo systemctl restart vuestorefront.praguebest.cz.service"
         - rm --force --recursive $BUILD_CACHE_DIR_PROD
     # only:
