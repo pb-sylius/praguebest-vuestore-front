@@ -1,3 +1,10 @@
+import {
+  PlatformApi,
+  Context,
+  CustomQuery,
+  FactoryParams,
+} from "@vue-storefront/core";
+
 import { ProductsSearchParams } from '@vue-storefront/core';
 
 export { UseCategory, UseProduct } from '@vue-storefront/core';
@@ -44,6 +51,22 @@ export type ProductsResponse = {
   data: Product[];
   total: number;
 };
+
+export interface ManufacturerSearchParams {
+  perPage?: number;
+  page?: number;
+  sort?: any;
+  term?: any;
+  filters?: any;
+  id?: string;
+  [x: string]: any;
+}
+
+export interface UseManufacturerFactoryParams<MANUFACTURERS, MANUFUACTURER_SEARCH_PARAMS extends ManufacturerSearchParams, API extends PlatformApi = any> extends FactoryParams<API> {
+  manufacturersSearch: (context: Context, params: MANUFUACTURER_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<MANUFACTURERS>;
+  manufacturersAll: (context: Context, params: MANUFUACTURER_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<MANUFACTURERS>;
+  manufacturersOne: (context: Context, params: MANUFUACTURER_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<MANUFACTURERS>;
+}
 
 export type Manufacturer = Record<string, unknown>;
 

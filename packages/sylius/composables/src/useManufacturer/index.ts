@@ -1,13 +1,10 @@
 import { Context, Logger } from '@vue-storefront/core';
 
-import {
-  useManufacturerFactory,
-  ManufacturerSearchParams,
-} from '@praguebest/manufacturer'
+import { useManufacturerFactory } from '@praguebest/manufacturer'
 
-import { ManufacturerResponse } from '../types';
+import { ManufacturerResponse, ManufacturerSearchParams, UseManufacturerFactoryParams} from '../types';
 
-const params: any = {
+const params: UseManufacturerFactoryParams<ManufacturerResponse, any> = {
   manufacturersAll: async (context: Context, params: ManufacturerSearchParams): Promise<ManufacturerResponse> => {
     const { customQuery, ...searchParams } = params;
     try {
