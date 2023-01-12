@@ -1,4 +1,4 @@
-image: node:14.19.0
+image: docker-registry.praguebest.cz:5000/node-vuestorefront:latest
 
 variables:
     GIT_BRANCH: master
