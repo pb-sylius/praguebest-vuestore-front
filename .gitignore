@@ -28,3 +28,5 @@ coverage
 
 packages/docs
 docs/.vuepress/dist
+
+/docker-compose.yml

@@ -1,0 +1,24 @@
+version: "3.5"
+services:
+  sylius_storefront:
+    container_name: sylius_storefront
+    build:
+      context: .
+      target: node_dev
+    ports:
+      - "3000:3000"
+    environment:
+      - APP_ENV=dev
+    volumes:
+      - .:/var/www:rw
+#    networks:
+#      - network_storefront
+    entrypoint:
+      - tail
+      - -f
+      - /dev/null
+#
+#networks:
+#  network_storefront:
+#    external:
+#      name: sylius_network_shared
