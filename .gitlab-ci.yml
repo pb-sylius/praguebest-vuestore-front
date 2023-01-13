@@ -33,10 +33,9 @@ runCopy:
         - cd $BUILD_CACHE_DIR_PROD
         - ssh deployserver@$DEPLOY_SERVER "mkdir "${DEPLOY_LINKABLE_DIRECTORY}""
         - rsync -rpKzl --ignore-errors --force "." "deployserver@"$DEPLOY_LINKABLE_TARGET"" 2>&1
-    # UNCOMMENT BELOW:
-    # only:
-    #     variables:
-    #         - $CI_COMMIT_REF_NAME == $GIT_BRANCH
+    only:
+        variables:
+            - $CI_COMMIT_REF_NAME == $GIT_BRANCH
             
     tags:
         # runner has to be enabled https://gitlab.praguebest.cz/sylius/sylius-master/-/settings/ci_cd#js-runners-settings
@@ -53,12 +52,10 @@ runBuild:
     script:
         - ssh deployserver@$DEPLOY_SERVER "cd "${DEPLOY_LINKABLE_DIRECTORY}" && yarn install && yarn build:sylius && yarn cache clean --all"
         - ssh deployserver@$DEPLOY_SERVER "cd "${DEPLOY_LINKABLE_DIRECTORY}"/../ && readlink "${APP_SUBPATH}" > link.prev && rm -rf "${APP_SUBPATH}" && ln -s "${DEPLOY_LINKABLE_PATH}" "${APP_SUBPATH}""
-        #UNCOMMENT BELOW
-        # - ssh deployserver@$DEPLOY_SERVER "sudo systemctl restart vuestorefront.praguebest.cz.service"
-    # UNCOMMENT BELOW:
-    # only:
-    #     variables:
-    #         - $CI_COMMIT_REF_NAME == $GIT_BRANCH
+        - ssh deployserver@$DEPLOY_SERVER "sudo systemctl restart vuestorefront.praguebest.cz.service"
+    only:
+        variables:
+            - $CI_COMMIT_REF_NAME == $GIT_BRANCH
     tags:
         # runner has to be enabled https://gitlab.praguebest.cz/sylius/sylius-master/-/settings/ci_cd#js-runners-settings
         - runner2-docker
@@ -74,10 +71,9 @@ runClean:
     script:
         - ssh deployserver@$DEPLOY_SERVER "cd "${DEPLOY_LINKABLE_DIRECTORY}"/../ && PREV_LINK=\$(cat link.prev) && LINK_VALUE="\${PREV_LINK:=default}" && ls | grep -P '"${DEPLOY_LINKABLE_PATH_PREFIX}"__(?!"${CI_PIPELINE_ID}")' | grep -v "\$LINK_VALUE" | while read LINE; do rm -rf "\$LINE";done;"
         - rm --force --recursive $BUILD_CACHE_DIR_PROD
-    # UNCOMMENT BELOW:
-    # only:
-    #     variables:
-    #         - $CI_COMMIT_REF_NAME == $GIT_BRANCH
+    only:
+        variables:
+            - $CI_COMMIT_REF_NAME == $GIT_BRANCH
     tags:
         # runner has to be enabled https://gitlab.praguebest.cz/sylius/sylius-master/-/settings/ci_cd#js-runners-settings
         - runner2-docker
