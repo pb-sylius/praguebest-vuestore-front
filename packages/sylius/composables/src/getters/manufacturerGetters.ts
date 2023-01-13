@@ -1,6 +1,18 @@
-import { ManufacturerGetters } from '@praguebest/manufacturer';
 import { Manufacturer, Product } from '@realtainment/sylius-api/src/types';
 import { AgnosticPrice } from '@vue-storefront/core';
+
+export interface ManufacturerGetters<MANUFACTURER> {
+  getName: (manufacturer: MANUFACTURER) => string;
+  getSlug: (manufacturer: MANUFACTURER) => string;
+  getCoverImage: (manufacturer: MANUFACTURER) => string;
+  getId: (manufacturer: MANUFACTURER) => string;
+  getProducts: (manufacturer: MANUFACTURER) => Product[];
+  getProductsPagination: (manufacturer: MANUFACTURER, activePage: number) => any;
+  getProductPrice: (product: any) => AgnosticPrice,
+  getProductImage: (product: any) => string;
+  [getterName: string]: any;
+}
+
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const getManufacturerName = (manufacturer: Manufacturer): string => manufacturer.name;
