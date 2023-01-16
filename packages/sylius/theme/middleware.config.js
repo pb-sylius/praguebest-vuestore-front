@@ -1,5 +1,6 @@
 const lruCache = require('stale-lru-cache');
 
+
 module.exports = {
   integrations: {
     sylius: {
