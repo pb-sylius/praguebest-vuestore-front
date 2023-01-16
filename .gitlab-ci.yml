@@ -39,7 +39,7 @@ runCopy:
             
     tags:
         # runner has to be enabled https://gitlab.praguebest.cz/sylius/v_storefront/-/settings/ci_cd#js-runners-settings
-        - runner2-shell
+        - runner2-docker
 
 runBuild:
     stage: build
@@ -58,7 +58,7 @@ runBuild:
     #         - $CI_COMMIT_REF_NAME == $GIT_BRANCH
     tags:
         # runner has to be enabled https://gitlab.praguebest.cz/sylius/v_storefront/-/settings/ci_cd#js-runners-settings
-        - runner2-shell
+        - runner2-docker
 
 runClean:
     stage: clean
@@ -76,4 +76,4 @@ runClean:
     #         - $CI_COMMIT_REF_NAME == $GIT_BRANCH
     tags:
         # runner has to be enabled https://gitlab.praguebest.cz/sylius/v_storefront/-/settings/ci_cd#js-runners-settings
-        - runner2-shell
+        - runner2-docker
