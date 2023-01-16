@@ -124,6 +124,7 @@
     "helmet": "^6.0.1",
     "install": "^0.13.0",
     "leaflet": "^1.9.2",
+    "lodash": "^4.17.21",
     "node-notifier": "10",
     "nuxt": "2.15",
     "nuxt-ssr-cache": "^1.5.2",

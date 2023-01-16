@@ -1,7 +1,7 @@
 <template>
   <div class="wrapp_all" v-if="!loading" key="norrefw">
     <input type="text" class="search_input" :placeholder="$t('Search for manufacturer')" @input="handleInput" />
-    <SfManufacturerGridTop v-show="topManufactures" :manufacturers="topManufactures" ref="top_grid" />
+    <SfManufacturerGridTop v-show="topManufactures.length" :manufacturers="topManufactures" ref="top_grid" />
     <SfHeading :level="2" :title="$t('All Manufacturers')" class="manufacturer_heading hideable_heading" />
     <SfManufacturerLetters @selected="scrollToLetter" ref="allLetters" :manufacturers="computedManufacturers"
       :key="refreshKey" />
@@ -18,7 +18,7 @@ import SfManufacturerGridTop from "../ui/components/organisms/SfManufacturerGrid
 import SfManufacturerLetters from "../ui/components/molecules/SfManufacturerLetters/SfManufacturerLetters.vue";
 
 import { onSSR } from '@vue-storefront/core';
-import cloneDeep from 'lodash.cloneDeep';
+import cloneDeep from 'lodash/cloneDeep';
 import { ref } from '@vue/composition-api';
 import uuid from 'uuid';
 
