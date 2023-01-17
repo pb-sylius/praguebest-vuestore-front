@@ -125,6 +125,7 @@
     "install": "^0.13.0",
     "leaflet": "^1.9.2",
     "lodash": "^4.17.21",
+    "moment": "^2.29.4",
     "node-notifier": "10",
     "nuxt": "2.15",
     "nuxt-ssr-cache": "^1.5.2",

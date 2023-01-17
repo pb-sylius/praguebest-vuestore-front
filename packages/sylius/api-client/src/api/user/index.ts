@@ -57,7 +57,6 @@ export const refreshLoginUser = async (context, defaultVariables, customQuery?: 
 
 export const getUserAddresses = async (context, id: string) => {
   const { addresses } = await query(context, getUserAddressesQuery, { id });
-  console.log('addresses', addresses.collection)
   return addresses.collection;
 };
 

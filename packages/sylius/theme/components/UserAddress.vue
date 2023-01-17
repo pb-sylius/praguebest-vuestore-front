@@ -18,8 +18,5 @@ export default {
       required: true
     }
   },
-  setup(props) {
-    console.log(props, 'props');
-  }
 };
 </script>

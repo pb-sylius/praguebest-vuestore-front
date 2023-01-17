@@ -31,10 +31,9 @@
         <transition-group tag="div" name="fade" class="shipping-list">
           <div
             v-if="addresses"
-            v-for="{address, i} in addresses"
-            :key="i"
+            v-for="address in addresses"
+            :key="userShippingGetters.getId(address)"
             class="shipping">
-            {{ console.log(addresses) }}
             <div class="shipping__content">
               <div class="shipping__address">
                 <UserAddress v-if="address" :address="address" />

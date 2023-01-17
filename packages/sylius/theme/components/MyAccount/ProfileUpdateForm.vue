@@ -64,7 +64,7 @@
 
       <div class="form__horizontal">
         <SfInput
-          type="date"
+          type="text"
           name="birthday"
           label="Birthday"
           class="form__element"
@@ -99,14 +99,15 @@
 </template>
 
 <script>
-import { ref, onMounted } from '@vue/composition-api';
+import { ref } from '@vue/composition-api';
 import { ValidationProvider, ValidationObserver } from 'vee-validate';
 import { useUser, userGetters } from '@realtainment/sylius';
 import SfInput from "../../ui/components/atoms/SfInput/SfInput.vue";
 import SfButton from "../../ui/components/atoms/SfButton/SfButton.vue";
 import SfSelect from "../../ui/components/molecules/SfSelect/SfSelect.vue";
 import SfCheckbox from "../../ui/components/molecules/SfCheckbox/SfCheckbox.vue";
-import { parse as parseDate, format as formatDate } from 'date-fns';
+import moment from "moment";
+
 export default {
   name: 'ProfileUpdateForm',
 
@@ -132,6 +133,8 @@ export default {
     });
     const form = ref(resetForm());
     const selectedBirthday = ref('');
+    const birthdayFromDb = ref('');
+    const locale = ref('');
 
     const genderOptions = [
       { key: 'u', label: 'Unknown'},
@@ -140,9 +143,17 @@ export default {
     ];
 
     const handleBirthday = (val) => {
-      selectedBirthday.value = val;
-      const birthday = parseDate(val, 'yyyy-MM-dd', new Date());
-      form.value.birthday = formatDate(birthday, 'yyyy-MM-dd');
+      if (val !== birthdayFromDb.value) {
+        selectedBirthday.value = val;
+        moment.locale(locale.value);
+        const formated = moment(val, 'DD.MM.YYYY').locale('en').format('YYYY-MM-DD 00:00:00');
+        form.value.birthday = formated;
+        selectedBirthday.value = val;
+      } else {
+        moment.locale('en');
+        const formated = moment(val, 'YYYY-MM-DD 00:00:00').format('DD.MM.YYYY');
+        selectedBirthday.value = formated;
+      }
     };
     const handleCheckSubscribedToNewsletter = (val) => {
       form.value.subscribedToNewsletter = val;
@@ -163,22 +174,30 @@ export default {
       };
     };
 
-    onMounted(() => {
-      if (user.value.birthday) {
-        const birthday = user.value.birthday.split('T');
-        handleBirthday(birthday[0]);
-      }
-    });
-
     return {
       form,
       submitForm,
       handleCheckSubscribedToNewsletter,
       handleBirthday,
       selectedBirthday,
-      genderOptions
+      genderOptions,
+      locale,
+      birthdayFromDb,
+      user
     };
-  }
+  },
+  mounted: function() {
+    this.locale = navigator.language;
+    if (this.user.birthday) {
+      const birthday = this.user.birthday.split('T');
+      this.birthdayFromDb = birthday[0];
+      this.handleBirthday(birthday[0]);
+    }
+  },
+  computed: {
+    console: () => console,
+    window: () => window,
+  },
 };
 </script>
 
