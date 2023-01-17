@@ -82,6 +82,8 @@ export const authLinkFactory = ({ state, customHeaders }) => setContext((apolloR
 
   const token: string = state.getCustomerToken();
 
+  console.log('token', token)
+
   if (token) {
     Logger.debug('Apollo authLinkFactory, finished, token: ', token);
   }

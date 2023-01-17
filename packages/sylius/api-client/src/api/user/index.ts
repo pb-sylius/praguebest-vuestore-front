@@ -19,7 +19,7 @@ export const getUser = async (context, id: string) => {
   }
 
   if (key) {
-    cached = await getKey(key);
+    //cached = await getKey(key);
   }
 
   if (!cached) {
@@ -57,6 +57,7 @@ export const refreshLoginUser = async (context, defaultVariables, customQuery?: 
 
 export const getUserAddresses = async (context, id: string) => {
   const { addresses } = await query(context, getUserAddressesQuery, { id });
+  console.log('addresses', addresses.collection)
   return addresses.collection;
 };
 

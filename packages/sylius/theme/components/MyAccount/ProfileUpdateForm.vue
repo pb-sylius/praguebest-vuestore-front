@@ -142,7 +142,7 @@ export default {
     const handleBirthday = (val) => {
       selectedBirthday.value = val;
       const birthday = parseDate(val, 'yyyy-MM-dd', new Date());
-      form.value.birthday = formatDate(birthday, 'yyyy-MM-dd 00:00:00');
+      form.value.birthday = formatDate(birthday, 'yyyy-MM-dd');
     };
     const handleCheckSubscribedToNewsletter = (val) => {
       form.value.subscribedToNewsletter = val;
