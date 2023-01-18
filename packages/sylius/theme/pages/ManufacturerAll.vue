@@ -1,7 +1,8 @@
 <template>
   <div class="wrapp_all" v-if="!loading" key="norrefw">
     <input type="text" class="search_input" :placeholder="$t('Search for manufacturer')" @input="handleInput" />
-    <SfManufacturerGridTop v-show="topManufactures && topManufactures.length" :manufacturers="topManufactures" ref="top_grid" />
+    <SfManufacturerGridTop v-show="topManufactures && topManufactures.length" :manufacturers="topManufactures"
+      ref="top_grid" />
     <SfHeading :level="2" :title="$t('All Manufacturers')" class="manufacturer_heading hideable_heading" />
     <SfManufacturerLetters @selected="scrollToLetter" ref="allLetters" :manufacturers="computedManufacturers"
       :key="refreshKey" />
@@ -21,6 +22,7 @@ import { onSSR } from '@vue-storefront/core';
 import cloneDeep from 'lodash/cloneDeep';
 import { ref } from '@vue/composition-api';
 import uuid from 'uuid';
+import inViewport from 'javascript-inviewport';
 
 import {
   useManufacturer,
@@ -34,7 +36,8 @@ export default {
     const LETTER = 'letter';
     const SEARCH = 'search';
 
-    const { search, letter } = context.root.$route.query;
+    const { search } = context.root.$route.query;
+    const letter = context.root.$route.hash.substring(1).toLowerCase();
 
     const { manufacturers, all, loading } = useManufacturer('manufacturer');
 
@@ -109,8 +112,29 @@ export default {
       this.clearUrlParams();
     }
     if (this.letter) {
-      this.scrollToLetter('l' + this.letter);
+      this.scrollToLetter(this.letter);
     }
+    this.$nextTick(() => {
+      (async () => {
+        while (!document.querySelector('.one_letter')) {
+          await new Promise(resolve => setTimeout(resolve, 1));
+        }
+        const letterBlocks = document.querySelectorAll('.manufacturer_grid');
+        const letters = [...document.querySelectorAll('.one_letter')];
+        [...letterBlocks].forEach((block, index) => {
+          inViewport(block, 1, [
+            () => {
+              letters[index].classList.add('active');
+            },
+            () => {
+              letters[index].classList.remove('active');
+            },
+          ]);
+        })
+      })()
+
+    })
+
   },
   components: {
     SfHeading,
@@ -138,18 +162,21 @@ export default {
       document.querySelector('.search_input').value = null;
     },
     scrollToLetter: function (letter) {
+      if (letter.length > 1) {
+        letter = letter.substring(1);
+      }
       (async () => {
-        while (!this.$refs.allLetters) {
+        while (!this.$refs.allLetters || !this.$refs.grid.$el || this.$refs.grid.$el.nodeType !== 1) {
           await new Promise(resolve => setTimeout(resolve, 1));
         }
         const letters = this.$refs.allLetters.$el;
         const container = this.$refs.grid.$el;
         const yOffset = -letters.offsetHeight;
-        const targetElement = container.querySelector('#' + letter);
+        const targetElement = container.querySelector('#l' + letter);
         if (targetElement) {
           const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
-          window.history.pushState('', '', `?${this.LETTER}=${letter.substring(1)}`);
+          window.history.pushState('', '', `#${letter}`);
         } else {
           window.scrollTo({ top: 0, behavior: 'smooth' });
           if (!this.getUrlParams(this.SEARCH)) {

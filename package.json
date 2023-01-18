@@ -124,6 +124,7 @@
     "css-loader": "5.2.0",
     "helmet": "^6.0.1",
     "install": "^0.13.0",
+    "javascript-inviewport": "^4.0.12",
     "leaflet": "^1.9.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",

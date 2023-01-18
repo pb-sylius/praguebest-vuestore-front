@@ -26,6 +26,10 @@
     &:hover {
       background-color: var(--c-white);
     }
+
+    &.active {
+      background-color: var(--c-white);
+    }
   }
 
   & .scroll_to_top {

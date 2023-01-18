@@ -5,7 +5,7 @@
         <div>{{`${$t('search result for the your phrase')} "${searchPhrase}" (${manufacturerCount}): `}}</div>
         <div class="reset_manufacturers" @click="resetSearch">{{ $t('reset search and show all manufacturers') }}</div>
       </div>
-      <div v-for="(letter, i) in startLetters" :key="i">
+      <div v-for="(letter, i) in startLetters" :key="i" :id="`block${letter}`" class="manufacturers_by_letter">
         <div class="manufacturer_letter" :id="'l' + letter">
           <div class="manufacturer_letter_indent"></div>
           <SfHeading :level="3" :title="letter" class="manufacturer_letter_heading" />

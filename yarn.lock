@@ -13423,6 +13423,11 @@ jake@^10.8.5:
     filelist "^1.0.1"
     minimatch "^3.0.4"
 
+javascript-inviewport@^4.0.12:
+  version "4.0.12"
+  resolved "https://registry.yarnpkg.com/javascript-inviewport/-/javascript-inviewport-4.0.12.tgz#bbb8dd7366d6509598b388489482d7de943890cd"
+  integrity sha512-TUPO3p8lTldZqZQr/Y16JXll+QB/UiN8maaD44KymX0oJQGms+v21Zg/F5RhqTSpKJ9CcIGCbhLvIAHDng4ZPA==
+
 jest-changed-files@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-24.9.0.tgz#08d8c15eb79a7fa3fc98269bc14b451ee82f8039"
