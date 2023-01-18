@@ -50,7 +50,7 @@ runBuild:
         - ssh-add - <<< "${GITLAB_DEPLOY_GROUP_SYLIUS_SSH_KEY}"
         - ssh-keyscan "${DEPLOY_SERVER}" > /etc/ssh/ssh_known_hosts # to avoid "Host key verification failed." rsync/ssh error
     script:
-        - ssh deployserver@$DEPLOY_SERVER "cd "${DEPLOY_LINKABLE_DIRECTORY}"/packages/sylius/theme && ln -s .env.prod.dist .env && cd ../../.. && yarn install && yarn build:sylius && yarn cache clean --all"
+        - ssh deployserver@$DEPLOY_SERVER "cd "${DEPLOY_LINKABLE_DIRECTORY}"/packages/sylius/theme && ln -s .env.prod.dist .env && cd ../../.. && yarn install && npm run build:sylius && yarn cache clean --all"
         - ssh deployserver@$DEPLOY_SERVER "cd "${DEPLOY_LINKABLE_DIRECTORY}"/../ && readlink "${APP_SUBPATH}" > link.prev && rm -rf "${APP_SUBPATH}" && ln -s "${DEPLOY_LINKABLE_PATH}" "${APP_SUBPATH}""
         - ssh deployserver@$DEPLOY_SERVER "sudo systemctl restart vuestorefront.praguebest.cz.service"
     only:
