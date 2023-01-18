@@ -178,6 +178,8 @@ export const getPaymentMethods = async (context) => {
   const { locale } = context.config;
   const { paymentMethods } = await query(context, getPaymentMethodsQuery, {});
 
+  console.log(paymentMethods)
+
   return paymentMethods.collection.map(method => {
     const translation = method.translations.collection.find(translation => translation.locale === locale);
     return {
@@ -191,6 +193,8 @@ export const getPaymentMethods = async (context) => {
 export const getShippingMethods = async (context, defaultVariables) => {
   const { locale } = context.config;
   const { shippingMethods } = await query(context, getShippingMethodsQuery, defaultVariables);
+
+  console.log(shippingMethods)
 
   return shippingMethods.collection.map(method => {
     const translation = method.translations.collection.find(translation => translation.locale === locale);
