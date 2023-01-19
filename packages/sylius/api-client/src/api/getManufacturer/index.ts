@@ -9,8 +9,10 @@ const setAbsoluteImagePaths = (context, collection: any, mapProductImages = fals
   collection.map(item => {
     if (item.images) {
       const mapImages = item.images.edges;
-      item.images = mapImages.map(img => [imagePaths.regular, img.node.path].join('/'));
-
+      //item.images = mapImages.map(img => [imagePaths.regular, img.node.path].join('/'));
+      item.images = mapImages.map(img => {
+        return `${imagePaths.regular}/${img.node.path}`
+      });
     }
 
     if (mapProductImages && item.products && item.products.collection) {

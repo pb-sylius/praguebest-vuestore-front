@@ -12,7 +12,6 @@
     "dev:sylius:api-client": "cd packages/sylius/api-client && yarn dev",
     "dev:sylius:composables": "cd packages/sylius/composables && yarn dev",
     "dev:sylius:theme": "cd packages/sylius/theme && yarn dev",
-    "dev:sylius:manufacturers": "cd node_modules/@praguebest/manufacturers && yarn dev",
     "dev:sylius": "concurrently \"yarn:dev:sylius:*\"",
     "start:sylius": "cd packages/sylius/theme && yarn start",
     "cli": "cd packages/core/cli && yarn cli",

@@ -20,6 +20,9 @@ export default {
     SfHeading,
     SfImage,
   },
+  setup(props) {
+    console.log(props.image)
+  },
   mounted() {
     /*
     pripraveno pro prepocitani velikosti log
