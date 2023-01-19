@@ -1,7 +1,7 @@
 <template>
   <SfLink :link="`/manufacturer/${slug}`" :className="'manufacturer_tile_link'">
     <div class="manufacturer_tile_img_wrapper">
-      <SfImage :src="image" :alt="name" ref='imgElement' />
+      <SfImage :src="stripedImagePath" :alt="name" ref='imgElement' />
     </div>
     <SfHeading :level="4" :title="name" class="manufacturer_tile_name"></SfHeading>
   </SfLink>
@@ -21,7 +21,10 @@ export default {
     SfImage,
   },
   setup(props) {
-    //console.log(props.image)
+    const stripedImagePath = props.image.replaceAll('"', '');
+    return {
+      stripedImagePath
+    }
   },
   mounted() {
     /*
