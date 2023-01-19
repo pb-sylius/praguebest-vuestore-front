@@ -21,7 +21,7 @@ export default {
     SfImage,
   },
   setup(props) {
-    console.log(props.image)
+    //console.log(props.image)
   },
   mounted() {
     /*

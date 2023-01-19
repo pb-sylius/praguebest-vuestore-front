@@ -11,6 +11,7 @@ const setAbsoluteImagePaths = (context, collection: any, mapProductImages = fals
       const mapImages = item.images.edges;
       //item.images = mapImages.map(img => [imagePaths.regular, img.node.path].join('/'));
       item.images = mapImages.map(img => {
+        console.log(`${imagePaths.regular}/${img.node.path}`)
         return `${imagePaths.regular}/${img.node.path}`
       });
     }
