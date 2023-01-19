@@ -119,7 +119,7 @@ export default {
         while (!document.querySelector('.one_letter')) {
           await new Promise(resolve => setTimeout(resolve, 1));
         }
-        const letterBlocks = document.querySelectorAll('.manufacturer_grid');
+        const letterBlocks = document.querySelectorAll('.manufacturer_letter');
         const letters = [...document.querySelectorAll('.one_letter')];
         [...letterBlocks].forEach((block, index) => {
           inViewport(block, 1, [
