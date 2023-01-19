@@ -15,7 +15,6 @@
           <SfManufacturerTile v-for="(manufacturer, i) in findGroupByLetter(letter, manufacturersGroups)" :key="i"
             :slug="manufacturerGetters.getSlug(manufacturer)" :name="manufacturerGetters.getName(manufacturer)"
             :image="manufacturerGetters.getCoverImage(manufacturer)">
-            {{ console.log(manufacturerGetters.getCoverImage(manufacturer)) }}
           </SfManufacturerTile>
         </div>
       </div>

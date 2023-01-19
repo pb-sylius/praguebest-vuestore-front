@@ -69,7 +69,7 @@ export const getProductPrice = (product: any): AgnosticPrice => {
 };
 
 export const getProductImage = (product: any): string => {
-  return product.images.collection[0];
+  return product.images.collection[0].replaceAll('"', '');
 }
 
 export const manufacturerGetters: ManufacturerGetters<Manufacturer> = {
