@@ -11,11 +11,13 @@ export const getCartQuery = gql`
 
 export const getShippingMethodsQuery = gql`
   query getShippingMethods(
-    $zone: String
+    $zone: String,
+    $orderTokenValue: String
   ) {
     shippingMethods(
       enabled: true,
-      zone_members_code: $zone
+      zone_members_code: $zone,
+      orderTokenValue: $orderTokenValue
     ) {
       collection {
         code
@@ -39,9 +41,10 @@ export const getShippingMethodsQuery = gql`
 `;
 
 export const getPaymentMethodsQuery = gql`
-  query getPaymentMethods {
+  query getPaymentMethods($orderTokenValue: String) {
     paymentMethods(
-      enabled: true
+      enabled: true,
+      orderTokenValue: $orderTokenValue
     ) {
       collection {
         code

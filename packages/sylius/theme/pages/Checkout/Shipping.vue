@@ -204,7 +204,7 @@ import SfCheckbox from "../../ui/components/molecules/SfCheckbox/SfCheckbox.vue"
 
 import { ref, computed, onMounted } from '@vue/composition-api';
 import useUiNotification from "../../composables/useUiNotification";
-import { useBilling, useShipping, useUserShipping, userShippingGetters, useUser } from '@realtainment/sylius';
+import { useBilling, useShipping, useUserShipping, userShippingGetters, useUser, useCart } from '@realtainment/sylius';
 import { required, min, digits } from 'vee-validate/dist/rules';
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
 import { onSSR, useVSFContext } from '@vue-storefront/core';
@@ -247,6 +247,7 @@ export default {
     const { shipping: userShipping, load: loadUserShipping } = useUserShipping();
     const { isAuthenticated, user } = useUser();
     const { billing } = useBilling();
+    const { cart } = useCart();
 
     const form = ref({
       firstName: '',
@@ -264,7 +265,8 @@ export default {
       await save({ shippingDetails: form.value });
 
       shippingMethods.value = await $sylius.api.getShippingMethods({
-        zone: form.value.countryCode
+        zone: form.value.countryCode,
+        orderTokenValue: cart.value.tokenValue
       });
 
       if (shippingMethods.value.length) {

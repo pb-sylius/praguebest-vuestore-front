@@ -34,7 +34,10 @@ export function generateBaseConfig(pkg, useTerser = false) {
     ],
     external: [
       ...Object.keys(pkg.dependencies || {}),
-      ...Object.keys(pkg.peerDependencies || {})
+      ...Object.keys(pkg.peerDependencies || {}),
+      '@vue-storefront/core',
+      '@praguebest/manufacturer',
+      '@vue/composition-api'
     ],
     plugins
   };

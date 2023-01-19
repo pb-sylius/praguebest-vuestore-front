@@ -70,7 +70,7 @@ export default {
         emit('status');
         updatePayment(selectedMethod.value);
       }
-      paymentMethods.value = await $sylius.api.getPaymentMethods();
+      paymentMethods.value = await $sylius.api.getPaymentMethods(cart.value.tokenValue);
     });
 
     return {

@@ -174,11 +174,9 @@ export const updateCartShipping = async (context, defaultVariables, customQuery?
   return transformCart(context, cartData.order);
 };
 
-export const getPaymentMethods = async (context) => {
+export const getPaymentMethods = async (context, orderTokenValue: string) => {
   const { locale } = context.config;
-  const { paymentMethods } = await query(context, getPaymentMethodsQuery, {});
-
-  console.log(paymentMethods)
+  const { paymentMethods } = await query(context, getPaymentMethodsQuery, orderTokenValue);
 
   return paymentMethods.collection.map(method => {
     const translation = method.translations.collection.find(translation => translation.locale === locale);
@@ -193,8 +191,6 @@ export const getPaymentMethods = async (context) => {
 export const getShippingMethods = async (context, defaultVariables) => {
   const { locale } = context.config;
   const { shippingMethods } = await query(context, getShippingMethodsQuery, defaultVariables);
-
-  console.log(shippingMethods)
 
   return shippingMethods.collection.map(method => {
     const translation = method.translations.collection.find(translation => translation.locale === locale);

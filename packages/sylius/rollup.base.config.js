@@ -15,7 +15,10 @@ export function generateBaseConfig(pkg) {
       }
     ],
     external: [
-      ...Object.keys(pkg.dependencies || {})
+      ...Object.keys(pkg.dependencies || {}),
+      '@vue-storefront/core',
+      '@praguebest/manufacturer',
+      '@vue/composition-api'
     ],
     plugins: [
       typescript({
