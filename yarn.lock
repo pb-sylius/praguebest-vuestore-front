@@ -3631,8 +3631,8 @@
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
 "@praguebest/manufacturer@git+https://praguebest-manufacturers:glpat-atHbWZsGDJfZLazyKXRH@gitlab.praguebest.cz/sylius/storefront-praguebest-manufacturers":
-  version "1.0.1"
-  resolved "git+https://praguebest-manufacturers:glpat-atHbWZsGDJfZLazyKXRH@gitlab.praguebest.cz/sylius/storefront-praguebest-manufacturers#033cc1b2833cf95cef12d847587a5f73ea907989"
+  version "1.0.3"
+  resolved "git+https://praguebest-manufacturers:glpat-atHbWZsGDJfZLazyKXRH@gitlab.praguebest.cz/sylius/storefront-praguebest-manufacturers#b900d634287ed56fbcd2d365a2417ef702c9c03a"
   dependencies:
     axios "0.22.0"
     express "^4.17.1"
