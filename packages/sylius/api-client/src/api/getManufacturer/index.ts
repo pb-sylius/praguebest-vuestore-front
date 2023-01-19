@@ -9,7 +9,7 @@ const setAbsoluteImagePaths = (context, collection: any, mapProductImages = fals
   collection.map(item => {
     if (item.images) {
       const mapImages = item.images.edges;
-      item.images = mapImages.map(img => [String(imagePaths.regular), img.node.path].join('/'));
+      item.images = mapImages.map(img => [imagePaths.regular, img.node.path].join('/'));
     }
 
     if (mapProductImages && item.products && item.products.collection) {
@@ -41,7 +41,7 @@ export async function getManufacturerAll(context, params, customQuery?: CustomQu
   }
 
   if (key) {
-    cached = await getKey(key);
+    //cached = await getKey(key);
   }
 
   let pagination = {};
