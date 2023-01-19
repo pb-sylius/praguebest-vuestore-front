@@ -68,6 +68,16 @@ export async function getManufacturerAll(context, params, customQuery?: CustomQu
     pagination = data.manufacturers.paginationInfo;
     manufacturers = data.manufacturers.collection;
 
+    const { imagePaths } = context.config;
+
+    manufacturers.map(item => {
+      if (item.images) {
+        const mapImages = item.images.edges;
+        item.images = mapImages.map(img => [imagePaths.regular, img.node.path].join('/'));
+      }
+
+    });
+
     context.config.lruCache.set(key, JSON.stringify({ manufacturers, pagination }));
   } else {
     manufacturersData = JSON.parse(cached);
@@ -75,7 +85,7 @@ export async function getManufacturerAll(context, params, customQuery?: CustomQu
     pagination = manufacturersData.pagination;
   }
 
-  manufacturers = setAbsoluteImagePaths(context, manufacturers);
+  //manufacturers = setAbsoluteImagePaths(context, manufacturers);
 
   return {
     manufacturers,
