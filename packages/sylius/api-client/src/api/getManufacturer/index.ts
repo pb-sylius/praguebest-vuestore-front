@@ -6,12 +6,13 @@ const setAbsoluteImagePaths = (context, collection: any, mapProductImages = fals
 
   const { imagePaths } = context.config;
 
+  console.log(collection)
+
   collection.map(item => {
-    if (item.images) {
-      const mapImages = item.images.edges;
-      const replacedImages = mapImages.map(img => [imagePaths.regular, img.node.path].join('/'));
-      delete item.images;
-      item.images = replacedImages;
+    if (item.imageRefs) {
+      const mapImages = item.imageRefs.edges;
+      item.images = mapImages.map(img => [imagePaths.regular, img.node.path].join('/'));
+      delete item.imageRefs;
     }
 
     if (mapProductImages && item.products && item.products.collection) {

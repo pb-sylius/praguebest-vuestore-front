@@ -24,10 +24,9 @@ translations {
 `;
 
 export const imagesFragment = `
-images {
+imageRefs: images {
   edges {
     node {
-      id
       path
     }
   }
