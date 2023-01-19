@@ -73,7 +73,13 @@ export async function getManufacturerAll(context, params, customQuery?: CustomQu
     manufacturers.map(item => {
       if (item.images) {
         const mapImages = item.images.edges;
-        item.images = mapImages.map(img => [imagePaths.regular, img.node.path].join('/'));
+        item.images = mapImages.map(img => {
+          if (img.node.path) {
+            const temp = [imagePaths.regular, img.node.path].join('/');
+            delete img.node.path;
+            return temp;
+          }
+        });
       }
 
     });
