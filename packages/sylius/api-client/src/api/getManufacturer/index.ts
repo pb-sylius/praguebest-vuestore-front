@@ -9,7 +9,7 @@ const setAbsoluteImagePaths = (context, collection: any, mapProductImages = fals
   collection.map(item => {
     if (item.images) {
       const mapImages = item.images.edges;
-      item.images = mapImages.map(img => ['https://sylius-master-dev.praguebest.cz', img.node.path].join('/'));
+      item.images = mapImages.map(img => [String(imagePaths.regular), img.node.path].join('/'));
     }
 
     if (mapProductImages && item.products && item.products.collection) {
