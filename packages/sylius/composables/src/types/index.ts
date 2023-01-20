@@ -75,6 +75,30 @@ export type ManufacturerResponse = {
     total: number;
 };
 
+export interface BrandSearchParams {
+  perPage?: number;
+  page?: number;
+  sort?: any;
+  term?: any;
+  filters?: any;
+  id?: string;
+  [x: string]: any;
+}
+
+export interface UseBrandFactoryParams<BRANDS, BRAND_SEARCH_PARAMS extends BrandSearchParams, API extends PlatformApi = any> extends FactoryParams<API> {
+  manufacturersSearch: (context: Context, params: BRAND_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<BRANDS>;
+  manufacturersAll: (context: Context, params: BRAND_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<BRANDS>;
+  manufacturersOne: (context: Context, params: BRAND_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<BRANDS>;
+}
+
+export type Brand = Record<string, unknown>;
+
+export type BrandResponse = {
+    data: Brand[];
+    total: number;
+};
+
+
 export type OrderSearchParams = Record<string, any>;
 
 export type OrdersResponse = {

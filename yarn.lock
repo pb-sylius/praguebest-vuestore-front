@@ -3626,9 +3626,18 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
-"@praguebest/manufacturer@git+https://praguebest-manufacturers:glpat-atHbWZsGDJfZLazyKXRH@gitlab.praguebest.cz/sylius/storefront-praguebest-manufacturers#1.0.6":
-  version "1.0.6"
-  resolved "git+https://praguebest-manufacturers:glpat-atHbWZsGDJfZLazyKXRH@gitlab.praguebest.cz/sylius/storefront-praguebest-manufacturers#38918c0248271479baae0a13a9c80b3c1363b1c1"
+"@praguebest/brands@git+https://praguebest-brands:glpat-mB3kxHBg8i1M7w8d7Yj9@gitlab.praguebest.cz/sylius/storefront-praguebest-brands#~1":
+  version "1.0.1"
+  resolved "git+https://praguebest-brands:glpat-mB3kxHBg8i1M7w8d7Yj9@gitlab.praguebest.cz/sylius/storefront-praguebest-brands#9834c64a38e1c913cea8451b888944f8a861187a"
+  dependencies:
+    axios "0.22.0"
+    express "^4.17.1"
+    lodash-es "^4.17.15"
+    vue "^2.6.11"
+
+"@praguebest/manufacturer@git+https://praguebest-manufacturers:glpat-atHbWZsGDJfZLazyKXRH@gitlab.praguebest.cz/sylius/storefront-praguebest-manufacturers#~1":
+  version "1.0.8"
+  resolved "git+https://praguebest-manufacturers:glpat-atHbWZsGDJfZLazyKXRH@gitlab.praguebest.cz/sylius/storefront-praguebest-manufacturers#b5abcde508015185f68d3298ba56ce82d050fc15"
   dependencies:
     axios "0.22.0"
     express "^4.17.1"

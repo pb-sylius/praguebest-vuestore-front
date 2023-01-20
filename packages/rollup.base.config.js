@@ -1,6 +1,7 @@
 import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
+import externals from './externals.config';
 
 const extensions = ['.ts', '.js'];
 
@@ -35,9 +36,7 @@ export function generateBaseConfig(pkg, useTerser = false) {
     external: [
       ...Object.keys(pkg.dependencies || {}),
       ...Object.keys(pkg.peerDependencies || {}),
-      '@vue-storefront/core',
-      '@praguebest/manufacturer',
-      '@vue/composition-api'
+      ...externals
     ],
     plugins
   };
