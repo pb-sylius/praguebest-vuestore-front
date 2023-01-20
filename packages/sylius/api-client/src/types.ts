@@ -81,6 +81,18 @@ export type Manufacturer = {
   products: any;
 }
 
+export type Brand = {
+  _id?: number;
+  code: string;
+  description: string;
+  name: string;
+  slug: string;
+  images: Record<string, unknown>;
+  edges: string[];
+  collection: Product[];
+  products: any;
+}
+
 export type Category = {
   id: number;
   name: string;

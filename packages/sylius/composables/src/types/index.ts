@@ -11,6 +11,8 @@ export { UseCategory, UseProduct } from '@vue-storefront/core';
 
 export { UseManufacturer } from '@praguebest/manufacturer';
 
+export { UseBrand } from '@praguebest/brand';
+
 export type Address = Record<string, unknown>;
 
 export type Category = Record<string, unknown>;
@@ -62,10 +64,10 @@ export interface ManufacturerSearchParams {
   [x: string]: any;
 }
 
-export interface UseManufacturerFactoryParams<MANUFACTURERS, MANUFUACTURER_SEARCH_PARAMS extends ManufacturerSearchParams, API extends PlatformApi = any> extends FactoryParams<API> {
-  manufacturersSearch: (context: Context, params: MANUFUACTURER_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<MANUFACTURERS>;
-  manufacturersAll: (context: Context, params: MANUFUACTURER_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<MANUFACTURERS>;
-  manufacturersOne: (context: Context, params: MANUFUACTURER_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<MANUFACTURERS>;
+export interface UseManufacturerFactoryParams<MANUFACTURERS, MANUFACTURER_SEARCH_PARAMS extends ManufacturerSearchParams, API extends PlatformApi = any> extends FactoryParams<API> {
+  manufacturersSearch: (context: Context, params: MANUFACTURER_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<MANUFACTURERS>;
+  manufacturersAll: (context: Context, params: MANUFACTURER_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<MANUFACTURERS>;
+  manufacturersOne: (context: Context, params: MANUFACTURER_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<MANUFACTURERS>;
 }
 
 export type Manufacturer = Record<string, unknown>;
@@ -86,9 +88,9 @@ export interface BrandSearchParams {
 }
 
 export interface UseBrandFactoryParams<BRANDS, BRAND_SEARCH_PARAMS extends BrandSearchParams, API extends PlatformApi = any> extends FactoryParams<API> {
-  manufacturersSearch: (context: Context, params: BRAND_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<BRANDS>;
-  manufacturersAll: (context: Context, params: BRAND_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<BRANDS>;
-  manufacturersOne: (context: Context, params: BRAND_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<BRANDS>;
+  brandsSearch: (context: Context, params: BRAND_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<BRANDS>;
+  brandsAll: (context: Context, params: BRAND_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<BRANDS>;
+  brandsOne: (context: Context, params: BRAND_SEARCH_PARAMS & { customQuery?: CustomQuery }) => Promise<BRANDS>;
 }
 
 export type Brand = Record<string, unknown>;
@@ -97,7 +99,6 @@ export type BrandResponse = {
     data: Brand[];
     total: number;
 };
-
 
 export type OrderSearchParams = Record<string, any>;
 

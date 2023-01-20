@@ -3,9 +3,10 @@
 const external_modules = [
   '@vue-storefront/core',
   '@praguebest/manufacturer',
-  '@praguebest/brands',
+  '@praguebest/brand',
   '@vue/composition-api',
-  '@nuxtjs/composition-api'
+  '@nuxtjs/composition-api',
+  'rimraf'
 ]
 
 export default external_modules;

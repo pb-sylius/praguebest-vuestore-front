@@ -1,0 +1,38 @@
+@import "../../../styles/helpers";
+
+.brand_letters_wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  & .brand_heading {
+    padding-bottom: 20px;
+  }
+}
+
+.brand_letters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: var(--_c-light-secondary);
+  padding: 10px 0;
+  margin-bottom: 20px;
+
+  & .one_letter, .scroll_to_top {
+    padding: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: var(--c-white);
+    }
+
+    &.active {
+      background-color: var(--c-white);
+    }
+  }
+
+  & .scroll_to_top {
+    text-transform: none;
+  }
+}

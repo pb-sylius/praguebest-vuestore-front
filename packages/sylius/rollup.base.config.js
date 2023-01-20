@@ -1,5 +1,6 @@
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
+import externals from '../externals.config';
 
 export function generateBaseConfig(pkg) {
   return {
@@ -16,9 +17,7 @@ export function generateBaseConfig(pkg) {
     ],
     external: [
       ...Object.keys(pkg.dependencies || {}),
-      '@vue-storefront/core',
-      '@praguebest/manufacturer',
-      '@vue/composition-api'
+      ...externals
     ],
     plugins: [
       typescript({

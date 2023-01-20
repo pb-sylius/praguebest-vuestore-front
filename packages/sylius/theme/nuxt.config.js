@@ -56,12 +56,14 @@ export default {
         dev: [
           '@realtainment/sylius',
           '@vue-storefront/core',
-          '@praguebest/manufacturer'
+          '@praguebest/manufacturer',
+          '@praguebest/brand',
         ],
         prod: [
           '@realtainment/sylius',
           '@vue-storefront/core',
-          '@praguebest/manufacturer'
+          '@praguebest/manufacturer',
+          '@praguebest/brand',
         ]
       }
     }],
@@ -206,6 +208,26 @@ export default {
         name: 'ManufacturerAll',
         path: `/manufacturers/`,
         component: resolve(__dirname, 'pages/ManufacturerAll.vue')
+      });
+
+      routes.splice(
+        routes.findIndex(route => route.path === '/BrandOne'), 1
+      );
+
+      routes.push({
+        name: 'BrandOne',
+        path: `/brand/:slug/`,
+        component: resolve(__dirname, 'pages/BrandOne.vue')
+      });
+
+      routes.splice(
+        routes.findIndex(route => route.path === '/BrandAll'), 1
+      );
+
+      routes.push({
+        name: 'BrandAll',
+        path: `/brands/`,
+        component: resolve(__dirname, 'pages/BrandAll.vue')
       });
     }
   },

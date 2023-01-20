@@ -1,0 +1,49 @@
+@import "../../../styles/helpers";
+
+.top_brand_wrapper {
+  margin-bottom: 30px;
+
+  & .sf-heading__title {
+    text-transform: uppercase;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 400;
+  }
+
+  & .top_brand_grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: stretch;
+    padding: 30px;
+    border: 1px solid #ddd;
+  }
+
+  & .brand_heading .sf-heading__title {
+    text-transform: none;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .top_brand_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .top_brand_wrapper .top_brand_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .top_brand_wrapper .top_brand_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .top_brand_wrapper .top_brand_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

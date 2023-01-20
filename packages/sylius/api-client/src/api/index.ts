@@ -1,6 +1,7 @@
 export { default as createOrder } from './createOrder';
 export { default as getProduct } from './getProduct';
 export { getManufacturerAll, getManufacturerOne, getManufacturerSearch } from './getManufacturer';
+export { getBrandAll, getBrandOne, getBrandSearch } from './getBrand';
 export { default as getCategory } from './getCategory';
 export {
   createCart,
