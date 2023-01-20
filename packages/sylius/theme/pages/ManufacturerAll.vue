@@ -6,7 +6,7 @@
     <SfHeading :level="2" :title="$t('All Manufacturers')" class="manufacturer_heading hideable_heading" />
     <SfManufacturerLetters @selected="scrollToLetter" ref="allLetters" :manufacturers="computedManufacturers"
       :key="refreshKey" />
-    <SfManufacturerGrid :manufacturers="computedManufacturers" @clicked="resetSearch" ref="grid" />
+    <SfManufacturerGrid :manufacturers="computedManufacturers" @clicked="resetSearch" ref="grid" :key="'grid' + refreshKey" />
   </div>
 </template>
 

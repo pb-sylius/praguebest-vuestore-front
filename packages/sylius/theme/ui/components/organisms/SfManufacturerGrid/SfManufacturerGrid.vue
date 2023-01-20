@@ -12,7 +12,7 @@
           <div class="manufacturer_letter_indent"></div>
         </div>
         <div class="manufacturer_grid">
-          <SfManufacturerTile v-for="(manufacturer, i) in findGroupByLetter(letter, manufacturersGroups)" :key="i"
+          <SfManufacturerTile v-for="(manufacturer, i) in findGroupByLetter(letter, manufacturersGroups)" :key="manufacturerGetters.getId(manufacturer) + i"
             :slug="manufacturerGetters.getSlug(manufacturer)" :name="manufacturerGetters.getName(manufacturer)"
             :image="manufacturerGetters.getCoverImage(manufacturer)">
           </SfManufacturerTile>

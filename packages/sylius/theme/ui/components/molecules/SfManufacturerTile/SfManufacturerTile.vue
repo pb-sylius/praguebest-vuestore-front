@@ -1,7 +1,7 @@
 <template>
   <SfLink :link="`/manufacturer/${slug}`" :className="'manufacturer_tile_link'">
     <div class="manufacturer_tile_img_wrapper">
-      <SfImage :src="stripedImagePath" :alt="name" ref='imgElement' />
+      <SfImage :src="stripedImagePath" :alt="name" />
     </div>
     <SfHeading :level="4" :title="name" class="manufacturer_tile_name"></SfHeading>
   </SfLink>
