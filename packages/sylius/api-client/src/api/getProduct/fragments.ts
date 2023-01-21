@@ -97,4 +97,20 @@ export const productFragment = `
         }
       }
   }
+  brand {
+    name
+    code
+    description
+    slug
+    images {
+      edges {
+        node {
+          _id
+          id
+          type
+          path
+        }
+      }
+    }
+}
 `;

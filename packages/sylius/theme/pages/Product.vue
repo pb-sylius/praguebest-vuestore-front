@@ -50,6 +50,15 @@
         </SfPropertyLink>
         </div>
         <div>
+        <SfPropertyLink
+          v-if="product.brand"
+          name="Brand"
+          :link="localePath(`/brand/${product.brand.slug}`)"
+          :value="product.brand.name"
+        >
+        </SfPropertyLink>
+        </div>
+        <div>
           <p class="product__description desktop-only">
             {{ product.shortDescription }}
           </p>
