@@ -5,6 +5,11 @@ slow for sizes of our eshops.**_  ✋
 
 Check original plugin if BitBug already upgraded it to required Sylius version https://github.com/BitBagCommerce/SyliusVueStorefront2Plugin
 
+## Plugins
+
+- [manufacturers](https://github.com/pb-sylius/storefront-praguebest-manufacturers)
+- [brands](https://github.com/pb-sylius/storefront-praguebest-brands)
+
 ---
 
 ### _Original readme:_
